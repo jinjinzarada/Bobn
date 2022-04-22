@@ -26,7 +26,7 @@ public class TempViewPageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_list.jsp").forward(request, response);
+		request.getRequestDispatcher("view/common/template_header.jsp").forward(request, response);
 	}
 
 	/**
