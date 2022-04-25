@@ -91,7 +91,7 @@ nav:hover {
 		<div>
 			<!-- 메인 페이지로 연결 필요 -->
 			<div>
-				<a href="#"> <img src="/bobn/web/resources/image/bobn_logo.png" class="p_logo_size">
+				<a href="#"> <img src="/bobn/web/resources/image/common_main/bobn_logo.png" class="p_logo_size">
 				</a>
 			</div>
 			<nav class="nav nav-tabs">
@@ -139,15 +139,15 @@ nav:hover {
 						<!-- mypage : 클릭 시 모달 구현해야 함 -->
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2"> 
-							<object data="/bobn/web/resources/image/search.svg" type="image/svg+xml" class="p_icon"></object>>
+							<object data="/bobn/web/resources/common_main/image/search.svg" type="image/svg+xml" class="p_icon"></object>>
 						</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2"> 
-							<object data="/bobn/web/resources/image/cart.svg" type="image/svg+xml" class="p_icon"></object>>
+							<object data="/bobn/web/resources/common_main/image/cart.svg" type="image/svg+xml" class="p_icon"></object>>
 						</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2"> 
-							<object data="/bobn/web/resources/image/person-fill.svg" type="image/svg+xml" class="p_icon"></object>>
+							<object data="/bobn/web/resources/common_main/image/person-fill.svg" type="image/svg+xml" class="p_icon"></object>>
 						</a></li>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2">Login</a></li>

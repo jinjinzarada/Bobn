@@ -90,8 +90,7 @@
 
 <body>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="view/common/template_header.jsp" %>
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 
    <section>
             <!-- bx-silder로 슬라이더 구현 -->
@@ -105,11 +104,11 @@
                 </div>
             <div class="p_article_container">
                 <!-- 썸네일 이미지 -->
-                <a href="#"> <img src="/bobn/web/resources/image/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="/bobn/web/resources/image/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="/bobn/web/resources/image/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="/bobn/web/resources/image/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="/bobn/web/resources/image/rabbit.png" class="p_article-img"></a>
+                <a href="#"> <img src="/bobn/web/resources/common_main/image/rabbit.png" class="p_article-img"></a>
+                <a href="#"> <img src="/bobn/web/resources/common_main/image/rabbit.png" class="p_article-img"></a>
+                <a href="#"> <img src="/bobn/web/resources/common_main/image/rabbit.png" class="p_article-img"></a>
+                <a href="#"> <img src="/bobn/web/resources/common_main/image/rabbit.png" class="p_article-img"></a>
+                <a href="#"> <img src="/bobn/web/resources/common_main/image/rabbit.png" class="p_article-img"></a>
                 <!-- 썸네일 설명 -->
                 <div class="p_article-desc">
                     <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
@@ -135,8 +134,7 @@
         </div>
         </section>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="view/common/template_footer.jsp" %>
+<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 
 
 </body>
