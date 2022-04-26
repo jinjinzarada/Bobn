@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* 페이지명 article0*/
+ #j_ntcs_article0{
+    font-size: 30px;
+    border-color: white;
+    border-bottom: 1px solid #F54748;
+}
+
+/* 고객센터 안내 article1*/
+#j_ntcs_notice_btn{
+    width: 170px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #F54748;
+    border: #F54748;
+    border-top-right-radius: 5px;
+    border-radius: 5px;  
+}
+#j_ntcs_notice_btn:hover {
+    background-color: #e74141;
+}
+
+li{
+    padding: 5px;
+}
+
+#j_ntcs_info{
+    font-size: 40px;
+}
+img{
+    width: 160px;
+    height: 160px;
+}
+#j_ntcs_article1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 자주묻는질문 버튼 article2 */
+    #j_ntcs_article2{
+    display: flex;               
+    justify-content: center; 
+    align-items: center;
+    }
+
+    label{
+    margin: auto;
+    padding: 10px 35px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #F54748;
+    }
+    .j_ntcs_btn{
+    display: none;
+    }
+
+    label:hover {
+    background-color: #F54748;
+    color: white;
+    }
+
+    .labelChecked1 {
+	    background-color: #F54748;
+		color: white;
+	}
+/* 자주묻는질문_아코디언 article3~7 */
+  
+.j_ntcs_que:first-child{
+    border-top: 1px solid #F54748;
+}
+  
+.j_ntcs_que{
+  position: relative;
+  padding: 17px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #dddddd;
+}
+  
+.j_ntcs_que::before{
+  display: inline-block;
+  content: 'Q';
+  font-size: 14px;
+  color: #F54748;
+  margin-right: 5px;
+}
+
+.j_ntcs_que.on>span{
+  font-weight: bold;
+  color: #F54748; 
+}
+  
+.j_ntcs_anw {
+  display: none;
+    overflow: hidden;
+  font-size: 14px;
+  background-color: #f4f4f2;
+  padding: 27px 0;
+}
+  
+.j_ntcs_anw::before {
+  display: inline-block;
+  content: 'A';
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
+
+/* 공지사항_아코디언 article8 */
+  
+.j_ntcs_ntitle:first-child{
+    border-top: 1px solid #F54748;
+  }
+  
+.j_ntcs_ntitle{
+  position: relative;
+  padding: 17px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #dddddd;
+}
+  
+.j_ntcs_ntitle::before{
+  display: inline-block;
+  content: '제목';
+  font-size: 14px;
+  color: #F54748;
+  margin-right: 5px;
+}
+
+.j_ntcs_ntitle.on>span{
+  font-weight: bold;
+  color: #F54748; 
+}
+  
+.j_ntcs_ncontent {
+  display: none;
+    overflow: hidden;
+  font-size: 14px;
+  background-color: #f4f4f2;
+  padding: 27px 0;
+}
+  
+.j_ntcs_ncontent::before {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
+.j_ntcs_cscontent {
+  display: none;
+}
+
+.j_ntcs_cscontent_select {
+    display: block;
+}

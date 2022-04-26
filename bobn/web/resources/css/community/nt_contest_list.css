@@ -1,0 +1,108 @@
+@charset "UTF-8";
+ /* 페이지명 article0*/
+ #j_ntcl_article0{
+    font-size: 30px;
+    border-color: white;
+    border-bottom: 1px solid #F54748;
+}
+/* 컨셉버튼 article1 */
+#j_ntcl_checked{
+    background-color: #F54748;
+}
+    #j_ntcl_article1{
+    display: flex;               
+    justify-content: center; 
+    align-items: center;
+    }
+    #j_ntcl_concept{
+        width: 1000px;
+        height: 300px;
+    }
+
+/* 참여하기버튼 article2*/
+#j_ntcl_write_btn{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: #F54748;
+    border-top-right-radius: 5px;
+    border-radius: 5px;
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;   
+    cursor: pointer;   
+
+}
+#j_ntcl_write_btn:hover {
+background-color: #e74141;
+}
+
+/*이미지 article3*/
+.j_ntcl_article3_img{
+    text-align: center;
+    padding: 20px 40px;
+    font-size: medium;
+    cursor: pointer;  
+
+}
+.j_ntcl_article3_img:hover{
+    transform: scale(1.1);
+}
+.j_ntcl_article3_text{
+    text-align: center;
+    padding: 20px 40px;
+    font-size: medium;
+    overflow: hidden;
+}
+.j_ntcl_article3_img_id{
+    text-align: left;
+    padding: 20px 40px;
+    font-size: medium;
+}
+#j_ntcl_article3{
+    display: flex;               
+    justify-content: center; 
+    align-items: center;
+}
+
+/* 페이징 */
+#j_ntcl_article4{
+    display: flex;               
+    justify-content: center; 
+    align-items: center;   
+
+}
+
+.j_ntcl_pagination {
+display: inline-block;       
+}
+
+.j_ntcl_pagination a {
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+border: 1px solid #ddd;
+}
+
+.j_ntcl_pagination a.j_ntcl_active {
+background-color: #F54748;
+color: white;
+border: 1px solid #F54748;
+}
+
+.j_ntcl_pagination a:hover:not(.active) {
+background-color: #ddd;
+}
+
+.j_ntcl_pagination a:first-child {
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.j_ntcl_pagination a:last-child {
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}

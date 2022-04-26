@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* 페이지명 article0*/
+#j_ntcd_article0{
+    font-size: 30px;
+    border-color: white;
+    border-bottom: 1px solid #F54748;
+}
+
+/* 회원id,컨셉,좋아요 article1*/
+#j_ntcd_article1{
+    border: white;
+}
+#j_ntcd_like_btn{
+    float: right;
+}
+#j_ntcd_member_id{
+    float: left;
+    
+}
+
+/*이미지,내용,댓글작성 article2*/
+.j_ntcd_article2_img{
+    /* border: 1px solid black; */
+    text-align: center;
+    padding: 20px 40px;
+    font-size: medium;
+}
+#j_ntcd_submit_btn{
+    background-color: #F54748;
+    border-radius: 5px;
+    border: 1px solid #F54748;
+    cursor: pointer;  
+    font-size: medium;
+    padding: 3px 10px;
+}
+#j_ntcd_submit_btn:hover {
+    background-color: #e74141;
+    }
+
+#j_ntcd_article2{
+    display: flex;               
+    justify-content: center; 
+    align-items: center;
+    border: white;
+    border-bottom: 1px solid #F54748;
+}
+#j_ntcd_ntprCnt{
+    float: left;
+}
+#j_ntcd_recomment{
+    width: 510px;
+}
+/* 작성한 댓글 article3 */
+#j_ntcd_article3{
+    width: 680px; margin: 0 auto;
+    border: white;
+}

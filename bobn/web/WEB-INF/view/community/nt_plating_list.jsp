@@ -1,13 +1,13 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcontent_list.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_list.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>플레이팅조회</title>
+<title>플레이팅_조회</title>
 </head>
 <body>
      <div class="j_wrap content">
@@ -128,7 +128,5 @@
             </section>
         </div>
     </div>
-</body>
-</body>
 </body>
 </html>

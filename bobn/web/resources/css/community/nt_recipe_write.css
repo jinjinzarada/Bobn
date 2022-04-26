@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* 페이지명 article0*/
+#j_ntrw_article0 {
+	font-size: 30px;
+	border-color: white;
+	border-bottom: 1px solid #F54748;
+}
+/* 글쓰기 article1 */
+.j_ntrw_table {
+	background-color: #F54748;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+#j_ntrw_write {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.j_ntrw_tablewr {
+	padding-left: 20px;
+}
+
+#j_ntrw_title {
+	width: 562px;
+	height: 25px;
+}
+
+#j_ntrw_file_btn {
+	width: 100%;
+}
+
+textarea {
+	resize: none;
+}
+
+/* 저장버튼 article2*/
+#j_ntrw_write_btn {
+	width: 90px;
+	height: 35px;
+	font-size: medium;
+	color: white;
+	background-color: #F54748;
+	border-top-right-radius: 5px;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+#j_ntrw_write_btn:hover {
+	background-color: #e74141;
+}
