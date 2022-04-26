@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+.c_pay_frame{
+    width: 80%;
+    margin:0 auto;
+    padding: 50px 50px;
+}
+
+/* 주문자 */
+
+.c_pay_deliv{
+    font-size: 12pt;
+    color: #585858;
+}
+
+/* 배송지 */
+
+.c_pay_delivery{
+    border:solid 1px gray;
+    border-collapse: collapse;
+    width:100%;
+}
+.c_pay_delivery th, td{
+    border:solid 1px #e0e0eb;
+    padding:12px 10px;
+}
+#c_pay_findadd{
+    margin-bottom:10px; 
+    border: solid 1px #e0e0eb; 
+    border-radius: 5px;
+    cursor: pointer;;
+}
+.c_pay_ordersame{
+    float: right;
+}
+
+/* 주문 상품*/
+
+.c_pay_order{
+   text-align: center;
+}
+.c_pay_minus-btn, .c_pay_plus-btn{
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.c_pay_order{
+    width : 1000px;
+    height : 200px;
+}
+
+/* 결제 수단 */
+
+.c_payment_title{
+    font-size: 25px;
+    font-weight: 600;
+    color: #585858;
+}
+.c_payment{
+    padding:18px 10px;
+    border-bottom:solid 1px #e0e0eb;
+}
+.c_pay_status{
+    padding: 0 245px 0 0;
+    border:1px solid #e0e0eb;
+    line-height: 1.5;
+}
+
+/* 결제 금액*/
+
+#c_pay_price{
+    font-size:20pt;
+    font-weight:bold;
+}
+
+.c_pay_calcu {
+    border:solid 1px #e0e0eb;
+    border-collapse: collapse;
+    background: #f5e6ca;
+    width:100%;
+    font-size: 10pt;
+}
+
+.c_pay_calcu th{
+    border:solid 1px #e0e0eb;
+    text-align: center;
+    width:750px; 
+    padding:22px 0;
+}
+.c_pay_calcu td{
+    border:solid 1px #e0e0eb;
+    text-align: center;
+}
+
+/* 결제하기 버튼 */
+
+.c_pay_btn{
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius: 5px;
+    background-color: #ddd;
+    width: 500px; 
+    height:60px; 
+    font-size: 25px;
+}
+.c_pay_btn:hover{
+    background: #F54748;
+}
+.c_pay_btnside{
+    position: absolute;
+    left: 37%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

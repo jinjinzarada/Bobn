@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.bobn.shopbasket.model.service.ShopbasketService;
+import kh.semi.bobn.shopbasket.model.vo.ShopbasketVo;
+
 /**
  * Servlet implementation class BasketListServlet
  */
@@ -26,16 +29,32 @@ public class BasketListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
+		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket_main.jsp").forward(request, response);
+		String amountStr=request.getParameter("amount");
+		int amount = 0;
+		try {
+			amount = Integer.parseInt(amountStr);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		System.out.println(amount);
+		ShopbasketVo vo = new ShopbasketVo();
+		vo.setBasketitemAmount(amount);
+		
+		int result = new ShopbasketService().insertShopbasket(vo);
+		
+//		if(result ==0) {
+//			//실패
+//			System.out.println("실패");
+//		} else {
+//			System.out.println("성공");
+//		}
+//	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		System.out.println("여기 들어오남");
+//	}
 	}
-
 }
