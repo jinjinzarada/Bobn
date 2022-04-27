@@ -8,7 +8,7 @@
 <title>밥앤-로그인및계정찾기</title>
 </head>
 <body>
-<div class="title"></div>
+ <div class="title"></div>
     <div class="l_login_wrap">
         <div class="l_login_form-wrap">
             <div class="l_login_button-wrap">
@@ -24,14 +24,14 @@
                 <button class="l_login_justbtn" type="button" onclick="location.href='#'">회원가입</button>
             </form>
             <form id="l_login_idfind" action="" class="l_login_input-group">
-                <input type="text" class="l_login_input-field" placeholder="아이디 입력" required>
+                <input type="text" class="l_login_input-field" placeholder="이름 입력" required>
                 <input type="email" class="l_login_input-field" placeholder="이메일 주소 입력" required>
                 <button class="l_login_submit">아이디 찾기</button>
             </form>
             <form id="l_login_passwordfind" action="" class="l_login_input-group">
-                <input type="text" class="l_login_input-field" placeholder="아이디 입력" required>
+                <input type="text" class="l_login_input-field" placeholder="이름 입력" required>
+                <input type="text" class="l_login_input-field" placeholder="ID 입력" required>
                 <input type="email" class="l_login_input-field" placeholder="이메일 주소 입력" required>
-                <input type="password" class="l_login_input-field" placeholder="비밀번호 입력" required>
                 <button class="l_login_submit">비밀번호 찾기</button>
             </form>
         </div>
