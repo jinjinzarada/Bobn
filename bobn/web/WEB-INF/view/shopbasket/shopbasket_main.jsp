@@ -29,7 +29,7 @@
 		<c:forEach items="${basketvolist }" var="vo">
 		<!-- Product # -->
 		<div class="c_cart_item">
-			<div style="display:none;" class="p_id">${vo.pId }</div>
+			<div style="display:none;" class="p_id">${vo.pId}</div>
 			<div class="c_cart_checkbox">
 				<input type="checkbox" name="check" value="select" />
 			</div>
@@ -39,7 +39,7 @@
 			</div>
 
 			<div class="c_cart_description">
-				<span>${vo.p_name }</span> <span>${vo.p_flavor }</span>
+				<span>${vo.p_name}</span> <span>${vo.p_flavor}</span>
 			</div>
 		
 			<div class="c_cart_quantity">
@@ -47,13 +47,13 @@
 					<!-- <img src="minus.svg" alt="" /> -->
 					-
 				</button>
-				<input type="text" name="itemAmount" class="itemAmount" value="${vo.basketitemAmount }">
+				<input type="text" name="itemAmount" class="itemAmount" value="${vo.basketitemAmount}">
 				<button class="c_cart_plus-btn" type="button" name="button">
 					<!-- <img src="plus.svg" alt="" /> -->
 					+
 				</button>
 			</div>
-			<div class="c_cart_total-price">&#8361;${vo.p_price }</div>
+			<div class="c_cart_total-price">&#8361;${vo.p_price}</div>
 		</div>
 		</c:forEach>
 <script>
@@ -84,14 +84,32 @@ function funPlusAmount(){
 			}
 		}
 	});
-	
-	
-	
-	
-	
-	
-	
-	
+}
+	$(".c_cart_minus-btn").click(funMinusAmount);
+	function funMinusAmount(){
+		console.log(this); 
+		console.log($(this));
+		console.log($(this).parents(".c_cart_item").children(".p_id").text());
+		var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
+		var $thisEle = $(this);  
+		$.ajax({
+			url:"bcount",
+			type:"post",
+			data:{pId : pidVal},
+			success: function (result){
+				console.log(result);
+				console.log(this);  
+				if(result == 1){
+					//$thisEle.prev().val(pidVal+1);
+					var oldVal = $thisEle.next().val();
+					$thisEle.next().val(Number(oldVal)-1); 
+				}else if(result == 0){
+					
+				}else {
+					
+				}
+			}
+		});
 }
 </script>
 		<br> <br>
