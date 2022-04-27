@@ -1,7 +1,7 @@
 package kh.semi.bobn.event.controller;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kh.semi.bobn.event.model.service.EventService;
 import kh.semi.bobn.event.model.vo.EventVo;
 
 /**
@@ -21,27 +22,14 @@ public class EventMainServlet extends HttpServlet {
     public EventMainServlet() {
         super();
     }
-//
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String eTitle = request.getParameter("eTitle");
-		String eContent = request.getParameter("eContent");
-		String eStartDate = request.getParameter("eStartDate");
-		String eEndDate = request.getParameter("eEndDate");
-		
-		EventVo vo = new EventVo();
-		vo.seteTitle(eTitle);
-		vo.seteContent(eContent);		
-		vo.seteStartDate(eStartDate);
-		vo.seteEndDate(eEndDate);
-
+		// 게시글 전체 리스트 (service)
+		ArrayList<EventVo> evlist=new EventService().evlist();
+		// 배열 넘기기 
+		request.setAttribute("evlist", evlist);
+		request.getRequestDispatcher("/WEB-INF/view/event/event_test.jsp").forward(request, response);
 		
 	}
 }

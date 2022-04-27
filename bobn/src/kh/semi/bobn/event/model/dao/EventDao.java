@@ -3,44 +3,49 @@ package kh.semi.bobn.event.model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
+
+import static kh.semi.bobn.common.jdbc.JdbcDBCP.close;
 
 import kh.semi.bobn.event.model.vo.EventVo;
 
+
 public class EventDao {
 	
-	private PreparedStatement pstmt;
-	private Connection conn;
-	private ResultSet rs;
+	private PreparedStatement pstmt = null;
+	private ResultSet rs = null;
 	
-	public int evBoardList(Connection conn, EventVo vo) {
-		int result = 0;
+	// 게시글 목록 조회
+	public ArrayList<EventVo> evlist(Connection conn){
+		ArrayList<EventVo> evlist = new ArrayList<EventVo>();
 		
+		EventVo vo = new EventVo();
 //		private int eNo;
-//		private String ePostDate;
 //		private String eTitle;
-//		private String eContent;
-//		private String String;
 //		private String eStartDate;
 //		private String eEndDate;
-//
-//		private int eImageNo;
-//		private String eImageRoute;
 		
-		
-		String sql = "select eImangeRoute, eTitle, eStartDate, eEndDate from ev_content";
+		String sql = "select eNo, eTitle, ePostDate, eEndDate from ev_content order by eNo";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-		} catch (SQLException e){
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				vo.seteNo(rs.getInt("eNo"));
+				vo.seteTitle(rs.getString("eTitle"));
+				vo.setePostDate(rs.getString("ePostDate"));
+				vo.seteEndDate(rs.getString("eEndDate"));
+				
+				evlist.add(vo);
+				System.out.println("evlist" + evlist); //확인용 코드 
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-//			close(pstmt);
+			close(pstmt);
 		}
-		return result;
-		
+		return evlist;
 	}
 	
-	
-
 }

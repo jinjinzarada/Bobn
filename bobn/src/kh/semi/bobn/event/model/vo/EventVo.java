@@ -19,7 +19,6 @@ public class EventVo {
 	private String ePostDate;
 	private String eTitle;
 	private String eContent;
-	private String String;
 	private String eStartDate;
 	private String eEndDate;
 
@@ -29,8 +28,8 @@ public class EventVo {
 	@Override
 	public String toString() {
 		return "EventVo [eNo=" + eNo + ", ePostDate=" + ePostDate + ", eTitle=" + eTitle + ", eContent=" + eContent
-				+ ", String=" + String + ", eStartDate=" + eStartDate + ", eEndDate=" + eEndDate + ", eImageNo="
-				+ eImageNo + ", eImageRoute=" + eImageRoute + "]";
+				+ ", eStartDate=" + eStartDate + ", eEndDate=" + eEndDate + ", eImageNo=" + eImageNo + ", eImageRoute="
+				+ eImageRoute + "]";
 	}
 
 	public int geteNo() {
@@ -63,14 +62,6 @@ public class EventVo {
 
 	public void seteContent(String eContent) {
 		this.eContent = eContent;
-	}
-
-	public String getString() {
-		return String;
-	}
-
-	public void setString(String string) {
-		String = string;
 	}
 
 	public String geteStartDate() {
