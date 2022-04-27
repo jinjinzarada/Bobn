@@ -8,6 +8,21 @@
 <head>
 <meta charset="UTF-8">
 <title>결제페이지</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+    function findAddress(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var code = data.zonecode; //우편번호
+            var Addr = data.address;// 선택한 주소
+
+            document.getElementById('c_pay_postnum').value = data.zonecode;
+            document.getElementById('c_pay_add1').value = data.address;
+            
+        }
+    }).open();
+}
+</script>
 </head>
 <body>
 	<div class="c_pay_frame">
@@ -49,14 +64,12 @@
 			</tr>
 			<tr>
 				<td class="c_pay_deliv">주소&nbsp;</td>
-				<td><input type="text" id="c_pay_postnum" size="10"
-					maxlength="5">
-					<button type="button" id="c_pay_findadd"
-						onclick="location.href = '주소 api로 가자'">주소찾기</button>
-					<br> <input type="text" id="c_pay_add1"
-					style="margin-bottom: 10px;" size="50"><br> <input
-					type="text" id="c_pay_add2" size="50" placeholder="상세 주소 입력">
-				</td>
+				<td>
+                	<input type="text" id="c_pay_postnum" size="10" maxlength="5" readonly="readonly" placeholder="우편번호">
+                	<button type ="button" id="c_pay_findadd" onclick = "findAddress()">주소찾기</button><br>
+                	<input  type="text" id="c_pay_add1" style =" margin-bottom:10px; " size="50" readonly="readonly" placeholder="주소"><br>
+               		<input  type="text" id="c_pay_add2" size="50" placeholder="상세 주소 입력">
+            </td>
 			</tr>
 			<tr>
 				<td class="c_pay_deliv">배송요청사항&nbsp;</td>
