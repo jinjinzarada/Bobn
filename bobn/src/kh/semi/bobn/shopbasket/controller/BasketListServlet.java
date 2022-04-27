@@ -1,6 +1,8 @@
 package kh.semi.bobn.shopbasket.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,19 +31,25 @@ public class BasketListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket_main.jsp").forward(request, response);
-		String amountStr=request.getParameter("amount");
-		int amount = 0;
-		try {
-			amount = Integer.parseInt(amountStr);
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
-		System.out.println(amount);
-		ShopbasketVo vo = new ShopbasketVo();
-		vo.setBasketitemAmount(amount);
+//		String amountStr=request.getParameter("amount");
+//		int amount = 0;
+//		try {
+//			amount = Integer.parseInt(amountStr);
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		System.out.println(amount);
+//		ShopbasketVo vo = new ShopbasketVo();
+//		vo.setBasketitemAmount(amount);
+//		
 		
-		int result = new ShopbasketService().insertShopbasket(vo);
+//		String memberId = "msson912"; // TODO 회원가입 후 삭제
+//		String memberId = "minykim"; // TODO 회원가입 후 삭제
+//		String memberId = "2seochoi"; // TODO 회원가입 후 삭제
+//		String memberId = "jialee"; // TODO 회원가입 후 삭제
+		String memberId = "ziwoo123"; // TODO 회원가입 후 삭제
+		
+		ArrayList<ShopbasketVo> volist = new ShopbasketService().selectShopbasketList(memberId);
 		
 //		if(result ==0) {
 //			//실패
@@ -49,12 +57,14 @@ public class BasketListServlet extends HttpServlet {
 //		} else {
 //			System.out.println("성공");
 //		}
-//	}
+		System.out.println("blist volist:" + volist);
+		request.setAttribute("basketvolist", volist);
+		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket_main.jsp").forward(request, response);
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 //	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		System.out.println("여기 들어오남");
 //	}
-	}
-}
+}   //class
