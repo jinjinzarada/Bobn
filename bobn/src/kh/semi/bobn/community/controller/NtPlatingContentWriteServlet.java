@@ -99,7 +99,7 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 			//파일 저장경로(절대경로) root를 통해 상대경로를 넘겨주면 물리경로를 얻어줌
 			String realPath = request.getServletContext().getRealPath("/upload");
 			System.out.println("realpath:" + realPath);
-			
+
 			//파일경로+경로구분자+uuid+파일명까지 filePath에 담기(separator는 \,/ 이런 경로 구분자 자동적용)
 			String filePath = realPath + File.separator + uniqueName + fileName;
 			System.out.println("filePath:" + filePath);
@@ -114,9 +114,14 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 	 			fos.write(buf,0,size);	//buf의 크기를 0개부터 size만큼 읽어줘
 	 		}
 			
+	 		
+	 		//사진경로 불러올때 경로지정(db저장용)
+	 		String Path = File.separator+ "bobn" + File.separator + "upload";
+	 		String rootPath = Path + File.separator + uniqueName + fileName;
+	 		
 	 		//파일경로를 vo에 담아줌(erd-플레이팅이미지테이블)
 	 		NtPlatingImgVo ntpiVo = new NtPlatingImgVo();
-	 		ntpiVo.setPiFile(filePath);
+	 		ntpiVo.setPiFile(rootPath);
 	 		
 	 		//vo를 가지고 서비스로 이동
 	 		int ntpiResult = new NtPlatingService().insertPlatingImg(ntpiVo);

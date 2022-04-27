@@ -45,8 +45,16 @@ background-color: #e74141;
     padding: 20px 40px;
     font-size: medium;
     cursor: pointer;  
+    width: 300px;
+	height: 300px;
 
 }
+
+#j_ntcl_img_item{
+	width: 300px;
+	height: 300px;
+}
+
 .j_ntcl_article3_img:hover{
     transform: scale(1.1);
 }
@@ -65,6 +73,7 @@ background-color: #e74141;
     display: flex;               
     justify-content: center; 
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /* 페이징 */

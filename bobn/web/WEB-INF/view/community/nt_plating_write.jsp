@@ -24,9 +24,8 @@
                                 <th class="j_ntpw_table">컨셉</th>
                                 <td class="j_ntpw_tablewr">
                                     <input type="radio" name="pbConcept" value="1" class="j_ntpw_concept" required="required">생일&nbsp;&nbsp;
-                                    <input type="radio" name="pbConcept" value="2" class="j_ntpw_concept" required="required">캠핑&nbsp;&nbsp;
-                                    <input type="radio" name="pbConcept" value="3" class="j_ntpw_concept" required="required">홈파티&nbsp;&nbsp;
-                                    <input type="radio" name="pbConcept" value="4" class="j_ntpw_concept" required="required">안주
+                                    <input type="radio" name="pbConcept" value="2" class="j_ntpw_concept" required="required">홈파티&nbsp;&nbsp;
+                                    <input type="radio" name="pbConcept" value="3" class="j_ntpw_concept" required="required">안주
                                 </td>
                             </tr>
                             <tr>

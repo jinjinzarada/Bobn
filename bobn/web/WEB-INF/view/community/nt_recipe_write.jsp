@@ -23,10 +23,9 @@
                             <tr>
                                 <th class="j_ntrw_table">컨셉</th>
                                 <td class="j_ntrw_tablewr">
-                                    <input type="radio" name="bp_concept" value="1" class="j_ntrw_concept" required="required">한식&nbsp;&nbsp;
-                                    <input type="radio" name="bp_concept" value="2" class="j_ntrw_concept" required="required">중식&nbsp;&nbsp;
-                                    <input type="radio" name="bp_concept" value="3" class="j_ntrw_concept" required="required">일식&nbsp;&nbsp;
-                                    <input type="radio" name="bp_concept" value="4" class="j_ntrw_concept" required="required">양식
+                                    <input type="radio" name="bp_concept" value="1" class="j_ntrw_concept" required="required">중식&nbsp;&nbsp;
+                                    <input type="radio" name="bp_concept" value="2" class="j_ntrw_concept" required="required">일식&nbsp;&nbsp;
+                                    <input type="radio" name="bp_concept" value="3" class="j_ntrw_concept" required="required">양식
                                 </td>
                             </tr>
                             <tr>
@@ -46,7 +45,7 @@
                             <tr>
                                 <th class="j_ntrw_table">파일등록</th>
                                 <td id="j_ntrw_files" class="j_ntrw_tablewr">
-                                    <input type="file" name="uploadFile_1" id="j_ntrw_file_btn">
+                                    <input type="file" name="uploadFile_1" id="j_ntrw_file_btn" required="required">
                                 </td>
                             </tr>
                             <tr>

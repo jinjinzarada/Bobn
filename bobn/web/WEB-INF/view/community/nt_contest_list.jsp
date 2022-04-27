@@ -25,92 +25,14 @@
                     <button type="button" id="j_ntcl_write_btn" onclick="location.href='어디로이동할지적어야함';">참여하기</button>
                 </article>
                 <article id="j_ntcl_article3">
-                    <table>
-                        <tr>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><br></td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><br></td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                            <td class="j_ntcl_article3_img_id">member_id</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                            <td class="j_ntcl_article3_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                            <td class="j_ntcl_article3_text">ntclCnt / ntcrCnt</td>
-                        </tr>
-                        <tr>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                            <td class="j_ntcl_article3_text">ntcr_cb_title</td>
-                        </tr>
-                    </table>
+                    <div>
+                        <div class="j_ntcl_article3_img_id">member_id</div>
+                        <div class="j_ntcl_article3_img">
+                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';" id="j_ntcl_img_item">
+                        </div>
+                        <div class="j_ntcl_article3_text">ntclCnt / ntcrCnt</div>
+                        <div class="j_ntcl_article3_text">ntcr_cb_title</div>
+                    </div>
                 </article>
                 <article id="j_ntcl_article4">
                     <div class="j_ntcl_pagination">
