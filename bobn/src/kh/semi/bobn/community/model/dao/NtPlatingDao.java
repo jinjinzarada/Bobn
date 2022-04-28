@@ -106,8 +106,10 @@ public class NtPlatingDao {
 					// db컬럼명 그대로 읽어서 ntpcVo에 넣어주기
 					ntpcVo.setPbTitle(rs.getString("pb_title"));
 					ntpcVo.setPbContent(rs.getString("pb_content"));
+					ntpcVo.setPbConcept(rs.getString("pb_concept"));
 					ntpcVo.setPiFile(rs.getString("pi_file"));
 					ntpcVo.setMemberId(rs.getString("member_id"));
+					
 
 					// ntpcVolist에 ntpcVo담기
 					ntpcVolist.add(ntpcVo);

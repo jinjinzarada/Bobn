@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_contest_list.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -18,15 +18,19 @@ public class NtPlatingListVo {
 	//변수 이름짓기
 	private String pbTitle;
 	private String pbContent;
+	private String pbConcept;
 	private String memberId;
 	private String piFile;
 	
+	
 	//생성자
-	public NtPlatingListVo() {};
-	public NtPlatingListVo(String pbTitle, String pbContent, String memberId, String piFile) {
+	
+	public NtPlatingListVo() {}
+	public NtPlatingListVo(String pbTitle, String pbContent, String pbConcept, String memberId, String piFile) {
 		super();
 		this.pbTitle = pbTitle;
 		this.pbContent = pbContent;
+		this.pbConcept = pbConcept;
 		this.memberId = memberId;
 		this.piFile = piFile;
 	}
@@ -34,8 +38,8 @@ public class NtPlatingListVo {
 	//toString
 	@Override
 	public String toString() {
-		return "NtPlatingListVo [pbTitle=" + pbTitle + ", pbContent=" + pbContent + ", memberId=" + memberId
-				+ ", piFile=" + piFile + "]";
+		return "NtPlatingListVo [pbTitle=" + pbTitle + ", pbContent=" + pbContent + ", pbConcept=" + pbConcept
+				+ ", memberId=" + memberId + ", piFile=" + piFile + "]";
 	}
 	
 	//게터세터
@@ -51,6 +55,12 @@ public class NtPlatingListVo {
 	public void setPbContent(String pbContent) {
 		this.pbContent = pbContent;
 	}
+	public String getPbConcept() {
+		return pbConcept;
+	}
+	public void setPbConcept(String pbConcept) {
+		this.pbConcept = pbConcept;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -63,6 +73,7 @@ public class NtPlatingListVo {
 	public void setPiFile(String piFile) {
 		this.piFile = piFile;
 	}
+
 	
 	
 	

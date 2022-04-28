@@ -6,8 +6,9 @@
 	border-bottom: 1px solid #F54748;
 }
 /* 컨셉버튼 article1 */
-#j_ntpl_checked {
+#j_ntpl_birth {
 	background-color: #F54748;
+	color: white;
 }
 
 #j_ntpl_article1 {

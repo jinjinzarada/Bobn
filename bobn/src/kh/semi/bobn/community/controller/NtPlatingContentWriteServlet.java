@@ -128,8 +128,13 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 	 		
 	 		if(ntpiResult == 0) {
 				System.out.println("이미지 등록 실패ㅠㅠ");
+				//글쓰기 실패 시 플레이팅 조회로 이동(request.getRe~~했기대문에 request.getContextPath쓸 필요 x)
+				//TODO : 실패 시 이동할 에러페이지 경로 넣어주기 
+				//request.getRequestDispatcher("").forward(request, response);
 			} else {
 				System.out.println("이미지 등록 성공!!");
+				//글쓰기 성공 시 플레이팅 조회로 이동(request가 아닌 응답하는 response는 contextpath를 써서 절대경로로 써줘야함)
+				response.sendRedirect(request.getContextPath()+"/ntpclist");
 			}
 	 		
 	 		fos.close();

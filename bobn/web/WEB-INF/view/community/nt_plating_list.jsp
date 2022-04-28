@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_list.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,10 +26,9 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 				</article>
 				<article id="j_ntpl_article1">
 					<div class="j_ntpl_concept_btn_wrap">
-						<button type="button" class="j_ntpl_concept_btn"
-							id="j_ntpl_checked">생일</button>
-						<button type="button" class="j_ntpl_concept_btn">홈파티</button>
-						<button type="button" class="j_ntpl_concept_btn">안주</button>
+						<button type="button" class="j_ntpl_concept_btn" id="j_ntpl_birth" >생일</button>
+						<button type="button" class="j_ntpl_concept_btn" id="j_ntpl_party" >홈파티</button>
+						<button type="button" class="j_ntpl_concept_btn" id="j_ntpl_snack" >안주</button>
 					</div>
 				</article>
 				<article id="j_ntpl_article2">
@@ -39,7 +39,7 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 
 					<!--db받아온 ntpcVolist를 vo에 담아서 반복문 돌리기  -->
 					<% for(NtPlatingListVo vo : ntpcVolist) {%>
-					<div>
+					<div id="j_ntpl_contentItem">
 						<div class="j_ntpl_article3_img_id"><%=vo.getMemberId() %></div>
 						<div class="j_ntpl_article3_img">
 							<img src=<%=vo.getPiFile() %> alt=""
@@ -47,6 +47,7 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 						</div>
 						<div class="j_ntpl_article3_text">ntplCnt / ntprCnt</div>
 						<div class="j_ntpl_article3_text"><%=vo.getPbTitle() %></div>
+						<div class="j_ntpl_article3_text" id="j_ntpl_conceptnum"><%=vo.getPbConcept() %></div>
 					</div>
 					<%} %>
 
@@ -60,5 +61,26 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 			</section>
 		</div>
 	</div>
+	<script>
+		$("#j_ntpl_birth").on("click", function(){
+			$("#j_ntpl_birth").css({"backgroundColor":"#F54748","color":"white"});
+			$("#j_ntpl_party").css({'backgroundColor':'white',"color":"black"});
+			$("#j_ntpl_snack").css({'backgroundColor':'white',"color":"black"});
+		});
+		
+		$("#j_ntpl_party").on("click", function(){
+			$("#j_ntpl_party").css({"backgroundColor":"#F54748","color":"white"});
+			$("#j_ntpl_birth").css({'backgroundColor':'white',"color":"black"});
+			$("#j_ntpl_snack").css({'backgroundColor':'white',"color":"black"});
+		});
+		
+		$("#j_ntpl_snack").on("click", function(){
+			$("#j_ntpl_snack").css({"backgroundColor":"#F54748","color":"white"});
+			$("#j_ntpl_party").css({'backgroundColor':'white',"color":"black"});
+			$("#j_ntpl_birth").css({'backgroundColor':'white',"color":"black"});
+		});
+		
+		
+	</script>
 </body>
 </html>

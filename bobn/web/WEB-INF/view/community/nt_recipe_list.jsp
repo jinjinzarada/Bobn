@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_recipe_list.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,9 +19,9 @@
                 </article>
                 <article id="j_ntrl_article1">
                     <div class="j_ntrl_concept_btn_wrap">
-                        <button type="button" class="j_ntrl_concept_btn" id="j_ntrl_checked">중식</button>
-                        <button type="button" class="j_ntrl_concept_btn">일식</button>
-                        <button type="button" class="j_ntrl_concept_btn">양식</button>
+                        <button type="button" class="j_ntrl_concept_btn" id="j_ntrl_ch" onclick="javascript:rkind('ch')">중식</button>
+                        <button type="button" class="j_ntrl_concept_btn" id="j_ntrl_ja" onclick="javascript:rkind('ja')">일식</button>
+                        <button type="button" class="j_ntrl_concept_btn" id="j_ntrl_ya" onclick="javascript:rkind('ya')">양식</button>
                     </div>
                 </article>
                  <article id="j_ntrl_article2">
@@ -49,5 +50,28 @@
             </section>
         </div>
     </div>
+    <script>
+    function rkind(data){
+			switch(data){
+			case "ch":
+				$("#j_ntrl_ch").css({"backgroundColor":"#F54748","color":"white"});
+				$("#j_ntrl_ja").css({'backgroundColor':'white',"color":"black"});
+				$("#j_ntrl_ya").css({'backgroundColor':'white',"color":"black"});
+				break;
+				
+			case "ja":
+				$("#j_ntrl_ja").css({"backgroundColor":"#F54748","color":"white"});
+				$("#j_ntrl_ch").css({'backgroundColor':'white',"color":"black"});
+				$("#j_ntrl_ya").css({'backgroundColor':'white',"color":"black"});
+				break;
+				
+			case "ya":
+				$("#j_ntrl_ya").css({"backgroundColor":"#F54748","color":"white"});
+				$("#j_ntrl_ch").css({'backgroundColor':'white',"color":"black"});
+				$("#j_ntrl_ja").css({'backgroundColor':'white',"color":"black"});
+				break;
+			}
+		}
+    </script>
 </body>
 </html>
