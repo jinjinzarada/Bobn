@@ -19,9 +19,9 @@ public class JdbcDBCP {
 			Context initContext = new InitialContext();
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
 			//학원공용db
-//			DataSource ds = (DataSource) envContext.lookup("jdbc/khbobnPclass");
+			DataSource ds = (DataSource) envContext.lookup("jdbc/khbobnPclass");
 			//개인로컬db
-			DataSource ds = (DataSource) envContext.lookup("jdbc/khbobnLocal");
+//			DataSource ds = (DataSource) envContext.lookup("jdbc/khbobnLocal");
 			conn = ds.getConnection();
 		} catch (SQLException e) {
 			System.out.println("DB 접속 실패ㅠㅠ");
