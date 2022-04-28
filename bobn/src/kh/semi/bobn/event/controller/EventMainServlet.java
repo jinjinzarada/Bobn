@@ -27,6 +27,7 @@ public class EventMainServlet extends HttpServlet {
 		
 		// 게시글 전체 리스트 (service)
 		ArrayList<EventVo> evlist=new EventService().evlist();
+		System.out.println("evlist"+evlist);
 		// 배열 넘기기 
 		request.setAttribute("evlist", evlist);
 		request.getRequestDispatcher("/WEB-INF/view/event/event_test.jsp").forward(request, response);

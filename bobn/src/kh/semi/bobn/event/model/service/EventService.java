@@ -15,7 +15,7 @@ public class EventService {
 		
 		Connection conn = getConnection();
 	
-		ArrayList<EventVo> evlist = new EventDao().evlist(conn);
+		ArrayList<EventVo> evlist = new EventDao().evlist(0, 0);
 		System.out.println("evlist" + evlist); //확인용 코드 
 		
 		close(conn);

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <!-- JSTL -->
+<%@ page import="kh.semi.bobn.event.model.dao.EventDao" %>
+<%@ page import="kh.semi.bobn.event.model.vo.EventVo" %>
+<%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -48,8 +51,36 @@
 }
 </style>
 <body>
-
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
+	
+	<!-- 전체 목록에서 페이징 처리를 위한 변수 선언 -->
+	<%	
+	// 화면에 여질 게시글 개수 지정 
+	int pageSize =10;
+	// 현재 카운터를 클릭한 번호값을 읽어옴
+	String pageNum = request.getParameter("pageNum");
+	// 처음 열면 pageNum값이 없어서 Null 처리
+	if(pageNum==null) {
+		pageNum="1";
+	}
+	int count = 0; // 전체 글의 갯수를 저장
+	int number = 0; // 페이징 넘버링 변수 
+	
+	//현재 보고자 하는 페이지 숫자를 저장 
+	int currentPage=Integer.parseInt(pageNum);
+	//전체 게시글의 내용을 jsp로가져옴 
+	EventDao dao = new EventDao();
+	// 전체 게시글의 갯수를 읽어들이는 메소드 호출 (dao)
+	count = dao.getAllcount();
+	//현재 페이지에 보여줄 시작 번호 설정 = DB에서 불러올 시작 번호
+			int startRow = (currentPage-1)*pageSize+1;
+			int endRow = currentPage * pageSize;
+	//10개를 기준으로 게시글 리턴 받아주는 메소드 호출
+	ArrayList<EventVo> cntlist = dao.evlist(startRow, endRow);
+	//테이블에 표시할 번호 지정
+	number = count  - (currentPage-1)*pageSize;
+	%>
+	
 	<section>
 		<div class="p_section_container">
 			<div class="p_headline_container">
@@ -84,6 +115,44 @@
 			</table>
 		</div>
 	</section>
+	
+		<% 
+			if(count > 0){
+				int pageCount = count /pageSize + (count%pageSize == 0 ? 0 : 1 );//페이징 숫자를 얼마까지 보여줄건지 결정 
+				
+				//시작 페이지 숫자를 설정 
+				int startPage = 1;
+				if(currentPage%10 !=0){
+					startPage = ((int)(currentPage/10))*10+1;
+				}else{
+					startPage = ((int)(currentPage/10)-1)*10+1;	
+				}
+				
+				int pageBlock=10;//페이징 처리 숫자 
+				int endPage = startPage+pageBlock-1;//화면에 보여질 페이지의 마지막 숫자 
+				
+				 if(endPage > pageCount) endPage = pageCount;
+				
+				//이전 링크 	 
+				if(startPage > 10){
+		%>				
+					<a href="event_test.jsp?pageNum=<%=startPage-10%>">[이전]</a>
+		<%			
+				}	 
+				//페이징 처리 
+				for(int i=startPage;i<=endPage;i++){
+		%>			
+					<a href="event_test.jsp?pageNum=<%=i%>">[<%=i %>]</a>
+		<% 			
+				}
+				//다음 링크
+				if(endPage < pageCount){
+		%>		
+				<a href="event_test.jsp?pageNum=<%=startPage+10%>">[다음]</a>	
+		<% 
+				}	
+			}
+		%>
 
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
