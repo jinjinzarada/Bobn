@@ -135,15 +135,14 @@ public class ShopbasketDao {
 		System.out.println("result"+ result);
 		return result;
 	}
-	public int deleteShopbasketProductAmount(Connection conn, String pId, String memberId, int deleteValue) {
+	public int deleteShopbasketProductAmount(Connection conn, String pId, String memberId) {
 		int result = 0;
 		
-		String sql = "delete basket_item from basketitem_amount = ? where member_id =? and p_id=?";
+		String sql = "delete from basket_item where member_id =? and p_id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, deleteValue);
-			pstmt.setString(2,memberId);
-			pstmt.setString(3,pId);
+			pstmt.setString(1,memberId);
+			pstmt.setString(2,pId);
 			
 			result =pstmt.executeUpdate();
 			

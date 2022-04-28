@@ -93,7 +93,6 @@ function updateAmount(){
 				$thisInputEle.val(updateVal); 					
 			}else if(result == 0){
 				// update에 실패 또는 삭제
-				 이것을 쓰면 뒤로가기했을 때 기록에 계속 같은 페이지가 남아 있음.location.href = "<%=request.getContextPath()%>/blist";
 				location.reload();
 			}else {
 				

@@ -43,11 +43,11 @@ public class ShopbasketService {
 
 		return result;
 	}
-	public int deleteAmount(String pId, String memberId, int deleteValue) {
+	public int deleteAmount(String pId, String memberId) {
 		int result = 0;
 		
 		Connection conn = getConnection();
-		result = new ShopbasketDao().updateAmount(conn, pId, memberId, deleteValue);
+		result = new ShopbasketDao().deleteShopbasketProductAmount(conn, pId, memberId);
 		close(conn);
 
 		return result;
