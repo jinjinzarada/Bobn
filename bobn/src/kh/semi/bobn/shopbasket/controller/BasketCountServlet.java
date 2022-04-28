@@ -38,13 +38,38 @@ public class BasketCountServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		
 		System.out.println("/bcount");
+		int updateValue = 0;
+		String updateValueStr = request.getParameter("updateValue");
+		try {
+			updateValue = Integer.parseInt(updateValueStr);
+		} catch (Exception e) {
+		}
+		if(updateValue == 0) {  // 0이 들어오지 않을 것임 .js 에서 처리할 예정
+			// 상품 삭제 ,  업데이트 아님
+			deleteValue
+			// list 전체 다시 읽어와서 화면에 뿌려보기
+			// blist 으로 이동
+			out.print(0);  
+			out.flush();out.close();
+			return;
+		}
+		
 		String pId = request.getParameter("pId");
 		System.out.println(pId);
 		String memberId="ziwoo123";
-		int result = new ShopbasketService().updateAmount(pId, memberId);
 		
-		PrintWriter out = response.getWriter();
+//		int amountCnt = 0;
+		int result = 0;
+//		amountCnt = new ShopbasketService().selectShopbasketProductAmount(pId, memberId);
+//		if(amountCnt == 0  && updateValue < 0) {
+//			
+//		}
+		result = new ShopbasketService().updateAmount(pId, memberId, updateValue);
+		
+
 		out.print(result);   /// 이제 진짜 중요한 데이터만 들고 갈꺼에요.
 		out.flush();out.close();
 	}

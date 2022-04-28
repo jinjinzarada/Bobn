@@ -25,13 +25,32 @@ public class ShopbasketService {
 		return volist;
 	}
 	
-	public int updateAmount(String pId, String memberId) {
+	public int updateAmount(String pId, String memberId, int updateValue) {
 		int result = 0;
 		
 		Connection conn = getConnection();
-		result = new ShopbasketDao().updateAmount(conn, pId, memberId);
+		result = new ShopbasketDao().updateAmount(conn, pId, memberId, updateValue);
 		close(conn);
 
 		return result;
 	}
+	public int selectShopbasketProductAmount(String pId, String memberId) {
+		int result = 0;
+		
+		Connection conn = getConnection();
+		result = new ShopbasketDao().selectShopbasketProductAmount(conn, pId, memberId);
+		close(conn);
+
+		return result;
+	}
+	public int deleteAmount(String pId, String memberId, int deleteValue) {
+		int result = 0;
+		
+		Connection conn = getConnection();
+		result = new ShopbasketDao().updateAmount(conn, pId, memberId, deleteValue);
+		close(conn);
+
+		return result;
+	}
+	
 }

@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import kh.semi.bobn.shopbasket.model.vo.ShopbasketVo;
@@ -89,18 +88,19 @@ public class ShopbasketDao {
 	}
 	
 	// 업데이트의 경우는 where 같은거나.. 업데이트할 것만 필요하므로.. 각각 들고 들어올수가 있어요. 1개의 자료형에 싣지 않고,, 각각 욜케..
-	public int updateAmount(Connection conn, String pId, String memberId) {
+	public int updateAmount(Connection conn, String pId, String memberId, int updateValue) {
 		
 		int result = 0;
 		
-		String sql = "update basket_item set basketitem_amount = basketitem_amount+1 where member_id =? and p_id=?";
+		String sql = "update basket_item set basketitem_amount = ? where member_id =? and p_id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			// 요기는 각각 들고 왔으니.. vo는 없죠. 욜케...
 			// ? 순서가 바꿨어요
 			// 그래서 같은 where을 못찾으니.. 0개입니다.
-			pstmt.setString(1,memberId);
-			pstmt.setString(2,pId);
+			pstmt.setInt(1, updateValue);
+			pstmt.setString(2,memberId);
+			pstmt.setString(3,pId);
 			
 			result =pstmt.executeUpdate();
 			
@@ -110,7 +110,50 @@ public class ShopbasketDao {
 			close(pstmt);
 		}
 		System.out.println("result"+ result);
-		//TODO 요기 채
 		return result;
 	}
+	public int selectShopbasketProductAmount(Connection conn, String pId, String memberId) {
+		
+		int result = 0;
+		
+		String sql = "select basketitem_amount from basket_item where member_id =? and p_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,memberId);
+			pstmt.setString(2,pId);
+			
+			rs =pstmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		System.out.println("result"+ result);
+		return result;
+	}
+	public int deleteShopbasketProductAmount(Connection conn, String pId, String memberId, int deleteValue) {
+		int result = 0;
+		
+		String sql = "delete basket_item from basketitem_amount = ? where member_id =? and p_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, deleteValue);
+			pstmt.setString(2,memberId);
+			pstmt.setString(3,pId);
+			
+			result =pstmt.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		System.out.println("result"+ result);
+		return result;
+	}
+	
 }

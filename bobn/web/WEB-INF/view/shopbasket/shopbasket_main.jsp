@@ -15,7 +15,7 @@
 	<div class="c_shopping-cart">
 		<!-- Cart_Title -->
 		<div class="c_cart_title">
-			<b>새벽 배송</b>
+			<b>일반 배송</b>
 		</div>
 		<div class="c_cart_firstLine">
 			<div class="c_cart_allCheck">
@@ -34,8 +34,8 @@
 				<input type="checkbox" name="check" value="select" />
 			</div>
 
-			<div class="c_cart_image">TODO
-				<object data="/image/seaweedsoup.png" alt="" width="70"></object>
+			<div class="c_cart_image">
+				<object data="<%=request.getContextPath()%>/resources/image/product/1.JPG" alt="" width="70"></object>
 			</div>
 
 			<div class="c_cart_description">
@@ -57,7 +57,52 @@
 		</div>
 		</c:forEach>
 <script>
-$(".c_cart_plus-btn").click(funPlusAmount);
+$(".c_cart_plus-btn").click(updateAmount);
+$(".c_cart_minus-btn").click(updateAmount);
+function updateAmount(){
+	console.log(this); 
+	console.log($(this));
+	console.log($(this).parents(".c_cart_item").children(".p_id").text());
+	var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
+	var $thisEle = $(this);
+	var $thisInputEle = "";
+	var p_m_value = 0;
+	if($(this).prop("class") == 'c_cart_plus-btn'){
+		p_m_value = 1;
+		$thisInputEle = $thisEle.prev();
+	} else if($(this).prop("class") == 'c_cart_minus-btn'){
+		p_m_value = -1
+		$thisInputEle = $thisEle.next();
+	}
+	var updateVal = Number($thisInputEle.val())+p_m_value;
+	if(updateVal==0){
+		var yesno = confirm("상품개수는 1개 이상이어야 합니다. 삭제할까요?");
+		if(yesno == false){
+			// 1 상태 유지
+			return;
+		} // 삭제한다.. 아래 bcount로 가서 0인 경우 db에서 삭제 하도록 함
+	}
+	$.ajax({
+		url:"bcount",
+		type:"post",
+		data:{pId : pidVal, updateValue: updateVal},
+		success: function (result){
+			console.log(result);
+			console.log(this);  
+			if(result == 1){
+				$thisInputEle.val(updateVal); 					
+			}else if(result == 0){
+				// update에 실패 또는 삭제
+				 이것을 쓰면 뒤로가기했을 때 기록에 계속 같은 페이지가 남아 있음.location.href = "<%=request.getContextPath()%>/blist";
+				location.reload();
+			}else {
+				
+			}
+		}
+	});
+}
+
+/*
 function funPlusAmount(){
 	console.log(this);  // 요게 클릭한 버튼 + 요거.. 여기에 바로 형님에 숫자가 바꿔야하죠
 	console.log($(this));
@@ -68,7 +113,7 @@ function funPlusAmount(){
 	$.ajax({
 		url:"bcount",
 		type:"post",
-		data:{pId : pidVal},
+		data:{pId : pidVal, updateValue:1},
 		success: function (result){
 			console.log(result);
 			console.log(this);  // 이때 this는 ajax 코드가 this네요.네네
@@ -85,132 +130,40 @@ function funPlusAmount(){
 		}
 	});
 }
-	$(".c_cart_minus-btn").click(funMinusAmount);
-	function funMinusAmount(){
-		console.log(this); 
-		console.log($(this));
-		console.log($(this).parents(".c_cart_item").children(".p_id").text());
-		var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
-		var $thisEle = $(this);  
-		$.ajax({
-			url:"bcount",
-			type:"post",
-			data:{pId : pidVal},
-			success: function (result){
-				console.log(result);
-				console.log(this);  
-				if(result == 1){
-					//$thisEle.prev().val(pidVal+1);
-					var oldVal = $thisEle.next().val();
-					$thisEle.next().val(Number(oldVal)-1); 
-				}else if(result == 0){
-					
-				}else {
-					
-				}
+
+function funMinusAmount(){
+	console.log(this); 
+	console.log($(this));
+	console.log($(this).parents(".c_cart_item").children(".p_id").text());
+	var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
+	var $thisEle = $(this);  
+	var updateVal = Number($thisEle.next().val())-1;
+	if(updateVal==0){
+		var yesno = confirm("상품개수는 1개 이상이어야 합니다. 삭제할까요?");
+		if(yesno == false){
+			// 1 상태 유지
+			return;
+		} // 삭제한다.. 아래 bcount로 가서 0인 경우 db에서 삭제 하도록 함
+	}
+	$.ajax({
+		url:"bcount",
+		type:"post",
+		data:{pId : pidVal, updateValue: updateVal},
+		success: function (result){
+			console.log(result);
+			console.log(this);  
+			if(result == 1){
+				$thisEle.next().val(updateVal); 
+			}else if(result == 0){
+				
+			}else {
+				
 			}
-		});
+		}
+	});
 }
+*/
 </script>
-		<br> <br>
-		<!-- Cart_Title -->
-		<div class="c_cart_title">
-			<b>일반 배송</b>
-		</div>
-		<div class="c_cart_firstLine">
-			<div class="c_cart_allCheck">
-				<input type="checkbox" name="check" value="select" />
-			</div>
-			<div class="c_cart_proname">상품명</div>
-			<div class="c_cart_procnt">수량</div>
-			<div class="c_cart_proprice">가격</div>
-		</div>
-		<!-- Product #1 -->
-		<div class="c_cart_item">
-			<div class="c_cart_checkbox">
-				<input type="checkbox" name="check" value="select" />
-			</div>
-
-			<div class="c_cart_image">
-				<object data="/image/bulgogi.png" alt="" width="70"></object>
-			</div>
-
-			<div class="c_cart_description">
-				<span>불고기 전골</span> <span>짠 맛</span>
-			</div>
-
-			<div class="c_cart_quantity">
-				<button class="c_cart_minus-btn" type="button" name="button">
-					<!-- <img src="minus.svg" alt="" /> -->
-					-
-				</button>
-				<input type="text" name="name" value="1">
-				<button class="c_cart_plus-btn" type="button" name="button">
-					<!-- <img src="plus.svg" alt="" /> -->
-					+
-				</button>
-			</div>
-
-			<div class="c_cart_total-price">&#8361;15,000</div>
-		</div>
-
-		<!-- Product #2 -->
-		<div class="c_cart_item">
-			<div class="c_cart_checkbox">
-				<input type="checkbox" name="check" value="select" />
-			</div>
-
-			<div class="c_cart_image">
-				<object data="/image/steak.png" alt="" width="70"></object>
-			</div>
-
-			<div class="c_cart_description">
-				<span>스테이크</span> <span>담백한 맛</span>
-			</div>
-
-			<div class="c_cart_quantity">
-				<button class="c_cart_minus-btn" type="button" name="button">
-					<!-- <img src="minus.svg" alt="" /> -->
-					-
-				</button>
-				<input type="text" name="name" value="1">
-				<button class="c_cart_plus-btn" type="button" name="button">
-					<!-- <img src="plus.svg" alt="" /> -->
-					+
-				</button>
-			</div>
-
-			<div class="c_cart_total-price">&#8361;20,000</div>
-		</div>
-
-		<!-- Product #3 -->
-		<div class="c_cart_item">
-			<div class="c_cart_checkbox">
-				<input type="checkbox" name="check" value="select" />
-			</div>
-
-			<div class="c_cart_image">
-				<object data="/image/rosepasta.png" alt="" width="70"></object>
-			</div>
-
-			<div class="c_cart_description">
-				<span>로제파스타</span> <span>느끼한 맛</span>
-			</div>
-
-			<div class="c_cart_quantity">
-				<button class="c_cart_minus-btn" type="button" name="button">
-					<!-- <img src="minus.svg" alt="" /> -->
-					-
-				</button>
-				<input type="text" name="name" value="1">
-				<button class="c_cart_plus-btn" type="button" name="button">
-					<!-- <img src="plus.svg" alt="" /> -->
-					+
-				</button>
-			</div>
-
-			<div class="c_cart_total-price">&#8361;5,000</div>
-		</div>
 		<br> <br>
 		<div class="c_cart_jjin_total-price">
 			<div>총 상품금액 : &#8361;20,000</div>
