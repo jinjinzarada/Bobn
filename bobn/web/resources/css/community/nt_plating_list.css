@@ -6,7 +6,11 @@
 	border-bottom: 1px solid #F54748;
 }
 /* 컨셉버튼 article1 */
-#j_ntpl_birth {
+#j_ntpl_total:active {
+	background-color: #F54748;
+	color: white;
+}
+#j_ntpl_birth:active {
 	background-color: #F54748;
 	color: white;
 }
@@ -71,11 +75,10 @@
 	height: 300px;
 }
 
-#j_ntpl_img_item{
+#j_ntpl_img_item {
 	width: 300px;
 	height: 300px;
 }
-
 
 .j_ntpl_article3_img:hover {
 	transform: scale(1.1);

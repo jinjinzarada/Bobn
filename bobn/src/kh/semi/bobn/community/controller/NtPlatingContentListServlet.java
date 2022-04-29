@@ -32,13 +32,17 @@ public class NtPlatingContentListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		System.out.println("/ntpclist");
-
+		
+				
+		String pbConcept = request.getParameter("pbConcept");
+		
 		//service로 이동
-		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingService().listPlatingContent();
+		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingService().listPlatingContent(pbConcept);
 		System.out.println(ntpcVolist);
-		request.setAttribute("ntpcVolist", ntpcVolist);	//읽어온 디비를 ntpcVolist넣어줌(jsp랑 소통)
+		
+		//읽어온 디비를 ntpcVolist넣어줌(jsp랑 소통)
+		request.setAttribute("ntpcVolist", ntpcVolist);
 		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_list.jsp").forward(request, response);
 	}
 

@@ -63,39 +63,54 @@ public class NtPlatingDao {
 		String sql = "insert into ntpi(pi_no, pi_file, pb_no)"
 				+ "values ((select nvl(max(pi_no),0)+1 from ntpi),?,(select pb_no from(select * from ntpc order by pb_date desc)where rownum=1))";
 
-		// vo에 가져온걸 sql문에 넣어줌
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, ntpiVo.getPiFile());
 
-			// 실행시켜주고 결과를 result에 담아줌
 			result = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-
-			// 다 사용하고 close
 		} finally {
 			close(pstmt);
 		}
 
 		System.out.println("PreparedStatement result :" + result);
-		// 담아놨던 결과 result를 리턴
 		return result;
 
 	}
+	//게시글 총 갯수 조회
+		public int countPlatingList(Connection conn, String pbConcept) {
+			int result = 0;
+			String sql = "select count(*) from ntpc where pb_concept=?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, pbConcept);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					result = rs.getInt(1);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+			
+			return result;
+		}
 
-	// 게시글 조회(여러개의 글을 가져오는거기 때문에 배열ArrayList형태)
-		public ArrayList<NtPlatingListVo> listPlatingContent(Connection conn) {
+	// 게시글 조회(특정concept지정)
+		public ArrayList<NtPlatingListVo> listPlatingContent(Connection conn, String pbConcept) {
 			ArrayList<NtPlatingListVo> ntpcVolist = null;
-
-			String sql = "select * from ntpc join((select ntpi.* "
-					+ "from (select row_number() over(partition by ntpi.pb_no order by pb_no)as rnum, ntpi.* from ntpi) ntpi where rnum = 1)) "
-					+ "using(pb_no)";
+			//컨셉 번호에 따라서 조회
+			String sql = "select * from ntpc join((select ntpi.* from (select row_number() over(partition by ntpi.pb_no order by pb_no)as rnum, ntpi.* from ntpi) ntpi "
+					+ "where rnum = 1)) using(pb_no) where pb_concept=?";
 			
 			// vo에 가져온걸 sql문에 넣어줌
 			try {
 				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, pbConcept);
 				rs = pstmt.executeQuery();
 
 				ntpcVolist = new ArrayList<NtPlatingListVo>();
@@ -117,7 +132,6 @@ public class NtPlatingDao {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
-				// 다 사용하고 close
 			} finally {
 				close(pstmt);
 			}
@@ -125,7 +139,5 @@ public class NtPlatingDao {
 			return ntpcVolist;
 
 		}
-	
-	
 
 }
