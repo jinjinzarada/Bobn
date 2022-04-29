@@ -23,6 +23,23 @@
     }).open();
 }
 </script>
+<script>
+    function btn(){
+        alert("결제가 완료되었습니다.")
+        location.href= "해당.jsp?page=";
+    }
+</script>
+<script type="text/javascript">
+    function Copy(){
+           if (document.getElementById("cb").checked)
+           {
+                document.getElementById("txtName2").value = document.getElementById("txtName1").value;
+                document.getElementById("phone4").value = document.getElementById("phone1").value;
+                document.getElementById("phone5").value = document.getElementById("phone2").value;
+                document.getElementById("phone6").value = document.getElementById("phone3").value;
+           }
+    }
+</script>
 </head>
 <body>
 	<div class="c_pay_frame">
@@ -32,36 +49,30 @@
 		<br>
 		<hr>
 		<table>
-			<tr>
-				<td class="c_pay_deliv">이름&nbsp;</td>
-				<td><input type="text"></td>
-			</tr>
-			<tr>
-				<td class="c_pay_deliv">휴대 전화&nbsp;</td>
-				<td><input type="tel" size="3px">&nbsp;-&nbsp;<input
-					type="tel" size="3px">&nbsp;-&nbsp;<input type="tel"
-					size="3px"></td>
-			</tr>
-		</table>
-		<br>
-		<!-- 배송지 -->
-		<h2 class="c_payment_title">&nbsp; 배송지</h2>
-		<div class="c_pay_ordersame">
-			<div>
-				<input type="checkbox">&nbsp;주문자정보와 동일
-			</div>
-		</div>
-		<table class="c_pay_delivery">
-			<tr>
-				<td class="c_pay_deliv">받는 사람&nbsp;</td>
-				<td><input type="text"></td>
-			</tr>
-			<tr>
-				<td class="c_pay_deliv">휴대 전화&nbsp;</td>
-				<td><input type="tel" size="3px">&nbsp;-&nbsp;<input
-					type="tel" size="3px">&nbsp;-&nbsp;<input type="tel"
-					size="3px"></td>
-			</tr>
+        <tr>
+            <td class = "c_pay_deliv">이름&nbsp;</td>
+            <td><input type ="text" id="txtName1"></td>
+        </tr>
+        <tr>
+            <td class = "c_pay_deliv">휴대 전화&nbsp;</td>
+            <td><input type ="tel" size="3px" id="phone1">&nbsp;-&nbsp;<input type ="tel" size="3px" id="phone2">&nbsp;-&nbsp;<input type ="tel" size="3px" id="phone3"></td>
+        </tr>
+    </table>
+    <br>
+    <!-- 배송지 -->
+    <h2 class="c_payment_title">&nbsp; 배송지</h2> 
+    <div class = "c_pay_ordersame">
+    <div><input type="checkbox" onclick="Copy();" id="cb"><label for="cb">&nbsp;주문자정보와 동일</label></div>
+    </div>
+    <table class ="c_pay_delivery">
+        <tr>
+            <td class = "c_pay_deliv">받는 사람&nbsp;</td>
+            <td><input type ="text" id="txtName2"></td>
+        </tr>
+        <tr>
+            <td class = "c_pay_deliv">휴대 전화&nbsp;</td>
+            <td><input type ="tel" size="3px" id="phone4">&nbsp;-&nbsp;<input type ="tel" size="3px" id="phone5">&nbsp;-&nbsp;<input type ="tel" size="3px" id="phone6"></td>
+        </tr>
 			<tr>
 				<td class="c_pay_deliv">주소&nbsp;</td>
 				<td>
@@ -141,7 +152,7 @@
 		</table>
 		<div class="c_pay_btnside">
 			<button type="button" class="c_pay_btn"
-				onclick="location.href = '결제완료.jsp로 가자'">결제하기</button>
+				onclick="javascript:btn()">결제하기</button>
 		</div>
 	</div>
 </body>
