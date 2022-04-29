@@ -54,16 +54,6 @@ public class ShopbasketDao {
 				vo.setpId(rs.getString("p_id"));
 				vo.setMemberId(rs.getString("member_id"));
 				vo.setBasketitemAmount(rs.getInt("basketitem_amount"));
-//				private String p_name;
-//				private int p_category;
-//				private int p_price;
-//				private int  p_sellamount;
-//				private int p_weight;
-//				private int p_calorie;
-//				private String p_flavor;
-//				private Timestamp p_postdate;
-//				private String p_salecheck;
-//				private String p_detail;
 				vo.setP_name(rs.getString("p_name"));
 				vo.setP_category(rs.getInt("p_category"));
 				vo.setP_price(rs.getInt("p_price"));

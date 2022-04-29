@@ -38,18 +38,13 @@
 
 .c_pay_order{
    text-align: center;
+   width : 1000px;
+   height : 50px;
 }
-.c_pay_minus-btn, .c_pay_plus-btn{
-    width: 30px;
-    height: 30px;
-    background-color: #E1E8EE;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-.c_pay_order{
-    width : 1000px;
-    height : 200px;
+.c_pay_order_list{
+	text-align: center;
+	width : 1000px;
+   height : 100px;
 }
 
 /* 결제 수단 */
@@ -112,7 +107,8 @@
 }
 .c_pay_btnside{
     position: absolute;
-    left: 37%;
+    left:34%;
     padding-top: 40px;
     padding-bottom: 40px;
+    
 }

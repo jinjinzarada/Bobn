@@ -8,18 +8,6 @@ public class ShopbasketVo {
 	private String memberId;
 	private int basketitemAmount;
 	
-//	P_ID         NOT NULL VARCHAR2(20)   
-//	P_NAME       NOT NULL VARCHAR2(100)  
-//	P_CATEGORY   NOT NULL NUMBER         
-//	P_PRICE      NOT NULL NUMBER         
-//	P_SELLAMOUNT NOT NULL NUMBER         
-//	P_WEIGHT              NUMBER         
-//	P_CALORIE             NUMBER         
-//	P_FLAVOR              VARCHAR2(20)   
-//	P_POSTDATE   NOT NULL TIMESTAMP(6)   
-//	P_SALECHECK  NOT NULL CHAR(1)        
-//	P_DETAIL     NOT NULL VARCHAR2(3900) 
-	
 	private String p_name;
 	private int p_category;
 	private int p_price;

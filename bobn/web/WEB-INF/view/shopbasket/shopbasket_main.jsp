@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
@@ -10,6 +11,16 @@
 <meta charset="UTF-8">
 <title>장바구니</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+function selectAll(selectAll)  {
+	  const checkboxes 
+	       = document.getElementsByName("check");
+
+		  checkboxes.forEach((checkbox) => {
+		  checkbox.checked = selectAll.checked;
+	  })
+	}
+</script>
 </head>
 <body>
 	<div class="c_shopping-cart">
@@ -19,14 +30,14 @@
 		</div>
 		<div class="c_cart_firstLine">
 			<div class="c_cart_allCheck">
-				<input type="checkbox" name="check" value="select" />
+				<input type="checkbox" name="check" value="selectall" onclick="selectAll(this)">
 			</div>
 			<div class="c_cart_proname">상품명</div>
 			<div class="c_cart_procnt">수량</div>
 			<div class="c_cart_proprice">가격</div>
 		</div>
 		
-		<c:forEach items="${basketvolist }" var="vo">
+		<c:forEach items="${basketvolist}" var="vo">
 		<!-- Product # -->
 		<div class="c_cart_item">
 			<div style="display:none;" class="p_id">${vo.pId}</div>
@@ -44,12 +55,10 @@
 		
 			<div class="c_cart_quantity">
 				<button class="c_cart_minus-btn" type="button" name="button">
-					<!-- <img src="minus.svg" alt="" /> -->
 					-
 				</button>
 				<input type="text" name="itemAmount" class="itemAmount" value="${vo.basketitemAmount}">
 				<button class="c_cart_plus-btn" type="button" name="button">
-					<!-- <img src="plus.svg" alt="" /> -->
 					+
 				</button>
 			</div>
@@ -165,15 +174,20 @@ function funMinusAmount(){
 </script>
 		<br> <br>
 		<div class="c_cart_jjin_total-price">
+			<br>
 			<div>총 상품금액 : &#8361;20,000</div>
+			<br>
 			<div>배송비 : &#8361;3,000</div>
+			<br>
 			<div>할인 금액 : &#8361;3,000</div>
+			<br>
 			<div>결제 금액 : &#8361;20,000</div>
+			<br>
 		</div>
 		<br>
 		<center>
 			<button class="c_cart_order-btn" type="button" name="order"
-				onclick="location.href = '결제페이지.jsp로 가자'">주문하기</button>
+				onclick="location.href = 'WEB-INF/view/pay/pay_main.jsp'">주문하기</button>
 		</center>
 		<br>
 	</div>

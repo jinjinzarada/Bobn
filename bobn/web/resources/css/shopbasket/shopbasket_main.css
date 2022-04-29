@@ -17,7 +17,6 @@ html,body {
     height: 423px;
     margin: 80px auto;
     background: #FFFFFF;
-    /* box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.10); */
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -125,16 +124,19 @@ html,body {
 }
 
 .c_cart_order-btn {
-    width: 70px;
-    height: 30px;
-    background-color: rgb(255, 175, 25);
-    color: #43484D;
+    background-color: #ddd;
+    color:white;
     font-weight: bold;
-    border-radius: 6px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    width: 300px; 
+    height:60px; 
     border: none;
     cursor: pointer;
 }
-
+.c_cart_order-btn:hover{
+    background-color: rgb(255, 175, 25);
+}
 .c_cart_jjin_total-price{
     background-color: #E1E8EE;
     color: #43484D;

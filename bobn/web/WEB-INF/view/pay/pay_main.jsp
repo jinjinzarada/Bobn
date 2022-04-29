@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/pay/pay.css">
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>결제페이지</title>
+<title>주문/결제 페이지</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
     function findAddress(){
@@ -39,6 +41,16 @@
                 document.getElementById("phone6").value = document.getElementById("phone3").value;
            }
     }
+</script>
+<script>
+function selectAll(selectAll)  {
+	  const checkboxes 
+	       = document.getElementsByName("check");
+
+		  checkboxes.forEach((checkbox) => {
+		  checkbox.checked = selectAll.checked;
+	  })
+	}
 </script>
 </head>
 <body>
@@ -100,25 +112,34 @@
 		<br>
 		<table class="c_pay_order">
 			<tr>
-				<td><input type="checkbox"></td>
+				<td>
+					<input type="checkbox" name="check" value="selectall" onclick="selectAll(this)">
+				</td>
 				<td>상품사진</td>
 				<td>상품명</td>
 				<td>가격</td>
 				<td>수량</td>
 			</tr>
+		</table>
+			<c:forEach items="${payvolist}" var="vo">
+		<table class="c_pay_order_list">
 			<tr>
-				<td><input type="checkbox"></td>
-				<td><object data="/image/grilledeel.png" alt="" width="70"></object></td>
-				<td>소고기 미역국</td>
-				<td>5,000원</td>
+				<td width="99">
+					<input type="checkbox" name ="check" value="select">
+				</td>
+				<td width="270.5">
+					<object data="<%=request.getContextPath()%>/resources/image/product/1.JPG" alt="" width="70"></object>
+				</td>
+				<td width="213">${vo.p_name}</td>
+				<td width="155.5">
+					<span id="c_pay_price">${vo.p_price}</span>원
+				</td>
 				<td>
-					<button class="c_pay_minus-btn" type="button" name="button">
-						-</button> <input type="text" name="name" value="1">
-					<button class="c_pay_plus-btn" type="button" name="button">
-						+</button>
+					<span name="itemAmount" class="itemAmount" id="c_pay_price">${vo.basketitemAmount}</span>개</td> 
 				</td>
 			</tr>
 		</table>
+		</c:forEach>
 		<!-- 결제수단 -->
 		<br>
 		<h2 class="c_payment_title">&nbsp; 결제 수단</h2>
@@ -144,10 +165,14 @@
 				<th>배송비</th>
 				<th>총 결제금액</th>
 			</tr>
+			<%-- <c:forEach items="${payvolist}" var="vo"> --%>
 			<tr style="background-color: #fff;">
-				<td style="padding: 23px 0;"><span id="c_pay_price">0</span>원</td>
-				<td><span id="c_pay_price">0</span>원</td>
-				<td><span id="c_pay_price">0</span>원</td>
+				<td style="padding: 23px 0;">
+					<span id="c_pay_price">${vo.payTotal}</span>원
+				</td>
+				<%--</c:forEach>--%>
+				<td><span id="c_pay_price">3,000</span>원</td>
+				<td><span id="c_pay_price">13,000</span>원</td>
 			</tr>
 		</table>
 		<div class="c_pay_btnside">
