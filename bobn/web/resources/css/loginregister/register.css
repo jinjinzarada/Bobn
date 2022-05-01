@@ -245,7 +245,7 @@ html, body, div, span, applet, object, iframe,
             padding: 10px;
             border: 1px solid #2b2e4a;
         }
-        .register .submit{
+        .register .button_submit{
             width: 300px;
             height: 50px;
             color: white;
@@ -260,7 +260,7 @@ html, body, div, span, applet, object, iframe,
         .register .flex .container:last-child{
             margin: 0;
         }
-        .register .submit:hover{
+        .register .button_submit:hover{
             /* width: 220px;
             height: 50px;
             border: none; */
@@ -306,14 +306,14 @@ html, body, div, span, applet, object, iframe,
 }        
 
 input[type="checkbox"]{
-    width: 25px;
-    height: 25px;
+    width: 17px;
+    height: 17px;
 }
 #agreementstart{
    margin-top: 20px;
 }
 .spantotal{
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     display: inline-block;
 }
@@ -325,4 +325,7 @@ input[type="checkbox"]{
             width: 540px;
             margin: auto;
             margin-bottom: 10px;
+}
+#name2{
+    height: 18px;
 }
