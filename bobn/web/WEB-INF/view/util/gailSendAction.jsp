@@ -18,7 +18,7 @@
 		String from = "khsemibobn@gmail.com";
 		String to = request.getParameter("email");
 		String password = request.getParameter("password");
-		String code = SHA256.getEncrypt(to, "cos");
+		//String code = SHA256.getEncrypt(to, "cos");
 		System.out.println("gmailsend 까지 들어왔다");
 
 		//사용자에게 보낼 메시지
