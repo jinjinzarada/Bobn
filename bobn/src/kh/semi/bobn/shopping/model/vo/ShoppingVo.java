@@ -16,12 +16,14 @@ public class ShoppingVo {
 	private String p_salecheck;
 	private String p_detail;
 	
+	private String d_file;
+
 	@Override
 	public String toString() {
 		return "ShoppingVo [pId=" + pId + ", p_name=" + p_name + ", p_category=" + p_category + ", p_price=" + p_price
 				+ ", p_sellamount=" + p_sellamount + ", p_weight=" + p_weight + ", p_calorie=" + p_calorie
 				+ ", p_flavor=" + p_flavor + ", p_postdate=" + p_postdate + ", p_salecheck=" + p_salecheck
-				+ ", p_detail=" + p_detail + "]";
+				+ ", p_detail=" + p_detail + ", d_file=" + d_file + "]";
 	}
 
 	public String getpId() {
@@ -111,5 +113,14 @@ public class ShoppingVo {
 	public void setP_detail(String p_detail) {
 		this.p_detail = p_detail;
 	}
+
+	public String getD_file() {
+		return d_file;
+	}
+
+	public void setD_file(String d_file) {
+		this.d_file = d_file;
+	}
+	
 	
 }
