@@ -1,3 +1,4 @@
+<%@page import="kh.semi.bobn.community.model.vo.NtPlatingListVo"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_detail.css">
@@ -10,6 +11,10 @@
 <title>플레이팅_상세조회</title>
 </head>
 <body>
+<!-- 받아온 db가 담겨있는 ntpcVolist를 화면에 뿌려줄 예정 -->
+<%
+NtPlatingListVo ntpcVolist = (NtPlatingListVo)request.getAttribute("ntpcVolist");
+%>
  <div class="j_wrap content">
         <div id="j_content">
             <section>
@@ -19,13 +24,10 @@
                 <article id="j_ntpd_article1">
                     <ul>
                         <li id="j_ntpd_like_btn">
-                            <img src="https://via.placeholder.com/15" alt=""> ntplCnt
-                        </li>
-                        <li id="j_ntpd_concept">
-                            <button type="button" id="j_ntpd_concept_btn">concept</button>&nbsp; &nbsp;
+                            <img src="https://via.placeholder.com/15" > ntplCnt
                         </li>
                         <li id="j_ntpd_member_id">
-                            member_id
+                            <%=ntpcVolist.getMemberId() %>
                         </li>
                     </ul>
                 </article>
@@ -33,11 +35,14 @@
                     <table>
                         <tr>
                             <td class="j_ntpd_article2_img">
-                                <img src="https://via.placeholder.com/600" alt="">
+                                <img src=<%=ntpcVolist.getPiFile() %>>
                             </td>
                         </tr>
                         <tr>
-                            <td class="j_ntpd_article2_img">글내용</td>
+                            <td class="j_ntpd_article2_img">제목 : <%=ntpcVolist.getPbTitle() %></td>
+                        </tr>
+                        <tr>
+                            <td class="j_ntpd_article2_img">내용 : <%=ntpcVolist.getPbContent() %></td>
                         </tr>
                         <tr>
                             <td class="j_ntpd_article2_img">

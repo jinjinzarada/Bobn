@@ -56,16 +56,29 @@ public class NtPlatingService {
 	}
 
 	// 게시글 조회
-	public ArrayList<NtPlatingListVo> listPlatingContent(String pbConcept) {
+	public ArrayList<NtPlatingListVo> listPlatingContent(String pbConcept, int startRnum, int endRnum) {
 		System.out.println("PlatingService vo :" + pbConcept);
 		
 		Connection conn = getConnection();
-		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingDao().listPlatingContent(conn, pbConcept);
+		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingDao().listPlatingContent(conn, pbConcept, startRnum, endRnum);
 		System.out.println("PlatingService ntpcVolist :" + ntpcVolist);
 
 		close(conn);
 		return ntpcVolist;
 
 	}
+	
+	// 게시글 상세조회
+		public NtPlatingListVo detailPlatingContent(int pbNo) {
+			System.out.println("PlatingService vo :" + pbNo);
+			
+			Connection conn = getConnection();
+			NtPlatingListVo ntpcVolist = new NtPlatingDao().detailPlatingContent(conn, pbNo);
+			System.out.println("PlatingService ntpcVolist :" + ntpcVolist);
+
+			close(conn);
+			return ntpcVolist;
+
+		}
 	
 }

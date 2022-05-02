@@ -98,10 +98,13 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 			
 			//파일 저장경로(절대경로) root를 통해 상대경로를 넘겨주면 물리경로를 얻어줌
 			String realPath = request.getServletContext().getRealPath("/upload");
+			//String realPath = request.getSession().getServletContext().getRealPath("");
 			System.out.println("realpath:" + realPath);
 
 			//파일경로+경로구분자+uuid+파일명까지 filePath에 담기(separator는 \,/ 이런 경로 구분자 자동적용)
+			//bobn과 동일선상에 이미지 저장(그래야지 서버 다시 돌려도 안없어짐)
 			String filePath = realPath + File.separator + uniqueName + fileName;
+			//String filePath = realPath +"../upload"+ File.separator + uniqueName + fileName;
 			System.out.println("filePath:" + filePath);
 			
 			//filePath(파일경로+파일명) 출력해서 fos변수에 담아주기
@@ -117,6 +120,7 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 	 		
 	 		//사진경로 불러올때 경로지정(db저장용)
 	 		String Path = File.separator+ "bobn" + File.separator + "upload";
+	 		//String Path = File.separator + "upload";
 	 		String rootPath = Path + File.separator + uniqueName + fileName;
 	 		
 	 		//파일경로를 vo에 담아줌(erd-플레이팅이미지테이블)
@@ -133,15 +137,14 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 				//request.getRequestDispatcher("").forward(request, response);
 			} else {
 				System.out.println("이미지 등록 성공!!");
-				//글쓰기 성공 시 플레이팅 조회로 이동(request가 아닌 응답하는 response는 contextpath를 써서 절대경로로 써줘야함)
-				response.sendRedirect(request.getContextPath()+"/ntpclist");
+				
 			}
 	 		
 	 		fos.close();
 	 		fis.close();
 		}
-
-		
+		//플레이팅 조회로 이동(request가 아닌 응답하는 response는 contextpath를 써서 절대경로로 써줘야함)
+		response.sendRedirect(request.getContextPath()+"/ntpclist");
 		
 		
 		

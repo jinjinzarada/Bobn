@@ -45,7 +45,7 @@
                             <tr>
                                 <th class="j_ntpw_table">파일등록</th>
                                 <td id="j_ntpw_files" class="j_ntpw_tablewr">
-                                    <input type="file" name="uploadFile" id="j_ntpw_file_btn">
+                                    <input type="file" name="uploadFile" id="j_ntpw_file_btn" required="required">
                                 </td>
                             </tr>
                             <tr>
