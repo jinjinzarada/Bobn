@@ -92,7 +92,6 @@
 
 <body>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 
    <section>
@@ -137,7 +136,6 @@
         </div>
         </section>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 
 

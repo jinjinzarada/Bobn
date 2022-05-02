@@ -15,7 +15,7 @@ import kh.semi.bobn.event.model.vo.EventVo;
 /**
  * Servlet implementation class EventMainServlet
  */
-@WebServlet("/evmain")
+@WebServlet("/event")
 public class EventMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -73,7 +73,7 @@ public class EventMainServlet extends HttpServlet {
 		request.setAttribute("pageCnt", pageCnt);
 		request.setAttribute("currentPage", currentPage);		
 		
-		request.getRequestDispatcher("/WEB-INF/view/event/event_test.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/event/event.jsp").forward(request, response);
 	}
 		public int countBoardList() {		
 			int result = service.countBoardList();
