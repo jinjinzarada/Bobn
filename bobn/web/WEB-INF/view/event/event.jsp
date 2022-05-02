@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page import="kh.semi.bobn.event.model.dao.EventDao"%>
 <%@ page import="kh.semi.bobn.event.model.vo.EventVo"%>
 <%@ page import="java.util.ArrayList"%>
@@ -51,9 +52,21 @@
 	color: #343f56;
 }
 
-.p_paging {
-	color: #343f56;
+.p_evtable {
+	text-decoration: none;
+	color: inherit;
 }
+.p_evtable:hover {
+	color: #f54748;
+}
+
+.pagination {
+  margin-left: 45%;
+}
+a.page-link {
+  color: #f54748;
+}
+
 </style>
 <body>
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
@@ -83,7 +96,9 @@
 					<c:forEach items="${evlist}" var="evlist">
 						<tr>
 							<td><c:out value="${evlist.eNo}" /></td>
-							<td><c:out value="${evlist.eTitle}" /></td>
+							<td>
+							<a class=p_evtable href="evdetail?eno=${vo.geteNo()}">
+							<c:out value="${evlist.eTitle}" /></a></td>
 							<td><c:out value="${evlist.eStartDate}" /></td>
 							<td><c:out value="${evlist.eEndDate}" /></td>
 						</tr>
@@ -93,16 +108,25 @@
 		</div>
 	</section>
 	<div class="p_section_container">
+	<nav aria-label="Page navigation example">
+		<ul class="pagination">
 		<c:if test="${startPage > 1}">
-			<li class="p_paging"><a href="evmain?pageNum=${startPage-1}">[이전]</a></li>
+		<li class="page-item">
+			<a class="page-link" href="event?pageNum=${startPage-1}" aria-label="Previous">
+			 <span aria-hidden="true">&laquo;</span>
+			</a></li>
 		</c:if>
 		<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
-			<li class="p_paging"><a href="evmain?pageNum=${i}">${i}</a></li>
+			<li class="page-item"><a class="page-link" href="event?pageNum=${i}">${i}</a></li>
 		</c:forEach>
 		<c:if test="${endPage < pageCnt}">
-			<li class="p_paging"><a href="evmain?pageNum=${endPage+1}">[다음]</a></li>
+		<li class="page-item">
+			<a class="page-link" href="event?pageNum=${endPage+1}" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+			</a></li>
 		</c:if>
-
+	</ul>
+	</nav>
 	</div>
 
 

@@ -108,9 +108,7 @@
     <div class="tab">
         <button class="tablinks" onclick="opentab(event, 'tab01')">주문/배송 조회</button>
         <button class="tablinks" onclick="opentab(event, 'tab02')">회원 정보 수정</button>
-        <button class="tablinks" onclick="opentab(event, 'tab03')">나의 문의</button>
-        <button class="tablinks" onclick="opentab(event, 'tab04')">나의 게시글</button>
-        <button class="tablinks" onclick="opentab(event, 'tab05')">회원 탈퇴</button>
+        <button class="tablinks" onclick="opentab(event, 'tab03')">회원 탈퇴</button>
       </div>
       
       <div id="tab01" class="tabcontent">
@@ -161,58 +159,8 @@
             </div>
           </div>
       </div>
-      
+
       <div id="tab03" class="tabcontent">
-        <h4 class="tabhead">나의 문의</h4><br>
-        <table class="table">
-            <colgroup>
-                <col style="width: 108px">
-                <col style="width: 263px">
-                <col style="width: 152px">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>글 번호</th>
-                    <th>제목</th>
-                    <th>작성일</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-            </table>
-      </div>
-
-      <div id="tab04" class="tabcontent">
-        <h4 class="tabhead">나의 게시글</h4><br>
-        <table class="table">
-            <colgroup>
-                <col style="width: 108px">
-                <col style="width: 263px">
-                <col style="width: 152px">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>글 번호</th>
-                    <th>제목</th>
-                    <th>작성일</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-            </tbody>
-            </table>
-      </div>
-
-      <div id="tab05" class="tabcontent">
         <h4 class="tabhead">회원 탈퇴</h4><br>
         <div class="card" style="width: 20rem; text-align: left;">
             <div class="card-header" style="color: #343f56; font-size: 16px; font-weight: 600;" >탈퇴 사유를 선택해주세요.</div>
@@ -256,8 +204,6 @@
         $('#tab01').show();
         $('#tab02').hide();
         $('#tab03').hide();
-        $('#tab04').hide();
-        $('#tab05').hide();
      });
     function opentab(evt, cityName) {
     // Declare all variables

@@ -84,4 +84,35 @@ public class EventDao {
 		
 		return result;
 	}
+	
+	// 개별 게시글 조회
+	public EventVo readEvdetail(int e_no) {
+		
+		EventVo vo = null;
+		Connection conn = getConnection();
+		
+		String sql = "select e.E_TITLE, c.EVC_IMAGEROUTE, e.E_CONTENT from EV_CONTENT e join EV_CONTENT_IMAGE c"
+				+ " using (E_NO) where e_no=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, e_no);
+			rs = pstmt.executeQuery();
+			
+			vo = new EventVo();
+			
+			if (rs.next()) {
+				vo.seteTitle(rs.getString("E_TITLE"));
+				vo.seteImageRoute(rs.getString("EVC_IMAGEROUTE"));
+				vo.seteContent(rs.getString("E_CONTENT"));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return vo;
+	}
 }

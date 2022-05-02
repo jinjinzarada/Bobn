@@ -112,31 +112,29 @@ nav:hover {
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false"> Curation </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">레시피</a></li>
-							<li><a class="dropdown-item" href="#">맛집추천</a></li>
-							<li><a class="dropdown-item" href="#">먹BTI</a></li>
+							<li><a class="dropdown-item" href="<%=request.getContextPath() %>/curreclist">레시피</a></li>
+							<li><a class="dropdown-item" href="<%=request.getContextPath() %>/currecom">맛집추천</a></li>
+							<li><a class="dropdown-item" href="<%=request.getContextPath() %>/cumbti">먹BTI</a></li>
 						</ul>
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false"> Community </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<li><a class="dropdown-item" href="<%=request.getContextPath() %>/ntpclist">플레이팅</a></li>
-							<li><a class="dropdown-item" href="#">레시피</a></li>
-							<li><a class="dropdown-item" href="#">요리콘테스트</a></li>
+							<li><a class="dropdown-item" href="<%=request.getContextPath()%>/ntrclist">레시피</a></li>
+							<li><a class="dropdown-item" href="<%=request.getContextPath()%>/ntcclist">요리콘테스트</a></li>
 						</ul>
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/event"
 							class="nav-link link-dark px-2">Event</a></li>
 					</ul>
 					<ul class="nav">
-						<!-- 각 아이콘에 페이지 연결 필요 -->
 						<!-- search : 클릭 시 모달 혹은 서치 창 구현 해야함 -->
-						<!-- mypage : 클릭 시 모달 구현해야 함 -->
 						
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2"> 
 							<object data="<%=request.getContextPath() %>/resources/image/common_main/search.svg" type="image/svg+xml" class="p_icon"></object>
 						</a></li>
-						<li class="nav-item"><a href="<%=request.getContextPath() %>/blist"
-							class="nav-link link-dark px-2"> 
+						<li class="nav-item">
+						<a href="<%=request.getContextPath() %>/blist" class="nav-link link-dark px-2"> 
 							<object data="<%=request.getContextPath() %>/resources/image/common_main/cart.svg" type="image/svg+xml" class="p_icon"></object>
 						</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/mypage"

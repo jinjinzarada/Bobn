@@ -1,3 +1,4 @@
+<%@page import="kh.semi.bobn.event.model.vo.EventVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -53,6 +54,16 @@
 </style>
 </head>
 <body>
+
+<section>
+<%
+EventVo vo = (EventVo)request.getAttribute("eVo");
+if(vo.geteNo() == 0){
+%>
+	<p>해당 글이 없습니다.</p>	
+<%
+} else {
+%>		
     <div class="p_section_container">
         <div class="p_headline_container">
             <div class="p_section_head">
@@ -65,15 +76,15 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th>제목</th>
+                    <th><%=vo.geteTitle() %></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr style="border:transparent">
-                    <td>이미지</td>
+                    <td><%=vo.geteImageRoute() %></td>
                   </tr>
                   <tr>
-                    <td>내용</td>
+                    <td><%=vo.geteContent() %></td>
                   </tr>
                   <tr>
                     <td>공유하기</td>
@@ -86,6 +97,9 @@
             <input class="btn btn-primary" type="button" value="목록으로">
         </div>
 </div>
-</section>   
+</section> 
+<%
+		}
+%>
 </body>
 </html>

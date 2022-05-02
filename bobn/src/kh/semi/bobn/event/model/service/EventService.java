@@ -30,4 +30,13 @@ public class EventService {
 		close(conn);
 		return result;
 	}
+	
+	public EventVo readEvdetail(int e_no)  {
+		Connection conn = getConnection();
+		EventVo vo = dao.readEvdetail(e_no);
+		close(conn);
+		return vo;
+	}
+	
+	
 }
