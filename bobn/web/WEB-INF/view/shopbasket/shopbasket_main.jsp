@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
@@ -179,15 +178,13 @@ function funMinusAmount(){
 			<br>
 			<div>배송비 : &#8361;3,000</div>
 			<br>
-			<div>할인 금액 : &#8361;3,000</div>
-			<br>
 			<div>결제 금액 : &#8361;20,000</div>
 			<br>
 		</div>
 		<br>
 		<center>
 			<button class="c_cart_order-btn" type="button" name="order"
-				onclick="location.href = 'WEB-INF/view/pay/pay_main.jsp'">주문하기</button>
+				onclick="location.href = '/bobn/paylist'">주문하기</button>
 		</center>
 		<br>
 	</div>

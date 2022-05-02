@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/pay/pay.css">
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -165,12 +164,12 @@ function selectAll(selectAll)  {
 				<th>배송비</th>
 				<th>총 결제금액</th>
 			</tr>
-			<%-- <c:forEach items="${payvolist}" var="vo"> --%>
+			<c:forEach items="${payvolist}" var="vo">
 			<tr style="background-color: #fff;">
 				<td style="padding: 23px 0;">
 					<span id="c_pay_price">${vo.payTotal}</span>원
 				</td>
-				<%--</c:forEach>--%>
+			</c:forEach>
 				<td><span id="c_pay_price">3,000</span>원</td>
 				<td><span id="c_pay_price">13,000</span>원</td>
 			</tr>

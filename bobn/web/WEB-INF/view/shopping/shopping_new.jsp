@@ -29,12 +29,6 @@
                         <button type="button" class="c_new_country_btn" onclick="location.href='어디로이동할지적어야함';">기타</button>
                     </div>
                 </article>
-                <!-- <select name="job">
-                    <option value="">직업선택</option>
-                    <option value="학생">학생</option>
-                    <option value="회사원">회사원</option>
-                    <option value="기타">기타</option>
-                </select> -->
                 <ul class="c_new_menu">
                     <li>
                       <a href="#" id="c_new_select1">추천순 &#9660;</a>
@@ -64,9 +58,9 @@
                             <td class="c_new_article2_text">장어구이 / &#8361;15,000</td>
                         </tr>
                         <tr>
-                            <td class="c_new_article2_text">새벽배송가능</td>
+                            <td class="c_new_article2_text">일반배송</td>
                             <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
-                            <td class="c_new_article2_text">새벽배송가능 / 품절되었습니다.</td>
+                            <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
                         </tr>
                         <tr>
                             <td colspan="3"><br></td>
@@ -88,9 +82,9 @@
                             <td class="c_new_article2_text">장어구이 / &#8361;15,000</td>
                         </tr>
                         <tr>
-                            <td class="c_new_article2_text">새벽배송가능 / 품절되었습니다.</td>
                             <td class="c_new_article2_text">일반배송</td>
-                            <td class="c_new_article2_text">새벽배송가능 / 품절되었습니다.</td>
+                            <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
+                            <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
                         </tr>
                         <tr>
                             <td colspan="3"><br></td>
@@ -112,9 +106,9 @@
                             <td class="c_new_article2_text">장어구이 / &#8361;15,000</td>
                         </tr>
                         <tr>
-                            <td class="c_new_article2_text">새벽배송가능</td>
+                            <td class="c_new_article2_text">일반배송</td>
                             <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
-                            <td class="c_new_article2_text">새벽배송가능 / 품절되었습니다.</td>
+                            <td class="c_new_article2_text">일반배송 / 품절되었습니다.</td>
                         </tr>
                     </table>
                 </article>

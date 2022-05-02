@@ -80,11 +80,6 @@
         <tr>
             <td width=50>
               <button type="button" class="c_prodtail_photo" onclick="location.href='사진파일열기';">사진첨부</button>
-                <!-- <select>
-                    <option>유머</option>
-                    <option>뉴스</option>
-                    <option>잡담</option>
-                </select> -->
             </td>
             <td >
               <div class="c_starpoint_wrap">
@@ -112,9 +107,6 @@
                   <span class="c_starpoint_bg"></span>
                 </div>
               </div>
-                <!-- <input type="text" placeholder="제목을 입력하세요."
-                maxlength=20
-                style="width:100%" > -->
             </td>
         </tr>
         <tr>
