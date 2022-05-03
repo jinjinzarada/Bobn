@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"

@@ -5,12 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<!-- JSTL -->
 <%@ page import="kh.semi.bobn.event.model.dao.EventDao"%>
 <%@ page import="kh.semi.bobn.event.model.vo.EventVo"%>
 <%@ page import="java.util.ArrayList"%>
+<!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>	
 	
 
 <!DOCTYPE html>
@@ -29,8 +28,8 @@
 	crossorigin="anonymous"></script>
 
 <body>
-	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 	<section>
+	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 		<div class="p_section_container">
 			<div class="p_headline_container">
 				<div class="p_section_head">
@@ -58,7 +57,6 @@
 							<td>
 							<a class=p_evtable href="evdetail?eno=${vo.eNo}">
 							<c:out value="${vo.eTitle}" /></a></td>
-							<%-- <td><fmt:fomatDate value="${vo.eStartDate}" type="date" /></td> --%>
 							<td><c:out value="${vo.eStartDate}" /></td>
 							<td><c:out value="${vo.eEndDate}" /></td>
 						</tr>

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage.css">
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -13,89 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <style type="text/css">
-        * {
-            font-family: 'Noto Sans', sans-serif;
-        }
-        /* 부트스트랩 반응형 제거 코드 - 전체*/
-        .container {
-            width: 1500px;
-            max-width: none!important;
-            margin-left: 80.500px;
-            margin-right: 80.500px;
-        }
-        .tab {
-        float: left;
-        background-color: #FFFFFF;
-        width: 150px;
-        height: 50px;
-        }
-        /* Style the buttons that are used to open the tab content */
-        .tab button {
-        display: block;
-        background-color: #FFFFFF;
-        color: #343f56;
-        padding: 22px 16px;
-        width: 100%;
-        border: solid 0.05rem;
-        text-align: center;
-        cursor: pointer;
-        transition: 0.3s;
-        }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-        background-color: #f54748;
-        color: #FFFFFF;
-        border: solid 0.05rem;
-        border-color: #f54748;
-        }
-
-        /* Create an active/current "tab button" class */
-        .tab button.active {
-        background-color: #f54748;
-        color: #FFFFFF;
-        border: solid 0.05rem;
-        border-color: #f54748;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-        float: left;
-        padding: 0px 40px;
-        width: 800px;
-        border-left: none;
-        height: 300px;
-        }
-
-        .tabhead {
-        color: #343f56;
-        }
-
-        /* 주문/배송 조회 */
-        .card {
-        float:left;
-        text-align: center;
-        }
-        /* 회원 탈퇴 */
-        .card-body {
-        margin-left: 20px;
-        margin-bottom: 10px;
-        margin: 0;
-        
-        }
-        .form-check-input:checked {
-        background-color: #f54748;
-        border: #f54748;
-        }
-        .btn-primary {
-        background-color: #f54748;
-        border: none;
-        }
-        
-    </style>
-        
 </head>
 
 <body>
@@ -184,7 +103,6 @@
                     배송 불만족
                     </label>
                     </div>
-        
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
@@ -206,22 +124,18 @@
         $('#tab03').hide();
      });
     function opentab(evt, cityName) {
-    // Declare all variables
     var i, p_tabcontent, p_tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    // Show the current tab, and add an "active" class to the link that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
     }

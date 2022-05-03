@@ -15,6 +15,10 @@ public class MainVo {
 	//P_SALECHECK  NOT NULL CHAR(1)        
 	//P_DETAIL     NOT NULL VARCHAR2(3900) 
 	
+//detail_image (쇼핑 이미지)
+	//P_ID   NOT NULL VARCHAR2(20)  
+	//D_FILE NOT NULL VARCHAR2(300) 
+	
 //cr_recipe_content 큐레이션 - 레시피 
 	//CRRECONTENT_NO       NOT NULL NUMBER         
 	//CRRECONTENT_POSTDATE NOT NULL TIMESTAMP(6)   
@@ -42,7 +46,9 @@ public class MainVo {
 	private String loginId;
 	private String loginPwd;
 	private String pId;
+	private int pCategory;
 	private String pName;
+	private String dFile;
 	private String pPrice;
 	private int crNo;
 	private String crTitle;
@@ -53,9 +59,10 @@ public class MainVo {
 	
 	@Override
 	public String toString() {
-		return "MainVo [loginId=" + loginId + ", loginPwd=" + loginPwd + ", pId=" + pId + ", pName=" + pName
-				+ ", pPrice=" + pPrice + ", crNo=" + crNo + ", crTitle=" + crTitle + ", crImgLoc=" + crImgLoc
-				+ ", pbNo=" + pbNo + ", pbTitle=" + pbTitle + ", pbImgLoc=" + pbImgLoc + "]";
+		return "MainVo [loginId=" + loginId + ", loginPwd=" + loginPwd + ", pId=" + pId + ", pCategory=" + pCategory
+				+ ", pName=" + pName + ", dFile=" + dFile + ", pPrice=" + pPrice + ", crNo=" + crNo + ", crTitle="
+				+ crTitle + ", crImgLoc=" + crImgLoc + ", pbNo=" + pbNo + ", pbTitle=" + pbTitle + ", pbImgLoc="
+				+ pbImgLoc + "]";
 	}
 
 	public String getLoginId() {
@@ -82,12 +89,28 @@ public class MainVo {
 		this.pId = pId;
 	}
 
+	public int getpCategory() {
+		return pCategory;
+	}
+
+	public void setpCategory(int pCategory) {
+		this.pCategory = pCategory;
+	}
+
 	public String getpName() {
 		return pName;
 	}
 
 	public void setpName(String pName) {
 		this.pName = pName;
+	}
+
+	public String getdFile() {
+		return dFile;
+	}
+
+	public void setdFile(String dFile) {
+		this.dFile = dFile;
 	}
 
 	public String getpPrice() {
@@ -144,6 +167,5 @@ public class MainVo {
 
 	public void setPbImgLoc(String pbImgLoc) {
 		this.pbImgLoc = pbImgLoc;
-	} 
-	
+	}
 }

@@ -24,8 +24,8 @@
 
 .btn-primary {
     margin-left: 50%;
-    background-color: #f54748;
-    border:none;
+    background-color: #f54748 !important;
+    border: none !important;
 }
 .btn-primary:active{
     background-color: #f54748;

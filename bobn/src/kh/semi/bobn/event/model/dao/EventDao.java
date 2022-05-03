@@ -32,9 +32,11 @@ public class EventDao {
 //		E_STARTDATE NOT NULL DATE           
 //		E_ENDDATE   NOT NULL DATE  
 
-		String sql = "select E_NO , E_TITLE , E_STARTDATE, E_ENDDATE from (select A.E_NO , A.E_TITLE , A.E_STARTDATE, A.E_ENDDATE,"
-				+ " Rownum Rnum from (select E_NO , E_TITLE , E_STARTDATE, E_ENDDATE from ev_content order by e_no)A)"
-				+ " where Rnum >= ? and Rnum <= ?";
+		String sql = "select E_NO , E_TITLE , to_char(E_STARTDATE, 'yyyy-mm-dd') E_STARTDATE,"
+				+ " to_char(E_ENDDATE, 'yyyy-mm-dd') E_ENDDATE from"
+				+ " (select A.E_NO , A.E_TITLE , A.E_STARTDATE, A.E_ENDDATE,"
+	            + " Rownum Rnum from (select E_NO , E_TITLE , E_STARTDATE, E_ENDDATE from ev_content order by e_no)A)"
+	            + " where Rnum >= ? and Rnum <= ?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

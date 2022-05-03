@@ -4,6 +4,8 @@
   
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <!-- JSTL -->
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 
 <!DOCTYPE html>
@@ -30,42 +32,28 @@
             <!-- bx-silder로 슬라이더 구현 -->
             <div style="border: solid; width: 1200px; height: 300px; margin-left: 80px; margin-top: 80px;">슬라이더</div>
 
-            <!--best -->
+            <!--best shopping-->
             <div class="p_section_container">
             <div class="p_headline_container">
                 <div class="p_section_head"><h3>BEST</h3></div>
                 <div class="p_section_more">더 보기</div>
                 </div>
             <div class="p_article_container">
-                <!-- 썸네일 이미지 -->
-                <a href="#"> <img src="<%=request.getContextPath() %>/resources/image/common_main/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="<%=request.getContextPath() %>/resources/image/common_main/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="<%=request.getContextPath() %>/resources/image/common_main/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="<%=request.getContextPath() %>/resources/image/common_main/rabbit.png" class="p_article-img"></a>
-                <a href="#"> <img src="<%=request.getContextPath() %>/resources/image/common_main/rabbit.png" class="p_article-img"></a>
-                <!-- 썸네일 설명 -->
+            <c:forEach items="${bslist}" var="bs">
+                <div class="p_article-img">
+                <a href="#">
+                <img src="<%=request.getContextPath() %><c:out value="${bs.dFile}" />"/></a></div> 
                 <div class="p_article-desc">
-                    <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
-                    <p class="p_acticle-desc-detail">&nbsp; &nbsp; 설명 설명 설명</p>
+                    <p class="p_article-desc-title">
+                    <c:out value="${bs.pName}" /></p>
                 </div>
                 <div class="p_article-desc">
-                    <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
-                    <p class="p_acticle-desc-detail">&nbsp; &nbsp; 설명 설명 설명</p>
+                    <p class="p_acticle-desc-detail">
+                    <c:out value="${bs.pPrice}" /></p>
                 </div>
-                <div class="p_article-desc">
-                    <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
-                    <p class="p_acticle-desc-detail">&nbsp; &nbsp; 설명 설명 설명</p>
-                </div>
-                <div class="p_article-desc">
-                    <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
-                    <p class="p_acticle-desc-detail">&nbsp; &nbsp; 설명 설명 설명</p>
-                </div>
-                <div class="p_article-desc">
-                    <p class="p_article-desc-title">&nbsp; &nbsp; 상품명</p>
-                    <p class="p_acticle-desc-detail">&nbsp; &nbsp; 설명 설명 설명</p>
-                </div>
+                </c:forEach>
             </div>
-        </div>
+            </div>
         </section>
 
 <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
