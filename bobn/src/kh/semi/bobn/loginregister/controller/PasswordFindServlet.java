@@ -53,7 +53,13 @@ public class PasswordFindServlet extends HttpServlet {
 		
 		// DB 확인
 				UserVo vo = new UserService().findpwd(userid, username, useremail);
-				
+				if(vo==null) {
+
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='Login';");
+					script.println("</script>");
+				}
 				
 				System.out.println(vo.getMpassword());
 				String pwdsend = vo.getMpassword();
@@ -78,7 +84,7 @@ public class PasswordFindServlet extends HttpServlet {
 				p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 				p.put("mail.smtp.sockerFactory.fallback", "false");
 
-				if(true) {
+				
 				try {
 					Authenticator auth = new Gmail();
 					Session ses = Session.getInstance(p, auth);
@@ -105,16 +111,11 @@ public class PasswordFindServlet extends HttpServlet {
 				script.println("<script>");
 				script.println("alert('입력하신 이메일주소로 이메일이 발송되었습니다. 확인하여 주시기 바랍니다.'); location.href='Login';");
 				script.println("</script>");
-				}
-				if(false) {
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='Login';");
-				script.println("</script>");
+				
 				}
 						
 		
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

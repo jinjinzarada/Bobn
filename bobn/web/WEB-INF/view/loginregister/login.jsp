@@ -7,9 +7,11 @@
 <meta charset="UTF-8">
 <title>밥앤-로그인및계정찾기</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 </head>
 <body>
- <div class="title"></div>
+ <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+
     <div class="l_login_wrap">
         <div class="l_login_form-wrap">
             <div class="l_login_button-wrap">
@@ -38,7 +40,8 @@
                 <button class="l_login_submit">비밀번호 찾기</button>
             </form>
         </div>
-        <div class="contentfooter"></div>
+       
+        <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
     </div>
     
     <script>

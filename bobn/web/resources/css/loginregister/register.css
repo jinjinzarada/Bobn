@@ -41,9 +41,12 @@ html, body, div, span, applet, object, iframe,
     }
     
     /* common.css */
-            * {
-              font-family: 'Noto Sans', sans-serif;
-            }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+
+		* {
+		  font-family: 'Noto Sans', sans-serif;
+		}
+          
     
             .l_signup_wrap {
                 width: 100%;
@@ -164,10 +167,10 @@ html, body, div, span, applet, object, iframe,
 .title{
             font-size: 30px;
             text-align: center;
-            padding-top: 80px;
+            padding-top: 60px;
             padding-bottom: 50px;
             border-bottom: 1px solid #F54748;
-            width: 1000px;
+            width: 1050px;
             margin: auto;
 }        
 .register{
@@ -181,7 +184,7 @@ html, body, div, span, applet, object, iframe,
         }
         
         .register input{
-            width: 100%;
+            width: 85%;
             height: 35px;
             outline: none;
             padding: 10px;
@@ -194,6 +197,7 @@ html, body, div, span, applet, object, iframe,
         .register .center{
             display: flex;
             align-items: center;
+            
         }
         .register .flex{
             display: flex;
@@ -210,7 +214,7 @@ html, body, div, span, applet, object, iframe,
         .register .flex .container .item .idcheck{
             height: 100%;
             width: 100px;
-            margin-left: 35px;
+            margin-left: -110px;
             /* padding: 5px 15px; */
             background: #fb9300;
             border: 1px solid #fb9300;
@@ -228,7 +232,7 @@ html, body, div, span, applet, object, iframe,
         .register .flex .container .item .emailcheck{
             height: 100%;
             width: 100px;
-            margin-left: 35px;
+            margin-left: -110px;
             /* padding: 5px 15px; */
             background: #fb9300;
             border: 1px solid #fb9300;
@@ -254,7 +258,7 @@ html, body, div, span, applet, object, iframe,
             background: #fb9300;
             transition: 0.3s;
             font-size: 18px;
-            margin-left: 50px;
+            margin-left: 160px;
             margin-top: 20px;
         }
         .register .flex .container:last-child{
@@ -277,7 +281,7 @@ html, body, div, span, applet, object, iframe,
             background: #fb9300;
             transition: 0.3s;
             font-size: 18px;
-            margin-right: 120px;
+            margin-right: 340px;
             margin-top: 20px;
         }
         .register .flex .container:last-child{
@@ -303,6 +307,8 @@ html, body, div, span, applet, object, iframe,
             width: 1000px;
             margin: auto;
             margin-top: -100px;
+            border: none;
+           
 }        
 
 input[type="checkbox"]{
@@ -322,10 +328,22 @@ input[type="checkbox"]{
 }
 .lineforagreeall{
     border-bottom: 1px solid #F54748;
-            width: 540px;
+            width: 900px;
             margin: auto;
             margin-bottom: 10px;
+            margin-left: -10px;
+            margin-top: -10px;
+            
 }
 #name2{
     height: 18px;
+}
+
+
+/* 부트스트랩 반응형 제거 코드 - 전체*/
+.container {
+    width: 1500px;
+    max-width: none !important;
+    margin-left: 80.500px;
+    margin-right: 80.500px;
 }
