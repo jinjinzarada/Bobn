@@ -67,13 +67,7 @@ html, body, div, span, applet, object, iframe,
                 box-sizing: border-box;
             }
             /* header */
-            header{ 
-                /* 1. 중앙정렬 */
-                width: 80%; margin: 0 auto;
-                border: 1px solid black;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
+            
             #l_signup_header{
                 padding: 30px 20px;
             }
@@ -100,13 +94,7 @@ html, body, div, span, applet, object, iframe,
             }
     
             /* footer */
-            footer{
-                /* 1. 중앙정렬 */
-                width: 80%; margin: 0 auto;
-                border: 1px solid black;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
+            
             #l_signup_footer{
                 padding: 30px 20px;
             }
