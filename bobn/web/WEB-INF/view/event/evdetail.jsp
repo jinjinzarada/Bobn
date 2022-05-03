@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/event/evdetail.css">
 
 <%@page import="kh.semi.bobn.event.model.vo.EventVo"%>
