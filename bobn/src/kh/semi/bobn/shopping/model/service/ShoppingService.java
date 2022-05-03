@@ -25,4 +25,9 @@ public class ShoppingService {
 		close(conn);
 		return volist;
 	}
+
+	public ArrayList<ShoppingVo> selectShoppingList(String pId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
