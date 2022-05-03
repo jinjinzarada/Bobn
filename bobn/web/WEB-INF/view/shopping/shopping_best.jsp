@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_best.css">
+<%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
+<%@page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,8 +11,12 @@
 <head>
 <meta charset="UTF-8">
 <title>BEST페이지</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+<%
+ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("volist");
+%>
      <div class="c_wrap content">
         <div id="c_content">
             <section>
@@ -17,14 +24,20 @@
                     <p>BEST상품</p>
                 </article>
                 <article id="c_best_article1">
-                    <div class="j_ntpl_concept_btn_wrap">
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';" id="c_best_kr">한식</button>
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';">양식</button>
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';">중식</button>
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';">일식</button>
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';">동남아</button>
-                        <button type="button" class="c_best_country_btn" onclick="location.href='어디로이동할지적어야함';">기타</button>
-                    </div>
+                	<div class="c_best_concept_btn_wrap">
+						<button type="button" class="c_best_country_btn" id="c_best_kr" 
+						<c:if test="${pCountry eq '6'}">style="background-color : #F54748; color : white;"</c:if>>한식</button>
+						<button type="button" class="c_best_country_btn" id="c_best_west" 
+						<c:if test="${pCountry eq '1'}">style="background-color : #F54748; color : white;"</c:if>>양식</button>
+						<button type="button" class="c_best_country_btn" id="c_best_chi" 
+						<c:if test="${pCountry eq '2'}">style="background-color : #F54748; color : white;"</c:if>>중식</button>
+						<button type="button" class="c_best_country_btn" id="c_best_ja" 
+						<c:if test="${pCountry eq '3'}">style="background-color : #F54748; color : white;"</c:if>>일식</button>
+						<button type="button" class="c_best_country_btn" id="c_best_east" 
+						<c:if test="${pCountry eq '4'}">style="background-color : #F54748; color : white;"</c:if>>동남아</button>
+						<button type="button" class="c_best_country_btn" id="c_best_etc" 
+						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
+					</div>
                 </article>
                 <ul class="c_best_menu">
                     <li>
@@ -40,13 +53,16 @@
                     <table>
                         <tr>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="290"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/tofustew.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/grilledeel.png" alt="" width="287"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -64,19 +80,22 @@
                         </tr>
                         <tr>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/bulgogi.png" alt="" width="275"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/steak.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/rosepasta.png" alt="" width="285"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">스테이크 / &#8361;20,000</td>
-                            <td class="c_best_article2_text">순두부찌개 / &#8361;5,000</td>
-                            <td class="c_best_article2_text">장어구이 / &#8361;15,000</td>
+                            <td class="c_best_article2_text">불고기 전골 / &#8361;20,000</td>
+                            <td class="c_best_article2_text">스테이크 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">로제파스타 / &#8361;15,000</td>
                         </tr>
                         <tr>
                             <td class="c_best_article2_text">일반배송</td>
@@ -88,19 +107,22 @@
                         </tr>
                         <tr>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/boodae.png" alt="" width="290"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <img src="https://via.placeholder.com/300" alt="" onclick="location.href='어디로이동할지적어야함';">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/potatosuzebee.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">소고기 미역국 / &#8361;5,000</td>
-                            <td class="c_best_article2_text">순두부찌개 / &#8361;5,000</td>
-                            <td class="c_best_article2_text">장어구이 / &#8361;15,000</td>
+                            <td class="c_best_article2_text">부대찌개 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">에그타르트 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">감자수제비 / &#8361;15,000</td>
                         </tr>
                         <tr>
                             <td class="c_best_article2_text">일반배송</td>
@@ -109,20 +131,57 @@
                         </tr>
                     </table>
                 </article>
+                <!-- 페이징 -->
                 <article id="c_best_article3">
-                    <div class="c_best_pagination">
-                        <a href="#">&laquo;</a>
-                        <a href="#" class="c_best_active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">&raquo;</a>
-                    </div>
-                </article>
+					<div class="c_best_pagination">
+					
+						<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="j_ntpl_active">${i}</a>
+						</c:if>
+						
+						<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>
+						</c:forEach>
+						
+						<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>
+					</div>
+				</article>
             </section>
         </div>
     </div>
-</body>
-</body>
+    <script>
+		//나라별 화면 조회
+	 	$("#c_best_kr").on("click", function(){
+	 		location.href="/bobn/shopblist?pCountry=6";
+		});
+	
+		$("#c_best_west").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=1";
+		});
+		
+		$("#c_best_chi").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=2";
+		});
+		
+		$("#c_best_ja").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=3";
+		}); 
+		
+		$("#c_best_east").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=4";
+		});
+		
+		$("#c_best_etc").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=5";
+		}); 
+	</script>
 </body>
 </html>

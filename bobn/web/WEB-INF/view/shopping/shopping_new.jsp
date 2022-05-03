@@ -8,9 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>NEW페이지</title>
-<link rel="stylesheet" type="text/css" href="./css/shopnew.css">
-<link rel="stylesheet" type="text/css" href="./css/reset.css">
-<link rel="stylesheet" type="text/css" href="./css/shopcommon.css">
 </head>
 <body>
      <div class="c_wrap content">

@@ -10,47 +10,6 @@
 <meta charset="UTF-8">
 <title>주문/결제 페이지</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script>
-    function findAddress(){
-    new daum.Postcode({
-        oncomplete: function(data) {
-            var code = data.zonecode; //우편번호
-            var Addr = data.address;// 선택한 주소
-
-            document.getElementById('c_pay_postnum').value = data.zonecode;
-            document.getElementById('c_pay_add1').value = data.address;
-            
-        }
-    }).open();
-}
-</script>
-<script>
-    function btn(){
-        alert("결제가 완료되었습니다.")
-        location.href= "해당.jsp?page=";
-    }
-</script>
-<script type="text/javascript">
-    function Copy(){
-           if (document.getElementById("cb").checked)
-           {
-                document.getElementById("txtName2").value = document.getElementById("txtName1").value;
-                document.getElementById("phone4").value = document.getElementById("phone1").value;
-                document.getElementById("phone5").value = document.getElementById("phone2").value;
-                document.getElementById("phone6").value = document.getElementById("phone3").value;
-           }
-    }
-</script>
-<script>
-function selectAll(selectAll)  {
-	  const checkboxes 
-	       = document.getElementsByName("check");
-
-		  checkboxes.forEach((checkbox) => {
-		  checkbox.checked = selectAll.checked;
-	  })
-	}
-</script>
 </head>
 <body>
 	<div class="c_pay_frame">
@@ -127,7 +86,7 @@ function selectAll(selectAll)  {
 					<input type="checkbox" name ="check" value="select">
 				</td>
 				<td width="270.5">
-					<object data="<%=request.getContextPath()%>/resources/image/product/1.JPG" alt="" width="70"></object>
+					<object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object>
 				</td>
 				<td width="213">${vo.p_name}</td>
 				<td width="155.5">
@@ -179,5 +138,46 @@ function selectAll(selectAll)  {
 				onclick="javascript:btn()">결제하기</button>
 		</div>
 	</div>
+<script>
+    function findAddress(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var code = data.zonecode; //우편번호
+            var Addr = data.address;// 선택한 주소
+
+            document.getElementById('c_pay_postnum').value = data.zonecode;
+            document.getElementById('c_pay_add1').value = data.address;
+            
+        }
+    }).open();
+}
+</script>
+<script>
+    function btn(){
+        alert("결제가 완료되었습니다.")
+        location.href= "./main";
+    }
+</script>
+<script type="text/javascript">
+    function Copy(){
+           if (document.getElementById("cb").checked)
+           {
+                document.getElementById("txtName2").value = document.getElementById("txtName1").value;
+                document.getElementById("phone4").value = document.getElementById("phone1").value;
+                document.getElementById("phone5").value = document.getElementById("phone2").value;
+                document.getElementById("phone6").value = document.getElementById("phone3").value;
+           }
+    }
+</script>
+<script>
+function selectAll(selectAll)  {
+	  const checkboxes 
+	       = document.getElementsByName("check");
+
+		  checkboxes.forEach((checkbox) => {
+		  checkbox.checked = selectAll.checked;
+	  })
+	}
+</script>
 </body>
 </html>

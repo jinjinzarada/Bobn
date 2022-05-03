@@ -8,14 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>제품상세페이지</title>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/productdetail.css">
 </head>
 <body>
     <!--사진-->
     <div class="c_prodtail_image">
-        <object data="/image/seaweedsoup.png" alt="" width="400"></object>
+        <object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="400"></object>
     </div>
     <!-- 상품tmi-->
     <div class="c_prodtail_right">
@@ -48,7 +45,7 @@
       </div>
       <br>
       <div class="c_prodtail_buy">
-        <button class="c_prodtail_cart-btn" type="button" name="buy" onclick = "location.href = '장바구니추가팝업'">장바구니</button>
+        <button class="c_prodtail_cart-btn" type="button" name="buy"onclick="javascript:btn()">장바구니</button>
         <button class="c_prodtail_buy-btn" type="button" name="buy" onclick = "location.href = '결제페이지.jsp로 가자'">바로 구매</button>
       </div>
     </div>
@@ -57,7 +54,7 @@
         <div class="c_prodtail_title">상품 정보</div>
         <br>
         <div>결대로 찢은 소고기와 부드러운 미역을 넣어 만든 미역국입니다.</div>
-        <div class="c_prodtail_review">리뷰(+999)</div>
+<!--    <div class="c_prodtail_review">리뷰(+999)</div>
         </div>
         <ul class="c_prodtail_menu">
             <li>
@@ -119,8 +116,14 @@
                 <button type="button" class="c_prodtail_review_succ">등록하기</button>
             </td>
         </tr>
-     </table>
+     </table>-->
+    </div>      
     </div>
-    </div>
+<script>
+    function btn(){
+        alert("장바구니에 추가되었습니다.")
+        location.href= "./shopdetail";
+    }
+</script>
 </body>
 </html>

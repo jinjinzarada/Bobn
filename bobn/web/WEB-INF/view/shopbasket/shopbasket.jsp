@@ -10,16 +10,6 @@
 <meta charset="UTF-8">
 <title>장바구니</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script>
-function selectAll(selectAll)  {
-	  const checkboxes 
-	       = document.getElementsByName("check");
-
-		  checkboxes.forEach((checkbox) => {
-		  checkbox.checked = selectAll.checked;
-	  })
-	}
-</script>
 </head>
 <body>
 	<div class="c_shopping-cart">
@@ -45,7 +35,7 @@ function selectAll(selectAll)  {
 			</div>
 
 			<div class="c_cart_image">
-				<object data="<%=request.getContextPath()%>/resources/image/product/1.JPG" alt="" width="70"></object>
+				<object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object>
 			</div>
 
 			<div class="c_cart_description">
@@ -64,6 +54,33 @@ function selectAll(selectAll)  {
 			<div class="c_cart_total-price">&#8361;${vo.p_price}</div>
 		</div>
 		</c:forEach>
+		<br> <br>
+		<div class="c_cart_jjin_total-price">
+			<br>
+			<div>총 상품금액 : &#8361;20,000</div>
+			<br>
+			<div>배송비 : &#8361;3,000</div>
+			<br>
+			<div>결제 금액 : &#8361;20,000</div>
+			<br>
+		</div>
+		<br>
+		<center>
+			<button class="c_cart_order-btn" type="button" name="order"
+				onclick="location.href = '/bobn/paylist';">주문하기</button>
+		</center>
+		<br>
+	</div>
+<script>
+function selectAll(selectAll)  {
+	  const checkboxes 
+	       = document.getElementsByName("check");
+
+		  checkboxes.forEach((checkbox) => {
+		  checkbox.checked = selectAll.checked;
+	  })
+	}
+</script>
 <script>
 $(".c_cart_plus-btn").click(updateAmount);
 $(".c_cart_minus-btn").click(updateAmount);
@@ -171,22 +188,5 @@ function funMinusAmount(){
 }
 */
 </script>
-		<br> <br>
-		<div class="c_cart_jjin_total-price">
-			<br>
-			<div>총 상품금액 : &#8361;20,000</div>
-			<br>
-			<div>배송비 : &#8361;3,000</div>
-			<br>
-			<div>결제 금액 : &#8361;20,000</div>
-			<br>
-		</div>
-		<br>
-		<center>
-			<button class="c_cart_order-btn" type="button" name="order"
-				onclick="location.href = '/bobn/paylist'">주문하기</button>
-		</center>
-		<br>
-	</div>
 </body>
 </html>
