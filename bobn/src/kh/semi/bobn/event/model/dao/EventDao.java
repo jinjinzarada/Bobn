@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static kh.semi.bobn.common.jdbc.JdbcDBCP.close;
-import static kh.semi.bobn.common.jdbc.JdbcDBCP.getConnection;
 
 import kh.semi.bobn.event.model.vo.EventVo;
 
@@ -18,10 +17,8 @@ public class EventDao {
 	private ResultSet rs = null;
 
 	// 게시글 목록 조회
-	public ArrayList<EventVo> evlist(int start, int end) {
+	public ArrayList<EventVo> evlist(Connection conn, int start, int end) {
 		ArrayList<EventVo> evlist = new ArrayList<EventVo>();
-		
-		Connection conn = getConnection();
 
 //		private int eNo;
 //		private String eTitle;
@@ -60,6 +57,7 @@ public class EventDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		System.out.println("dao evlist" + evlist);
@@ -86,12 +84,13 @@ public class EventDao {
 	}
 	
 	// 개별 게시글 조회
-	public EventVo readEvdetail(int e_no) {
+	public EventVo readEvdetail(Connection conn, int e_no) {
+		System.out.println("readEvdetail" + e_no);
+	
 		
 		EventVo vo = null;
-		Connection conn = getConnection();
 		
-		String sql = "select e.E_TITLE, c.EVC_IMAGEROUTE, e.E_CONTENT from EV_CONTENT e join EV_CONTENT_IMAGE c"
+		String sql = "select e.E_TITLE, c.EVC_IMAGEROUTE, e.E_CONTENT from EV_CONTENT e left outer join EV_CONTENT_IMAGE c"
 				+ " using (E_NO) where e_no=?";
 		
 		try {
@@ -99,9 +98,11 @@ public class EventDao {
 			pstmt.setInt(1, e_no);
 			rs = pstmt.executeQuery();
 			
-			vo = new EventVo();
 			
 			if (rs.next()) {
+				
+				vo = new EventVo();
+				vo.seteNo(e_no);
 				vo.seteTitle(rs.getString("E_TITLE"));
 				vo.seteImageRoute(rs.getString("EVC_IMAGEROUTE"));
 				vo.seteContent(rs.getString("E_CONTENT"));
@@ -113,6 +114,7 @@ public class EventDao {
 			close(rs);
 			close(pstmt);
 		}
+		System.out.println("readEvdetailvo" + vo);
 		return vo;
 	}
 }

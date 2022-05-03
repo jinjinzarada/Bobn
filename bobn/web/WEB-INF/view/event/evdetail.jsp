@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/event/evdetail.css">
+
 <%@page import="kh.semi.bobn.event.model.vo.EventVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -5,7 +8,7 @@
 <html>
 <meta charset="UTF-8">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-
+<head>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -23,38 +26,10 @@
 	rel="stylesheet">
 
 <style type="text/css">
-* {
-	font-family: 'Noto Sans', sans-serif;
-}
-/* 부트스트랩 반응형 제거 코드 - 전체*/
-.container {
-	width: 1500px;
-	max-width: none !important;
-	margin-left: 80.500px;
-	margin-right: 80.500px;
-}
-
-.p_section_container {
-	margin-left: 80.500px;
-	margin-right: 80.500px;
-	margin-top: 80.500px;
-	margin-bottom: 80.500px;
-}
-
-.p_section_head {
-	color: #343f56;
-}
-
-.btn-primary {
-    margin-left: 50%;
-    background-color: #f54748;
-    border:none;
-    
-}
 </style>
 </head>
 <body>
-
+	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 <section>
 <%
 EventVo vo = (EventVo)request.getAttribute("eVo");
@@ -101,5 +76,6 @@ if(vo.geteNo() == 0){
 <%
 		}
 %>
+<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>
