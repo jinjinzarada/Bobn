@@ -1,14 +1,25 @@
 @charset "UTF-8";
+/* 부트스트랩 반응형 제거 코드 - 전체*/
+.container {
+    width: 1500px;
+    max-width: none !important;
+    margin-left: 80.500px;
+    margin-right: 80.500px;
+}
 #c_best_article0{
     font-size: 30px;
     border-color: white;
     border-bottom: 1px solid #F54748;
 }
 /* 컨셉버튼 article1 */
-#c_best_kr{
+#c_best_kr:active{
     background-color: #F54748;
+    color: white;
 }
-
+#c_best_west:active{
+    background-color: #F54748;
+    color: white;
+}
 #c_best_article1{
     display: flex;               
     justify-content: center; 
@@ -37,17 +48,6 @@
     background-color: #F54748;
     color: white;
 }
-
-/* 글쓰기버튼 article2*/
-/* #j_ntpl_write_btn{
-
-    display: flex;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;   
-    cursor: pointer;   
-
-}*/
 
 /* 정렬순서 */
 ul {

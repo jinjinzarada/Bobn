@@ -8,10 +8,20 @@ import kh.semi.bobn.shopping.model.vo.ShoppingVo;
 import static kh.semi.bobn.common.jdbc.JdbcDBCP.*;
 
 public class ShoppingService {
-	public ArrayList<ShoppingVo> selectShoppingList(String pId){
-		ArrayList<ShoppingVo> volist = null;
+
+	public int countShoppingList(String pCountry) {
 		Connection conn = getConnection();
-		volist = new ShoppingDao().selectShoppingList(conn, pId);
+		int result = new ShoppingDao().countShoppingList(conn, pCountry);
+
+		close(conn);
+		return result;
+	}
+
+	public ArrayList<ShoppingVo> listShoppingCountry(String pCountry, int startRnum, int endRnum) {
+		Connection conn = getConnection();
+		
+		ArrayList<ShoppingVo> volist = new ShoppingDao().listShoppingCountry(conn, pCountry, startRnum, endRnum);
+		
 		close(conn);
 		return volist;
 	}

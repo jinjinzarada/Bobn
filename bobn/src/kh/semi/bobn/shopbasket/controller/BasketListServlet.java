@@ -59,7 +59,7 @@ public class BasketListServlet extends HttpServlet {
 //		}
 		System.out.println("blist volist:" + volist);
 		request.setAttribute("basketvolist", volist);
-		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket_main.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket.jsp").forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

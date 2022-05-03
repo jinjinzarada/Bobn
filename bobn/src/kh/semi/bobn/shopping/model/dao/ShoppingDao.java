@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import kh.semi.bobn.shopping.model.vo.ShoppingVo;
@@ -50,5 +51,95 @@ public ArrayList<ShoppingVo> selectShoppingList(Connection conn, String pId) {
 		close(pstmt);
 	}
 	return volist;
+}
+
+public int countShoppingList(Connection conn, String pCountry) {
+	int result = 0;
+	String sql = "";
+	
+	if(pCountry.equals("6")) {
+		sql = "select count(*) from product";
+	}else {
+		sql = "select count(*) from product where p_category=?";
+	}
+	try {
+		pstmt = conn.prepareStatement(sql);
+		
+		if(!pCountry.equals("6")) {
+			pstmt.setString(1, pCountry);	
+		}
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			result = rs.getInt(1);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close(rs);
+		close(pstmt);
+	}
+	
+	return result;
+}
+
+public ArrayList<ShoppingVo> listShoppingCountry(Connection conn, String pCountry, int startRnum, int endRnum) {
+	ArrayList<ShoppingVo> volist = null;
+	String sql = "";
+	if(pCountry.equals("6")) {
+		sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?"; 
+	}else {
+		sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?";
+	}
+	try {
+		pstmt = conn.prepareStatement(sql);
+		if(pCountry.equals("6")) {
+			pstmt.setInt(1, startRnum);
+			pstmt.setInt(2, endRnum);
+		}else {
+			pstmt.setString(1, pCountry);
+			pstmt.setInt(2, startRnum);
+			pstmt.setInt(3, endRnum);
+		}
+		rs = pstmt.executeQuery();
+		volist = new ArrayList<ShoppingVo>();
+//		private String pId;
+//		private String p_name;
+//		private int p_category;
+//		private int p_price;
+//		private int  p_sellamount;
+//		private int p_weight;
+//		private int p_calorie;
+//		private String p_flavor;
+//		private Timestamp p_postdate;
+//		private String p_salecheck;
+//		private String p_detail;
+//		
+//		private String d_file;
+		while (rs.next()) {
+			ShoppingVo shopVo = new ShoppingVo();
+			shopVo.setpId(rs.getString("pId"));
+			shopVo.setP_name(rs.getString("p_name"));
+			shopVo.setP_category(rs.getInt("p_category"));
+			shopVo.setP_price(rs.getInt("p_price"));
+			shopVo.setP_sellamount(rs.getInt("p_sellamount"));
+			shopVo.setP_weight(rs.getInt("p_weight"));
+			shopVo.setP_calorie(rs.getInt("p_calorie"));
+			shopVo.setP_flavor(rs.getString("p_flavor"));
+			shopVo.setP_postdate(rs.getTimestamp("p_postdate"));
+			shopVo.setP_salecheck(rs.getString("p_salecheck"));
+			shopVo.setD_file(rs.getString("d_file"));
+
+			volist.add(shopVo);
+			System.out.println("volist :" + volist);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		close(rs);
+		close(pstmt);
+	}
+	
+	return volist;
+
 }
 }

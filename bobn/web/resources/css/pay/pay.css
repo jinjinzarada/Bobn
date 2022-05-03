@@ -1,5 +1,11 @@
 @charset "UTF-8";
-
+/* 부트스트랩 반응형 제거 코드 - 전체*/
+.container {
+    width: 1500px;
+    max-width: none !important;
+    margin-left: 80.500px;
+    margin-right: 80.500px;
+}
 .c_pay_frame{
     width: 80%;
     margin:0 auto;
