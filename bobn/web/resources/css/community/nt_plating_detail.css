@@ -62,10 +62,58 @@
     float: right;
 }
 #j_ntpd_recomment{
-    width: 510px;
+    width: 570px;
 }
+#j_ntpd_detail_img{
+	width: 600px;
+	height: 600px;
+}
+
+/* 슬라이드 버튼 */
+.slides{display:none;}
+
+.j_ntpd_slides_l{
+	background-color: #F54748;
+    border-radius: 5px;
+    border: 1px solid #F54748;
+    padding-bottom : 10px;
+	font-size: 50px;
+	cursor: pointer;
+	float: left;
+  	margin-top : 290px;
+  	margin-right : 15px;
+}
+.j_ntpd_slides_r{
+	background-color: #F54748;
+    border-radius: 5px;
+    border: 1px solid #F54748;
+	padding-bottom : 10px;
+	font-size: 50px;
+	cursor: pointer;
+	float: right;
+	margin-top : 290px;
+	margin-left : 15px;
+}
+
 /* 작성한 댓글 article3 */
 #j_ntpd_article3{
     width: 680px; margin: 0 auto;
     border: white;
 }
+
+#j_ntpd_memberid{
+	float: left;
+	
+}
+
+#j_ntpd_date{
+	float: right;
+	padding-left: 40px;
+	
+}
+
+
+
+
+
+

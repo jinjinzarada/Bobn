@@ -10,6 +10,7 @@ import kh.semi.bobn.community.model.dao.NtPlatingDao;
 import kh.semi.bobn.community.model.vo.NtPlatingContentVo;
 import kh.semi.bobn.community.model.vo.NtPlatingImgVo;
 import kh.semi.bobn.community.model.vo.NtPlatingListVo;
+import kh.semi.bobn.community.model.vo.NtPlatingRecommentVo;
 
 public class NtPlatingService {
 
@@ -69,16 +70,55 @@ public class NtPlatingService {
 	}
 	
 	// 게시글 상세조회
-		public NtPlatingListVo detailPlatingContent(int pbNo) {
+	public NtPlatingContentVo detailPlatingContent(int pbNo) {
+		System.out.println("PlatingService vo :" + pbNo);
+
+		Connection conn = getConnection();
+		NtPlatingContentVo ntpcVo = new NtPlatingDao().detailPlatingContent(conn, pbNo);
+		System.out.println("PlatingService ntpcVo :" + ntpcVo);
+
+		close(conn);
+		return ntpcVo;
+
+	}
+
+	// 게시글 상세조회(이미지)
+	public ArrayList<NtPlatingImgVo> detailPlatingImg(int pbNo) {
+		System.out.println("PlatingService vo :" + pbNo);
+
+		Connection conn = getConnection();
+		ArrayList<NtPlatingImgVo> ntpiVolist = new NtPlatingDao().detailPlatingImg(conn, pbNo);
+		System.out.println("PlatingService ntpcVo :" + ntpiVolist);
+
+		close(conn);
+		return ntpiVolist;
+
+	}
+
+	// 댓글작성
+	public int insertPlatingRecomment(NtPlatingRecommentVo ntprVo) {
+		System.out.println("PlatingService ntprVo :" + ntprVo);
+
+		Connection conn = getConnection();
+		int result = new NtPlatingDao().insertPlatingRecomment(conn, ntprVo);
+		System.out.println("PlatingService result :" + result);
+
+		close(conn);
+		return result;
+
+	}
+	
+	// 댓글조회
+		public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(int pbNo) {
 			System.out.println("PlatingService vo :" + pbNo);
-			
+
 			Connection conn = getConnection();
-			NtPlatingListVo ntpcVolist = new NtPlatingDao().detailPlatingContent(conn, pbNo);
-			System.out.println("PlatingService ntpcVolist :" + ntpcVolist);
+			ArrayList<NtPlatingRecommentVo> ntprVolist = new NtPlatingDao().detailPlatingRecomment(conn, pbNo);
+			System.out.println("PlatingService ntprVo :" + ntprVolist);
 
 			close(conn);
-			return ntpcVolist;
+			return ntprVolist;
 
 		}
-	
+
 }

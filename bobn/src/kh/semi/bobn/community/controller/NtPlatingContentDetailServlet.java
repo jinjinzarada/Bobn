@@ -1,6 +1,8 @@
 package kh.semi.bobn.community.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.bobn.community.model.service.NtPlatingService;
-import kh.semi.bobn.community.model.vo.NtPlatingListVo;
+import kh.semi.bobn.community.model.vo.NtPlatingContentVo;
+import kh.semi.bobn.community.model.vo.NtPlatingImgVo;
+import kh.semi.bobn.community.model.vo.NtPlatingRecommentVo;
 
 /**
  * Servlet implementation class NtPlatingContentDetailServlet
@@ -32,7 +36,7 @@ public class NtPlatingContentDetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		System.out.println("/ntpcdetail");
 		
-		//화면(nt_plating_detail.jsp)에서 입력받은 데이터 꺼내기
+		//화면(nt_plating_detail.jsp)에서 읽어온 데이터 꺼내기
 		String bnoStr = request.getParameter("pbNo");
 		System.out.println(bnoStr);
 		int pbNo = 0;
@@ -42,22 +46,32 @@ public class NtPlatingContentDetailServlet extends HttpServlet {
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
-//		if (pbNo < 1) { // 오류발생
-//			// 읽어온 게시글 번호가 이상할 경우 아래 페이지로 이동
-//			response.sendRedirect("ntpclist");
-//			return;
-//		}
-		// db 읽어오기
+		if (pbNo < 1) { // 오류발생
+			// 읽어온 게시글 번호가 이상할 경우 아래 페이지로 이동
+			response.sendRedirect("ntpclist");
+			return;
+		}
 		// service로 이동
-		NtPlatingListVo ntpcVolist = new NtPlatingService().detailPlatingContent(pbNo);
-		System.out.println(ntpcVolist);
-		if (ntpcVolist == null) {
+		//게시글 내용 
+		NtPlatingContentVo ntpcVo = new NtPlatingService().detailPlatingContent(pbNo);
+		//게시글 이미지(여러장)
+		ArrayList<NtPlatingImgVo> ntpiVolist = new NtPlatingService().detailPlatingImg(pbNo);
+		//댓글
+		ArrayList<NtPlatingRecommentVo> ntprVolist = new NtPlatingService().detailPlatingRecomment(pbNo);
+		System.out.println("ntpcVo디테일 :" + ntpcVo);
+		System.out.println("ntpiVolist디테일 :" + ntpiVolist);
+		if (ntpcVo == null) {
 			// db query문 실행 중 오류발생 시 아래 페이지로 이동
 			response.sendRedirect("ntpclist");
 			return;
 		}
-		//꺼낸 정보를 "ntpcVolist"에 담아서 화면에 뿌려줌
-		request.setAttribute("ntpcVolist", ntpcVolist);
+		//꺼낸 값을 키에 담아서 화면에 뿌려줌
+		//게시글 내용 
+		request.setAttribute("ntpcVo", ntpcVo);
+		//게시글 이미지(여러장)
+		request.setAttribute("ntpiVolist", ntpiVolist);
+		//댓글
+		request.setAttribute("ntprVolist", ntprVolist);
 
 		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_detail.jsp").forward(request, response);
 	}

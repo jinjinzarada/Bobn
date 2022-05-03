@@ -49,7 +49,6 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 						<div class="j_ntpl_article3_img">
 							<img src=<%=vo.getPiFile() %> onclick="location.href='ntpcdetail?pbNo=<%=vo.getPbNo() %>';" id="j_ntpl_img_item">
 						</div>
-						<div class="j_ntpl_article3_text">ntplCnt / ntprCnt</div>
 						<div class="j_ntpl_article3_text"><%=vo.getPbTitle() %></div>
 						<!--TODO : 나중에 지워야함  -->
 						<div class="j_ntpl_article3_text"><%=vo.getPbConcept() %></div>
