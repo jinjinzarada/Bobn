@@ -20,7 +20,7 @@
 								style="font-size: 0.8rem; color: #343f56;">(주)밥엔</li>
 							<li class="nav-item mb-2"
 								style="font-size: 0.8rem; color: #343f56;">대표이사 : 김밥상 |
-								개인정보보호채임자 : 이밥엔 | 사업자등록번호 : 123-45-5678 | 통신판매업신고번호 :
+								개인정보보호책임자 : 이밥엔 | 사업자등록번호 : 123-45-5678 | 통신판매업신고번호 :
 								제2022-서울어디-1234호</li>
 							<li class="nav-item mb-2"
 								style="font-size: 0.8rem; color: #343f56;">(12345) 서울 특별시
