@@ -3,6 +3,7 @@ package kh.semi.bobn.shopping.model.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+import kh.semi.bobn.shopbasket.model.dao.ShopbasketDao;
 import kh.semi.bobn.shopping.model.dao.ShoppingDao;
 import kh.semi.bobn.shopping.model.vo.ShoppingVo;
 import static kh.semi.bobn.common.jdbc.JdbcDBCP.*;
@@ -30,4 +31,14 @@ public class ShoppingService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public int updateAmount(String pId, String memberId, int updateValue) {
+		int result = 0;
+		
+		Connection conn = getConnection();
+		result = new ShopbasketDao().updateAmount(conn, pId, memberId, updateValue);
+		close(conn);
+
+		return result;
+	}
+
 }

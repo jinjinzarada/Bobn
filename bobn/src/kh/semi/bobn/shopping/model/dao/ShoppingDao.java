@@ -140,6 +140,26 @@ public ArrayList<ShoppingVo> listShoppingCountry(Connection conn, String pCountr
 	}
 	
 	return volist;
-
+}
+public int updateAmount(Connection conn, String pId, String memberId, int updateValue) {
+	
+	int result = 0;
+	
+	String sql = "update basket_item set basketitem_amount = ? where member_id =? and p_id=?";
+	try {
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, updateValue);
+		pstmt.setString(2,memberId);
+		pstmt.setString(3,pId);
+		
+		result =pstmt.executeUpdate();
+		
+	}catch(SQLException e){
+		e.printStackTrace();
+	}finally {
+		close(pstmt);
+	}
+	System.out.println("result"+ result);
+	return result;
 }
 }

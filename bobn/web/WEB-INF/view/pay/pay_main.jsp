@@ -11,7 +11,19 @@
 <title>주문/결제 페이지</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
+  <link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 <body>
+<div id="c_pay_header">
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
 	<div class="c_pay_frame">
 		<!-- 주문자 -->
 		<br>
@@ -137,6 +149,13 @@
 			<button type="button" class="c_pay_btn"
 				onclick="javascript:btn()">결제하기</button>
 		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="c_pay_footer">
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 	</div>
 <script>
     function findAddress(){

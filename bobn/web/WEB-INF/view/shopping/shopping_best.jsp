@@ -13,16 +13,34 @@
 <title>BEST페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 <body>
 <%
 ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("volist");
 %>
+<div id="c_best_header">
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
+<br>
+<br>
      <div class="c_wrap content">
         <div id="c_content">
             <section>
                 <article id="c_best_article0">
                     <p>BEST상품</p>
+                    <br>
                 </article>
+                <br>
+                <br>
+                <br>
                 <article id="c_best_article1">
                 	<div class="c_best_concept_btn_wrap">
 						<button type="button" class="c_best_country_btn" id="c_best_kr" 
@@ -39,6 +57,8 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
 					</div>
                 </article>
+                <br>
+                <br>
                 <ul class="c_best_menu">
                     <li>
                       <a href="#" id="c_best_select1">추천순 &#9660;</a>
@@ -49,6 +69,8 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                       </ul>
                     </li>
                 </ul>
+                <br>
+                <br>
                 <article id="c_best_article2">
                     <table>
                         <tr>
@@ -131,6 +153,8 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         </tr>
                     </table>
                 </article>
+                <br>
+                <br>
                 <!-- 페이징 -->
                 <article id="c_best_article3">
 					<div class="c_best_pagination">
@@ -156,6 +180,11 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
             </section>
         </div>
+        <br>
+        <br>
+    <div id="c_best_footer">
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+	</div>
     </div>
     <script>
 		//나라별 화면 조회

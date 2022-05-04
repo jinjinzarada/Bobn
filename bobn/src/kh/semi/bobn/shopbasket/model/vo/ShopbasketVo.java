@@ -27,7 +27,9 @@ public class ShopbasketVo {
 	private int dStatus;
 	private String dType;
 	
-	
+//  file	
+	private String d_file;
+
 	@Override
 	public String toString() {
 		return "ShopbasketVo [pId=" + pId + ", memberId=" + memberId + ", basketitemAmount=" + basketitemAmount
@@ -35,11 +37,31 @@ public class ShopbasketVo {
 				+ p_sellamount + ", p_weight=" + p_weight + ", p_calorie=" + p_calorie + ", p_flavor=" + p_flavor
 				+ ", p_postdate=" + p_postdate + ", p_salecheck=" + p_salecheck + ", p_detail=" + p_detail
 				+ ", orderNumber=" + orderNumber + ", dDate=" + dDate + ", dCompany=" + dCompany + ", dNumber="
-				+ dNumber + ", dStatus=" + dStatus + ", dType=" + dType + "]";
+				+ dNumber + ", dStatus=" + dStatus + ", dType=" + dType + ", d_file=" + d_file + "]";
 	}
 
 	public String getpId() {
 		return pId;
+	}
+
+	public void setpId(String pId) {
+		this.pId = pId;
+	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public int getBasketitemAmount() {
+		return basketitemAmount;
+	}
+
+	public void setBasketitemAmount(int basketitemAmount) {
+		this.basketitemAmount = basketitemAmount;
 	}
 
 	public String getP_name() {
@@ -122,26 +144,6 @@ public class ShopbasketVo {
 		this.p_detail = p_detail;
 	}
 
-	public void setpId(String pId) {
-		this.pId = pId;
-	}
-
-	public String getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-
-	public int getBasketitemAmount() {
-		return basketitemAmount;
-	}
-
-	public void setBasketitemAmount(int basketitemAmount) {
-		this.basketitemAmount = basketitemAmount;
-	}
-
 	public String getOrderNumber() {
 		return orderNumber;
 	}
@@ -190,10 +192,12 @@ public class ShopbasketVo {
 		this.dType = dType;
 	}
 
-	
-	
-	
-	
+	public String getD_file() {
+		return d_file;
+	}
 
+	public void setD_file(String d_file) {
+		this.d_file = d_file;
+	}
 	
 }
