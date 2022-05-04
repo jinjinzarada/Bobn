@@ -33,7 +33,6 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 </div>
 	<div class="j_wrap content">
-<hr>
 		<div id="j_content">
 			<section>
 				<article id="j_ntpl_article1">
@@ -113,6 +112,8 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 			location.href="/bobn/ntpclist?pbConcept=3";
 		}); 
 	</script>
+	<div id="j_ntpl_footer">
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+	</div>
 </body>
 </html>

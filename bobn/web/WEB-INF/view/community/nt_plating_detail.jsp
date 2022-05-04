@@ -32,7 +32,9 @@ NtPlatingContentVo ntpcVo = (NtPlatingContentVo)request.getAttribute("ntpcVo");
 ArrayList<NtPlatingImgVo> ntpiVolist = (ArrayList<NtPlatingImgVo>)request.getAttribute("ntpiVolist");
 ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)request.getAttribute("ntprVolist");
 %>
+<div id="j_ntpd_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
  <div class="j_wrap content">
         <div id="j_content">
             <section>
@@ -120,6 +122,8 @@ ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)re
       x[slideIndex-1].style.display = "block";  
     }
     </script>
-    	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+    <div id="j_ntpd_footer">
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+	</div>
 </body>
 </html>

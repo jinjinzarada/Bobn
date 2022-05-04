@@ -22,7 +22,9 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="j_ntpw_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
  <div class="j_wrap content">
         <div id="j_content">
             <section>
@@ -84,6 +86,8 @@
                 $("#j_ntpw_files").append(html);
         });
     </script>
-    <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+    <div id="j_ntpw_footer">
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+	</div>
 </body>
 </html>
