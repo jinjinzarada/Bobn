@@ -26,6 +26,8 @@ public class PayVo {
 	private String pId;
 	private int basketitemAmount;
 	
+	private String d_file;
+
 	@Override
 	public String toString() {
 		return "PayVo [payNumber=" + payNumber + ", orderNumber=" + orderNumber + ", payName=" + payName + ", payDate="
@@ -33,7 +35,7 @@ public class PayVo {
 				+ ", p_name=" + p_name + ", p_category=" + p_category + ", p_price=" + p_price + ", p_sellamount="
 				+ p_sellamount + ", p_weight=" + p_weight + ", p_calorie=" + p_calorie + ", p_flavor=" + p_flavor
 				+ ", p_postdate=" + p_postdate + ", p_salecheck=" + p_salecheck + ", p_detail=" + p_detail + ", pId="
-				+ pId + ", basketitemAmount=" + basketitemAmount + "]";
+				+ pId + ", basketitemAmount=" + basketitemAmount + ", d_file=" + d_file + "]";
 	}
 
 	public int getPayNumber() {
@@ -188,4 +190,12 @@ public class PayVo {
 		this.basketitemAmount = basketitemAmount;
 	}
 
+	public String getD_file() {
+		return d_file;
+	}
+
+	public void setD_file(String d_file) {
+		this.d_file = d_file;
+	}
+	
 }

@@ -95,7 +95,8 @@
 					<input type="checkbox" name ="check" value="select">
 				</td>
 				<td width="297">
-					<object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object>
+					<!-- <object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object> -->
+					<img src="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70">
 				</td>
 				<td width="239">${vo.p_name}</td>
 				<td width="180">

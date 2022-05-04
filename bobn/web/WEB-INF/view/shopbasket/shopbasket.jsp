@@ -47,7 +47,9 @@
 			</div>
 
 			<div class="c_cart_image">
-				<object data="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70"></object>
+				<!--<object data="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70"></object>-->
+				<img src="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70">
+				<!--<img src="/upload/${vo.d_file}" alt="" width="70">-->
 			</div>
 
 			<div class="c_cart_description">
@@ -202,5 +204,6 @@ function funMinusAmount(){
 }
 */
 </script>
+
 </body>
 </html>

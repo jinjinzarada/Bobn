@@ -10,7 +10,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import kh.semi.bobn.pay.model.vo.PayVo;
-import kh.semi.bobn.shopbasket.model.vo.ShopbasketVo;
 
 public class PayDao {
 	private PreparedStatement pstmt = null;
@@ -44,11 +43,11 @@ public class PayDao {
 	public ArrayList<PayVo> selectPayList(Connection conn, String memberId) {
 		ArrayList<PayVo> volist =null;
 		
-		String sql="select * from product p join basket_item b using(p_id) where b.member_id = ?";
-		
+//		String sql="select * from product p join basket_item b using(p_id) where b.member_id = ?";
+		String sql = "select * from product p, detail_image d, basket_item b where p.p_id = d.p_id and d.p_id = b.p_id order by b.member_id";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, memberId);
+//			pstmt.setString(1, memberId);
 			rs = pstmt.executeQuery();
 		
 			if(rs.next()) {
@@ -69,6 +68,7 @@ public class PayDao {
 				vo.setP_postdate(rs.getTimestamp("p_postdate"));
 				vo.setP_salecheck(rs.getString("p_salecheck"));
 				vo.setP_detail(rs.getString("p_detail"));
+				vo.setD_file(rs.getString("d_file"));
 				volist.add(vo);
 				}while(rs.next());
 			}

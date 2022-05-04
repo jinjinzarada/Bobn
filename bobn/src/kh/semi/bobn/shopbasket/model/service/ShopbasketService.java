@@ -33,7 +33,9 @@ public class ShopbasketService {
 		close(conn);
 
 		return result;
+		
 	}
+	
 	public int selectShopbasketProductAmount(String pId, String memberId) {
 		int result = 0;
 		
@@ -42,7 +44,9 @@ public class ShopbasketService {
 		close(conn);
 
 		return result;
+		
 	}
+	
 	public int deleteAmount(String pId, String memberId) {
 		int result = 0;
 		
