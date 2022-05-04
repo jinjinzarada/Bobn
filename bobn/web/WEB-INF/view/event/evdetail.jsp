@@ -4,6 +4,10 @@
 <%@page import="kh.semi.bobn.event.model.vo.EventVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<!-- JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -26,14 +30,10 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 	<section>
-		<%
-			EventVo vo = (EventVo) request.getAttribute("eVo");
-		if (vo.geteNo() == 0) {
-		%>
+	<c:if test="${empty eVo}">
 		<p>해당 글이 없습니다.</p>
-		<%
-} else {
-%>
+	</c:if>
+	<c:if test="${not empty eVo}">
 		<div class="p_section_container">
 			<div class="p_headline_container">
 				<div class="p_section_head">
@@ -47,16 +47,18 @@
 					</colgroup>
 					<thead>
 						<tr>
-							<th><%=vo.geteTitle()%></th>
+							<th>${eVo.eTitle }</th>
 						</tr>
 					</thead>
 					<tbody>
+						<c:if test="${not empty eVo.eImageRoute}">
 						<tr style="border: transparent">
-							<td><img src="<%=request.getContextPath() %><%=vo.geteImageRoute()%>">
+							<td><img src="<%=request.getContextPath() %>${eVo.eImageRoute}">
 						</td>
 						</tr>
+						</c:if>
 						<tr>
-							<td><%=vo.geteContent()%></td>
+							<td>${eVo.eContent }</td>
 						</tr>
 						<tr>
 							<td>공유하기</td>
@@ -71,10 +73,8 @@
 					onClick="history.back()">
 			</div>
 		</div>
+		</c:if>
 	</section>
-	<%
-		}
-	%>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>
