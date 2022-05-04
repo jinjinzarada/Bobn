@@ -57,7 +57,7 @@ public class PasswordFindServlet extends HttpServlet {
 
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='Login';");
+					script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='login';");
 					script.println("</script>");
 				}
 				
@@ -103,13 +103,13 @@ public class PasswordFindServlet extends HttpServlet {
 				} catch (Exception e) {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='Login';");
+					script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='login';");
 					script.println("</script>");
 				}
 				
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('입력하신 이메일주소로 이메일이 발송되었습니다. 확인하여 주시기 바랍니다.'); location.href='Login';");
+				script.println("alert('입력하신 이메일주소로 이메일이 발송되었습니다. 확인하여 주시기 바랍니다.'); location.href='login';");
 				script.println("</script>");
 				
 				}

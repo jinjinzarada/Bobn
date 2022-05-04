@@ -21,8 +21,9 @@
 <div>
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 </div>
+<div class="l_all_wrap">
     <div class="title">회원가입</div>
-    <div class="register" style="margin-left:0px">
+    <div class="register">
         <form action="<%=request.getContextPath()%>/register.do" name="registerform" method="post" onsubmit="return rcheck()">
             <div class="flex">
                 <ul class="container">
@@ -187,6 +188,7 @@
     <div class="title2"></div>
    
     <div style="color: white;">.</div>
+ </div>
  <div>
     <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
     </div>
@@ -302,7 +304,7 @@
                // };
                 
                 
-                alert("회원가입이 완료되었습니다.\n로그인 화면으로 이동합니다.");
+                
                 }
 
 

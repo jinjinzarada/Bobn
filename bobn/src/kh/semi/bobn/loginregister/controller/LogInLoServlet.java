@@ -1,6 +1,8 @@
 package kh.semi.bobn.loginregister.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -53,13 +55,21 @@ public class LogInLoServlet extends HttpServlet {
 		UserVo vo = new UserService().login(mId, pwd);
 		if(vo == null) {  // 로그인실패
 			System.out.println("로그인 실패");
-			response.sendRedirect("login");
+			
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('입력하신 정보가 올바르지 않습니다. 다시 한번 입력하신 정보를 확인하여 주시기 바랍니다.'); location.href='login';");
+			script.println("</script>");
 		}else {  // 로그인성공
 			System.out.println("로그인 성공!!");
 			request.getSession().setAttribute("ssUserVo", vo);
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('로그인에 성공하였습니다. 반갑습니다 회원님.'); location.href='main';");
+			script.println("</script>");
 //			response.sendRedirect("./");  // 상대경로
 			//TODO - 이동경로 설정 필요
-			response.sendRedirect(request.getContextPath()+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
+			//response.sendRedirect(request.getContextPath()+"/main");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
 			//절대하지 마세요.response.sendRedirect("myWeb1"+"/");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
 		}
 	}
