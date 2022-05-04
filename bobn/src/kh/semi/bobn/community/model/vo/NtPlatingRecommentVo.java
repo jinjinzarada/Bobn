@@ -17,29 +17,32 @@ public class NtPlatingRecommentVo {
 	private Timestamp prDate;
 	private int pbNo;
 	private String memberId;
+	private int prRecommentCnt;
 	
 	//생성자
 	public NtPlatingRecommentVo() {}
 	
-	public NtPlatingRecommentVo(int prNo, String prContent, Timestamp prDate, int pbNo, String memberId) {
+	public NtPlatingRecommentVo(int prNo, String prContent, Timestamp prDate, int pbNo, String memberId, int prRecommentCnt) {
 		super();
 		this.prNo = prNo;
 		this.prContent = prContent;
 		this.prDate = prDate;
 		this.pbNo = pbNo;
 		this.memberId = memberId;
+		this.prRecommentCnt = prRecommentCnt;
 	}
 	//toString
 	@Override
 	public String toString() {
 		return "NtPlatingRecommentVo [prNo=" + prNo + ", prContent=" + prContent + ", prDate=" + prDate + ", pbNo="
-				+ pbNo + ", memberId=" + memberId + "]";
+				+ pbNo + ", memberId=" + memberId + ", prRecommentCnt=" + prRecommentCnt + "]";
 	}
-	
+
 	//게터세터
 	public int getPrNo() {
 		return prNo;
 	}
+
 	public void setPrNo(int prNo) {
 		this.prNo = prNo;
 	}
@@ -66,6 +69,14 @@ public class NtPlatingRecommentVo {
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+
+	public int getPrRecommentCnt() {
+		return prRecommentCnt;
+	}
+
+	public void setPrRecommentCnt(int prRecommentCnt) {
+		this.prRecommentCnt = prRecommentCnt;
 	}
 	
 	

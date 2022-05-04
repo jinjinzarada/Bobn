@@ -289,5 +289,34 @@ public class NtPlatingDao {
 			return ntprVolist;
 
 		}
+		
+	
+		// 댓글 총 갯수 조회
+		public NtPlatingRecommentVo countPlatingRecomment(Connection conn, int pbNo) {
+			NtPlatingRecommentVo ntprVo = null;
+			String sql = "select ntpr.pb_no, (select count(*) from ntpr where pb_no=?) as prRecommentCnt from ntpr";
+
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, pbNo);
+				rs = pstmt.executeQuery();
+				
+				ntprVo = new NtPlatingRecommentVo();
+				if(rs.next()) {
+					ntprVo.setPrRecommentCnt(rs.getInt("prRecommentCnt"));
+				}
+				
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+
+			return ntprVo;
+		}
+
+		
 
 }

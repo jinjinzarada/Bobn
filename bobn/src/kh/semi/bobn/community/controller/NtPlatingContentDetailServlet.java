@@ -58,6 +58,9 @@ public class NtPlatingContentDetailServlet extends HttpServlet {
 		ArrayList<NtPlatingImgVo> ntpiVolist = new NtPlatingService().detailPlatingImg(pbNo);
 		//댓글
 		ArrayList<NtPlatingRecommentVo> ntprVolist = new NtPlatingService().detailPlatingRecomment(pbNo);
+		//댓글 총 갯수 조회
+		NtPlatingRecommentVo ntprVo = new NtPlatingService().countPlatingRecomment(pbNo);
+		
 		System.out.println("ntpcVo디테일 :" + ntpcVo);
 		System.out.println("ntpiVolist디테일 :" + ntpiVolist);
 		if (ntpcVo == null) {
@@ -72,7 +75,9 @@ public class NtPlatingContentDetailServlet extends HttpServlet {
 		request.setAttribute("ntpiVolist", ntpiVolist);
 		//댓글
 		request.setAttribute("ntprVolist", ntprVolist);
-
+		//댓글 총 갯수
+		request.setAttribute("ntprVo", ntprVo);
+		
 		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_detail.jsp").forward(request, response);
 	}
 

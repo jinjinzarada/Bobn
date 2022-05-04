@@ -84,7 +84,6 @@ public class NtPlatingContentListServlet extends HttpServlet {
 		// service로 이동
 		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingService().listPlatingContent(pbConcept, startRnum, endRnum);
 		System.out.println("리스트 갯수 : " + ntpcVolist.size());
-		System.out.println(ntpcVolist);
 
 		// 읽어온 디비를 "ntpcVolist"넣어줌(jsp랑 소통)
 		request.setAttribute("ntpcVolist", ntpcVolist);

@@ -31,6 +31,7 @@
 NtPlatingContentVo ntpcVo = (NtPlatingContentVo)request.getAttribute("ntpcVo");
 ArrayList<NtPlatingImgVo> ntpiVolist = (ArrayList<NtPlatingImgVo>)request.getAttribute("ntpiVolist");
 ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)request.getAttribute("ntprVolist");
+NtPlatingRecommentVo ntprVo = (NtPlatingRecommentVo)request.getAttribute("ntprVo");
 %>
 <div id="j_ntpd_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
@@ -66,8 +67,8 @@ ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)re
                         <tr>
                             <td class="j_ntpd_article2_img">
                                 <ul>
-                                    <li id="j_ntpd_ntprCnt">
-                                        <img src="https://via.placeholder.com/15" alt=""> ntprCnt
+                                    <li id="j_ntpd_ntprCnt">댓글 : &nbsp;
+                                    <a id="j_ntpd_cnt"><%=ntprVo.getPrRecommentCnt() %></a>
                                     </li>
                                 </ul>
                             </td>

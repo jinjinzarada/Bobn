@@ -120,5 +120,18 @@ public class NtPlatingService {
 			return ntprVolist;
 
 		}
+		
+		// 댓글 총 갯수 조회
+				public NtPlatingRecommentVo countPlatingRecomment(int pbNo) {
+					System.out.println("PlatingService vo :" + pbNo);
+
+					Connection conn = getConnection();
+					NtPlatingRecommentVo ntprVo = new NtPlatingDao().countPlatingRecomment(conn, pbNo);
+					System.out.println("PlatingService ntprVo :" + ntprVo);
+
+					close(conn);
+					return ntprVo;
+
+				}
 
 }

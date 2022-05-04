@@ -95,6 +95,13 @@
 	height: 600px;
 	font-family: 'Noto Sans', sans-serif;
 }
+#j_ntpd_cnt{
+	color: #F54748;
+	font-weight: bold;
+}
+#j_ntpd_ntprCnt{
+	font-weight: bold;
+}
 
 /* 슬라이드 버튼 */
 .slides{
