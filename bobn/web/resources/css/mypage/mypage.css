@@ -18,6 +18,12 @@ header {
 	margin-left: 80.500px;
 	margin-right: 80.500px;
 }
+.p_section_container {
+	margin-left: 80.500px;
+	margin-right: 80.500px;
+	margin-top: 80.500px;
+	margin-bottom: 80.500px;
+}
 
 .tab {
 	float: left;
@@ -72,15 +78,11 @@ header {
 }
 
 .form-check-input:checked {
-	background-color: #f54748;
-	border: #f54748;
+	background-color: #f54748 !important;
+	border: #f54748 !important;
 }
 
-.btn-primary {
-	background-color: #f54748;
-	border: none;
-}
-
-footer {
-	border: 0;
+.btn-danger {
+	background-color: #f54748 !important;
+	border: none !important;
 }

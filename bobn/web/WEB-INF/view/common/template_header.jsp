@@ -2,6 +2,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="kh.semi.bobn.user.model.vo.UserVo" %>
+<!-- JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <header>
 		<div>
@@ -46,9 +50,18 @@
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/mypage" class="nav-link link-dark px-2"> 
 							<img src="<%=request.getContextPath() %>/resources/image/common_main/person.png" class="p_icon">
 						</a></li>
-						<!-- 로그인, 아웃 변경 필요 -->
+<%-- 						<!-- 로그인, 아웃 변경 -->
+						<c:choose>
+							<c:when test="${sessionScope.UserDao==null}"> --%>
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/login"
 							class="nav-link link-dark px-2">Login</a></li>
+<%-- 						</c:when>
+						<c:otherwise>
+				 		<li class="nav-item"><a href="<%=request.getContextPath() %>/main"
+							class="nav-link link-dark px-2">Logout</a></li>
+							<!-- '로그아웃 되었습니다' 알림창  -->
+						</c:otherwise>
+						</c:choose> --%>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2">|</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/register"

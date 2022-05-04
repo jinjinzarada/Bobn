@@ -70,9 +70,17 @@ public class RegisterDoServlet extends HttpServlet {
 		int result = new UserService().insertMember(vo);
 		if(result == 0) {
 			System.out.println("회원가입실패===================================");
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('다시 한번 회원가입을 시도하여 주시기 바랍니다. 불편을 끼쳐 죄송합니다.'); location.href='register';");
+			script.println("</script>");
 		} else {
 			System.out.println("회원가입성공===================================");
-			request.getRequestDispatcher("WEB-INF/view/loginregister/login.jsp").forward(request, response);
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('회원가입을 축하드립니다. 로그인 후 서비스를 이용하시기 바랍니다.'); location.href='login';");
+			script.println("</script>");
+			//request.getRequestDispatcher("WEB-INF/view/loginregister/login.jsp").forward(request, response);
 		}
 		
 	}
