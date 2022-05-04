@@ -1,11 +1,17 @@
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_detail.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <%@page import="kh.semi.bobn.community.model.vo.NtPlatingRecommentVo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kh.semi.bobn.community.model.vo.NtPlatingImgVo"%>
 <%@page import="kh.semi.bobn.community.model.vo.NtPlatingContentVo"%>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_detail.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +19,11 @@
 <head>
 <meta charset="UTF-8">
 <title>플레이팅_상세조회</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- 받아온 db가 담겨있는 ntpcVolist를 화면에 뿌려줄 예정 -->
@@ -21,12 +32,10 @@ NtPlatingContentVo ntpcVo = (NtPlatingContentVo)request.getAttribute("ntpcVo");
 ArrayList<NtPlatingImgVo> ntpiVolist = (ArrayList<NtPlatingImgVo>)request.getAttribute("ntpiVolist");
 ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)request.getAttribute("ntprVolist");
 %>
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
  <div class="j_wrap content">
         <div id="j_content">
             <section>
-                <article id="j_ntpd_article0">
-                    <p>플레이팅_상세조회</p>
-                </article>
                 <article id="j_ntpd_article1">
                     <ul>
                         <li id="j_ntpd_member_id">
@@ -111,5 +120,6 @@ ArrayList<NtPlatingRecommentVo> ntprVolist = (ArrayList<NtPlatingRecommentVo>)re
       x[slideIndex-1].style.display = "block";  
     }
     </script>
+    	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 </body>
 </html>

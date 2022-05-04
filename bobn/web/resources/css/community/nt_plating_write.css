@@ -1,5 +1,14 @@
 @charset "UTF-8";
 /* 페이지명 article0*/
+
+*, ::after, ::before{
+box-sizing : unset;
+}
+
+#j_ntpw_article1{
+	box-sizing : unset;
+}
+
 #j_ntpw_article0 {
 	font-size: 30px;
 	border-color: white;
@@ -12,10 +21,16 @@
 	padding: 20px;
 }
 
+.j_ntpw_ta{
+	padding-left : 35px;
+}
+
 #j_ntpw_write {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-collapse: unset;
+
 }
 
 .j_ntpw_tablewr {
@@ -23,7 +38,7 @@
 }
 
 #j_ntpw_title {
-	width: 562px;
+	width: 658px;
 	height: 25px;
 }
 
@@ -31,8 +46,16 @@
 	width: 100%;
 }
 
-textarea {
+
+#j_ntpw_textarea {
 	resize: none;
+	width: 658px;
+}
+#j_ntpw_addfile{
+	border-radius: 3px;
+	border: 1px solid gray;
+	width: 84.17px;
+	height: 28px;
 }
 
 /* 저장버튼 article2*/
@@ -44,7 +67,8 @@ textarea {
 	background-color: #F54748;
 	border-top-right-radius: 5px;
 	border-radius: 5px;
-	margin: 10px;
+	margin-left: 400px;
+	
 }
 
 #j_ntpw_write_btn:hover {

@@ -1,10 +1,16 @@
-<%@page import="kh.semi.bobn.community.model.vo.NtPlatingListVo"%>
-<%@page import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_list.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<%@page import="kh.semi.bobn.community.model.vo.NtPlatingListVo"%>
+<%@page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,18 +18,24 @@
 <head>
 <meta charset="UTF-8">
 <title>플레이팅_조회</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- 받아온 db가 담겨있는 ntpcVolist를 화면에 뿌려줄 예정 -->
 <%
 ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getAttribute("ntpcVolist");
 %>
+<div id="j_ntpl_header">
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
 	<div class="j_wrap content">
+<hr>
 		<div id="j_content">
 			<section>
-				<article id="j_ntpl_article0">
-					<p>플레이팅</p>
-				</article>
 				<article id="j_ntpl_article1">
 				<!-- 컨셉버튼 -->
 					<div class="j_ntpl_concept_btn_wrap">
@@ -100,8 +112,7 @@ ArrayList<NtPlatingListVo> ntpcVolist = (ArrayList<NtPlatingListVo>)request.getA
 		$("#j_ntpl_snack").on("click", function(){
 			location.href="/bobn/ntpclist?pbConcept=3";
 		}); 
-		 
-		
 	</script>
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 </body>
 </html>

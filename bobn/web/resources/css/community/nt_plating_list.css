@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+#j_ntpl_header{
+	width: 1500px;
+}
+
 /* 페이지명 article0*/
 #j_ntpl_article0 {
 	font-size: 30px;
@@ -73,6 +78,7 @@
 	cursor: pointer;
 	width: 300px;
 	height: 300px;
+	box-sizing : unset;
 }
 
 #j_ntpl_img_item {
