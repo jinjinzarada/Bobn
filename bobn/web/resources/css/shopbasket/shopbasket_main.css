@@ -7,6 +7,14 @@
 * {
     box-sizing: border-box;
 }
+#c_cart_header{
+          width:100%;
+          font-family: 'Noto Sans', sans-serif;
+}
+#c_cart_footer{
+          width:100%;
+          font-family: 'Noto Sans', sans-serif;
+}
 .container {
     width: 1500px;
     max-width: none !important;
@@ -39,6 +47,7 @@ html,body {
     color: #5E6977;
     font-size: 18px;
     font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .c_cart_firstLine {
@@ -56,15 +65,18 @@ html,body {
 .c_cart_proname {
     float: left;
     margin-right : 140px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .c_cart_procnt {
     float: left;
     margin-right : 120px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .c_cart_proprice {
     float: left;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .c_cart_item {
@@ -143,14 +155,17 @@ html,body {
     height:60px; 
     border: none;
     cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
 }
 .c_cart_order-btn:hover{
     background-color: rgb(255, 175, 25);
+    font-family: 'Noto Sans', sans-serif;
 }
 .c_cart_jjin_total-price{
     background-color: #E1E8EE;
     color: #43484D;
     font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .c_cart_total-price {

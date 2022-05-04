@@ -1,3 +1,7 @@
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/pay/pay.css">
@@ -11,11 +15,6 @@
 <title>주문/결제 페이지</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
-  <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -26,9 +25,7 @@
 </div>
 	<div class="c_pay_frame">
 		<!-- 주문자 -->
-		<br>
 		<h2 class="c_payment_title">&nbsp; 주문자</h2>
-		<br>
 		<hr>
 		<table>
         <tr>
@@ -94,14 +91,14 @@
 			<c:forEach items="${payvolist}" var="vo">
 		<table class="c_pay_order_list">
 			<tr>
-				<td width="99">
+				<td width="102">
 					<input type="checkbox" name ="check" value="select">
 				</td>
-				<td width="270.5">
+				<td width="297">
 					<object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object>
 				</td>
-				<td width="213">${vo.p_name}</td>
-				<td width="155.5">
+				<td width="239">${vo.p_name}</td>
+				<td width="180">
 					<span id="c_pay_price">${vo.p_price}</span>원
 				</td>
 				<td>

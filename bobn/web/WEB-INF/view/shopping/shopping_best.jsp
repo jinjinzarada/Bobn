@@ -29,18 +29,12 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 <div id="c_best_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 </div>
-<br>
-<br>
      <div class="c_wrap content">
         <div id="c_content">
             <section>
                 <article id="c_best_article0">
                     <p>BEST상품</p>
-                    <br>
                 </article>
-                <br>
-                <br>
-                <br>
                 <article id="c_best_article1">
                 	<div class="c_best_concept_btn_wrap">
 						<button type="button" class="c_best_country_btn" id="c_best_kr" 
@@ -57,8 +51,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
 					</div>
                 </article>
-                <br>
-                <br>
                 <ul class="c_best_menu">
                     <li>
                       <a href="#" id="c_best_select1">추천순 &#9660;</a>
@@ -69,8 +61,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                       </ul>
                     </li>
                 </ul>
-                <br>
-                <br>
                 <article id="c_best_article2">
                     <table>
                         <tr>
@@ -154,7 +144,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                     </table>
                 </article>
                 <br>
-                <br>
                 <!-- 페이징 -->
                 <article id="c_best_article3">
 					<div class="c_best_pagination">
@@ -180,7 +169,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
             </section>
         </div>
-        <br>
         <br>
     <div id="c_best_footer">
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>

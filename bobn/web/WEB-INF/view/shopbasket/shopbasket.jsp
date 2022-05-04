@@ -21,7 +21,9 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <body>
-<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
+<div id="c_cart_header">
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+</div>
 	<div class="c_shopping-cart">
 		<!-- Cart_Title -->
 		<div class="c_cart_title">
@@ -79,9 +81,10 @@
 			<button class="c_cart_order-btn" type="button" name="order"
 				onclick="location.href = '/bobn/paylist';">주문하기</button>
 		</center>
-		<br>
 	</div>
-	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
+	<div id="c_cart_footer">
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+	</div>
 <script>
 function selectAll(selectAll)  {
 	  const checkboxes 
