@@ -1,8 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
-* {
-	font-family: 'Noto Sans', sans-serif;
-}
+
 
 header {
 	border:0;
@@ -15,59 +12,83 @@ header {
             margin-left: 80.500px;
             margin-right: 80.500px;
         }
+         
  /* section */
         .p_section_container {
-            margin-left: 80.500px;
-            margin-right: 80.500px;
-            margin-top: 80.500px;
-            margin-bottom: 80.500px;
+        	max-width: 1500px;
+        	/* 위 nav와 banner 보다 작아서 좌우 패딩 줌 */
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 80px;
+            margin-bottom: 80px;
         }
         .p_headline_container {
-            display: grid;
-            grid-template-columns: 1000px 80px;
-            grid-template-rows: 30px;
+            display: flex;
             justify-content: center;
             margin-bottom: 20px;
         }
         .p_section_head {
+        	width:50%;
+        	text-align: left; 
             color: #343f56;
+            /* BEST 즉 p_section_head은 앞에 약간 띄움  */
+            padding-left:5px;
         }
         .p_section_more {
+        	width:50%;
             text-align: right;
             font-size: 15px;
             color: #f54748;
+            position: relative;
+        }
+        .p_section_more>div{
+        	position: absolute;
+        	bottom: 3px;
+        	right: 0;
+        }
+
+        .flex-container{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            vertical-align: top;
         }
         .p_article_container {
-            display: grid;
-            grid-template-columns: 200px 200px 200px 200px 200px;
-            grid-template-rows: 200px 90px;
-            grid-column-gap: 20px;
-            grid-row-gap: 0px;
+        	width: 20%;
+        	margin-right:10px;
+        	
+            display: flex;
+            flex-direction: column;
             justify-content: center;
         }
         .p_article-img {
             border: solid;
             border-bottom: none;
             border-color: #343f56;
-            width: 200px;
-            height: 200px;
+/*             이미지에 크기를 줘야 resizing되어 이미지가 겹치지 않음
+			width: 200px;
+            height: 200px; */
+        }
+        .p_article-img img {
+            width: 100%;
         }
         .p_article-desc {
             border: solid;
             border-color: #343f56;
-            width: 200px;
-            height: 90px;
+            text-align: center;
         }
         .p_article-desc-title {
             font-size: 16px;
             font-weight: 600;
             color: #343f56;
+            margin: 0;
         }
         .p_article-desc-detail {
             font-size: 15px;
             font-weight: 400;
             color: #343f56;
+            margin: 0;
         }
-        footer {
+       footer {
         	border : 0;
         }
