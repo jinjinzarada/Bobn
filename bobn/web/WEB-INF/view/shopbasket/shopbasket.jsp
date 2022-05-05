@@ -65,7 +65,7 @@
 					+
 				</button>
 			</div>
-			<div class="c_cart_total-price">&#8361;${vo.p_price}</div>
+			<div class="c_cart_total-price" value="*">&#8361;${vo.p_price}${vo.basketitemAmount}</div>
 		</div>
 		</c:forEach>
 		<br> <br>

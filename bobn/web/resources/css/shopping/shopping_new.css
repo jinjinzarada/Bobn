@@ -1,4 +1,17 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+* {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+#c_new_header{
+          width:100%;
+          font-family: 'Noto Sans', sans-serif;
+}
+#c_new_footer{
+          width:100%;
+          font-family: 'Noto Sans', sans-serif;
+}
 .container {
     width: 1500px;
     max-width: none !important;
@@ -9,17 +22,25 @@
     font-size: 30px;
     border-color: white;
     border-bottom: 1px solid #F54748;
+    font-family: 'Noto Sans', sans-serif;
 }
 /* 컨셉버튼 article1 */
-#c_new_kr{
+#c_new_kr:active{
     background-color: #F54748;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
 }
-
+#c_new_west:active{
+    background-color: #F54748;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
 #c_new_article1{
     display: flex;               
     justify-content: center; 
     align-items: center;
-    }
+    font-family: 'Noto Sans', sans-serif;
+}
 
 .c_new_country_btn{
     margin: auto;
@@ -33,10 +54,11 @@
     border-radius: 5px;
     background-color: white;
     border: 1px solid #F54748;
+    font-family: 'Noto Sans', sans-serif;
 }
     
 .c_new_country_btn:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+    border-right: none;
 }
     
 .c_new_country_btn:hover {
@@ -53,6 +75,7 @@ ul {
     display: table;
     margin-left: auto;
     align-items: center;
+    text-decoration-line: none;
 }
 a {
     text-decoration:none; color:#F54748;
@@ -73,6 +96,8 @@ a {
     height:40px; 
     line-height:40px; 
     color:#fff;
+    text-decoration-line: none;
+    font-family: 'Noto Sans', sans-serif;
 }
 .c_new_menu > li:hover .c_depth_1 {
     display:block;
@@ -89,6 +114,7 @@ a {
     padding:5px; 
     background:#f54747b2;
     color:#fff; 
+    text-decoration-line: none;
 }
 /*이미지 article3*/
 .c_new_article2_img{

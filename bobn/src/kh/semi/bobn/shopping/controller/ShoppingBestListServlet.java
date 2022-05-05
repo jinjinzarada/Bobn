@@ -35,10 +35,9 @@ public class ShoppingBestListServlet extends HttpServlet {
 
 		String pCountry = request.getParameter("pCountry");
 		if (pCountry == null) {
-			pCountry = "6";
+			pCountry = "1";
 		}
 
-		// paging Ã³¸®
 		int currentPage = 1;
 		
 		String pageNumStr = request.getParameter("pageNum");
@@ -49,8 +48,8 @@ public class ShoppingBestListServlet extends HttpServlet {
 		final int pageSize = 6;
 		final int pageBlock = 3;
 
-		int totalCnt = countPlatingList(pCountry);
-		System.out.println("°¹¼ö:" + totalCnt );
+		int totalCnt = countShoppingList(pCountry);
+		System.out.println("totalCnt:" + totalCnt );
 		
 		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 : 1);
 		int startPage = 1;
@@ -66,7 +65,6 @@ public class ShoppingBestListServlet extends HttpServlet {
 		}
 		System.out.println("paging" + startPage + "~" + endPage);
 
-		// rownum Ã³¸®
 		int startRnum = 0;
 		int endRnum = 0;
 		startRnum = (currentPage - 1) * pageSize + 1;
@@ -91,8 +89,8 @@ public class ShoppingBestListServlet extends HttpServlet {
 		
 		request.getRequestDispatcher("WEB-INF/view/shopping/shopping_best.jsp").forward(request, response);
 	}
-		//°Ô½Ã±Û ÃÑ °¹¼ö Á¶È¸
-		public int countPlatingList(String pCountry) {
+	
+		public int countShoppingList(String pCountry) {
 			int result = new ShoppingService().countShoppingList(pCountry);
 			return result;
 	}

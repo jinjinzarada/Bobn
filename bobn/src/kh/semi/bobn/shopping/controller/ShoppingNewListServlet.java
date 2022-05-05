@@ -13,7 +13,7 @@ import kh.semi.bobn.shopping.model.service.ShoppingService;
 import kh.semi.bobn.shopping.model.vo.ShoppingVo;
 
 /**
- * Servlet implementation class ShoppingNewListController
+ * Servlet implementation class ShoppingBestList
  */
 @WebServlet("/shopnlist")
 public class ShoppingNewListServlet extends HttpServlet {
@@ -31,13 +31,68 @@ public class ShoppingNewListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pId = "101aaa";
+		System.out.println("/shopnlist");
+
+		String pCountry = request.getParameter("pCountry");
+		if (pCountry == null) {
+			pCountry = "1";
+		}
+
+		int currentPage = 1;
 		
-		ArrayList<ShoppingVo> volist = new ShoppingService().selectShoppingList(pId);
+		String pageNumStr = request.getParameter("pageNum");
+		if(pageNumStr != null && !pageNumStr.equals(""))
+			  currentPage = Integer.parseInt(pageNumStr);
 		
-		System.out.println("shoppinglist volist:"+volist);
-		request.setAttribute("shoppingvolist", volist);
+		System.out.println("currentPage : " + currentPage);
+		final int pageSize = 6;
+		final int pageBlock = 3;
+
+		int totalCnt = countShoppingList(pCountry);
+		System.out.println("totalCnt:" + totalCnt );
+		
+		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 : 1);
+		int startPage = 1;
+		int endPage = 1;
+		if (currentPage % pageBlock == 0) {
+			startPage = ((currentPage / pageBlock) - 1) * pageBlock + 1;
+		} else {
+			startPage = (currentPage / pageBlock) * pageBlock + 1;
+		}
+		endPage = startPage + pageBlock - 1;
+		if (endPage > pageCnt) {
+			endPage = pageCnt;
+		}
+		System.out.println("paging" + startPage + "~" + endPage);
+
+		int startRnum = 0;
+		int endRnum = 0;
+		startRnum = (currentPage - 1) * pageSize + 1;
+		endRnum = startRnum + pageSize - 1;
+		if (endRnum > totalCnt) {
+			endRnum = totalCnt;
+		}
+
+		System.out.println("startRnum : "+ startRnum);
+		System.out.println("endRnum : "+ endRnum);
+		
+		ArrayList<ShoppingVo> volist = new ShoppingService().listShoppingCountry(pCountry, startRnum, endRnum);
+		System.out.println(volist);
+
+		request.setAttribute("volist", volist);
+		request.setAttribute("pCountry", pCountry);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+		request.setAttribute("currentPage", currentPage);
+		request.setAttribute("pageCnt", pageCnt);
+		
+		
 		request.getRequestDispatcher("WEB-INF/view/shopping/shopping_new.jsp").forward(request, response);
+	}
+	
+		public int countShoppingList(String pCountry) {
+			int result = new ShoppingService().countShoppingList(pCountry);
+			return result;
 	}
 
 	/**

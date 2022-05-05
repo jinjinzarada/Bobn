@@ -43,20 +43,10 @@ public class BasketListServlet extends HttpServlet {
 //		vo.setBasketitemAmount(amount);
 //		
 		
-//		String memberId = "msson912"; // TODO 회원가입 후 삭제
-//		String memberId = "minykim"; // TODO 회원가입 후 삭제
-//		String memberId = "2seochoi"; // TODO 회원가입 후 삭제
-//		String memberId = "jialee"; // TODO 회원가입 후 삭제
 		String memberId = "ziwoo123"; // TODO 회원가입 후 삭제
 		
 		ArrayList<ShopbasketVo> volist = new ShopbasketService().selectShopbasketList(memberId);
-		
-//		if(result ==0) {
-//			//실패
-//			System.out.println("실패");
-//		} else {
-//			System.out.println("성공");
-//		}
+
 		System.out.println("blist volist:" + volist);
 		request.setAttribute("basketvolist", volist);
 		request.getRequestDispatcher("WEB-INF/view/shopbasket/shopbasket.jsp").forward(request, response);

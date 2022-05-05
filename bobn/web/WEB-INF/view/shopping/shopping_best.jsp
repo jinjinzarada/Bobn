@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_best.css">
@@ -13,11 +16,7 @@
 <title>BEST페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
+
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -38,17 +37,17 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                 <article id="c_best_article1">
                 	<div class="c_best_concept_btn_wrap">
 						<button type="button" class="c_best_country_btn" id="c_best_kr" 
-						<c:if test="${pCountry eq '6'}">style="background-color : #F54748; color : white;"</c:if>>한식</button>
+						<c:if test="${pCountry eq '1'}">style="background-color : #F54748; color : white;"</c:if>>한식</button>
 						<button type="button" class="c_best_country_btn" id="c_best_west" 
-						<c:if test="${pCountry eq '1'}">style="background-color : #F54748; color : white;"</c:if>>양식</button>
+						<c:if test="${pCountry eq '2'}">style="background-color : #F54748; color : white;"</c:if>>양식</button>
 						<button type="button" class="c_best_country_btn" id="c_best_chi" 
-						<c:if test="${pCountry eq '2'}">style="background-color : #F54748; color : white;"</c:if>>중식</button>
+						<c:if test="${pCountry eq '3'}">style="background-color : #F54748; color : white;"</c:if>>중식</button>
 						<button type="button" class="c_best_country_btn" id="c_best_ja" 
-						<c:if test="${pCountry eq '3'}">style="background-color : #F54748; color : white;"</c:if>>일식</button>
+						<c:if test="${pCountry eq '4'}">style="background-color : #F54748; color : white;"</c:if>>일식</button>
 						<button type="button" class="c_best_country_btn" id="c_best_east" 
-						<c:if test="${pCountry eq '4'}">style="background-color : #F54748; color : white;"</c:if>>동남아</button>
+						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>동남아</button>
 						<button type="button" class="c_best_country_btn" id="c_best_etc" 
-						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
+						<c:if test="${pCountry eq '6'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
 					</div>
                 </article>
                 <ul class="c_best_menu">
@@ -83,9 +82,9 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                             <td class="c_best_article2_text">장어구이 / &#8361;15,000</td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">일반배송</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
                         </tr>
                         <tr>
                             <td colspan="3"><br></td>
@@ -106,20 +105,20 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         </tr>
                         <tr>
                             <td class="c_best_article2_text">불고기 전골 / &#8361;20,000</td>
-                            <td class="c_best_article2_text">스테이크 / &#8361;5,000</td>
-                            <td class="c_best_article2_text">로제파스타 / &#8361;15,000</td>
+                            <td class="c_best_article2_text">스테이크 / &#8361;20,000</td>
+                            <td class="c_best_article2_text">로제파스타 / &#8361;5,000</td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">일반배송</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
                         </tr>
                         <tr>
                             <td colspan="3"><br></td>
                         </tr>
                         <tr>
                             <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/boodae.png" alt="" width="290"
+                                <object data="<%=request.getContextPath()%>/resources/image/product/wollamssam.png" alt="" width="290"
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
@@ -132,14 +131,14 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                             </td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">부대찌개 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">월남쌈 / &#8361;10,000</td>
                             <td class="c_best_article2_text">에그타르트 / &#8361;5,000</td>
                             <td class="c_best_article2_text">감자수제비 / &#8361;15,000</td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">일반배송</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
-                            <td class="c_best_article2_text">일반배송 / 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
                         </tr>
                     </table>
                 </article>
@@ -154,7 +153,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 						
 						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
 						<c:if test="${currentPage eq i}">
-						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="j_ntpl_active">${i}</a>
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">${i}</a>
 						</c:if>
 						
 						<c:if test="${currentPage ne i}">
@@ -177,27 +176,27 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
     <script>
 		//나라별 화면 조회
 	 	$("#c_best_kr").on("click", function(){
-	 		location.href="/bobn/shopblist?pCountry=6";
+	 		location.href="/bobn/shopblist?pCountry=1";
 		});
 	
 		$("#c_best_west").on("click", function(){
-			location.href="/bobn/shopblist?pCountry=1";
-		});
-		
-		$("#c_best_chi").on("click", function(){
 			location.href="/bobn/shopblist?pCountry=2";
 		});
 		
-		$("#c_best_ja").on("click", function(){
+		$("#c_best_chi").on("click", function(){
 			location.href="/bobn/shopblist?pCountry=3";
+		});
+		
+		$("#c_best_ja").on("click", function(){
+			location.href="/bobn/shopblist?pCountry=4";
 		}); 
 		
 		$("#c_best_east").on("click", function(){
-			location.href="/bobn/shopblist?pCountry=4";
+			location.href="/bobn/shopblist?pCountry=5";
 		});
 		
 		$("#c_best_etc").on("click", function(){
-			location.href="/bobn/shopblist?pCountry=5";
+			location.href="/bobn/shopblist?pCountry=6";
 		}); 
 	</script>
 </body>

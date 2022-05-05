@@ -57,7 +57,7 @@ public int countShoppingList(Connection conn, String pCountry) {
 	int result = 0;
 	String sql = "";
 	
-	if(pCountry.equals("6")) {
+	if(pCountry.equals("1")) {
 		sql = "select count(*) from product";
 	}else {
 		sql = "select count(*) from product where p_category=?";
@@ -65,7 +65,7 @@ public int countShoppingList(Connection conn, String pCountry) {
 	try {
 		pstmt = conn.prepareStatement(sql);
 		
-		if(!pCountry.equals("6")) {
+		if(!pCountry.equals("1")) {
 			pstmt.setString(1, pCountry);	
 		}
 		rs = pstmt.executeQuery();
@@ -85,14 +85,14 @@ public int countShoppingList(Connection conn, String pCountry) {
 public ArrayList<ShoppingVo> listShoppingCountry(Connection conn, String pCountry, int startRnum, int endRnum) {
 	ArrayList<ShoppingVo> volist = null;
 	String sql = "";
-	if(pCountry.equals("6")) {
+	if(pCountry.equals("1")) {
 		sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?"; 
 	}else {
 		sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?";
 	}
 	try {
 		pstmt = conn.prepareStatement(sql);
-		if(pCountry.equals("6")) {
+		if(pCountry.equals("1")) {
 			pstmt.setInt(1, startRnum);
 			pstmt.setInt(2, endRnum);
 		}else {
