@@ -32,7 +32,6 @@
 <body>
 
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-<div class="wrap section">
 <section>
 <div class="section_container">
 	<!-- Slideshow container  from w3schools howto -->
@@ -69,8 +68,8 @@
 	<!--best shopping-->
 	<div class="p_section_container">
 		<div class="p_headline_container">
-		    <div class="p_section_head"><h3>BEST</h3></div>
-		    <div class="p_section_more"><div>더 보기</div></div>
+		    <div class="p_section_head"><h3>BEST SHOPPING</h3></div>
+		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/shopblist">더 보기</a></div></div>
 	    </div>
 	    <div class="flex-container">
 			<c:forEach items="${bslist}" var="bs">
@@ -82,56 +81,56 @@
 			    <div class="p_article-desc">
 			        <p class="p_article-desc-title"><c:out value="${bs.pName}" /></p>
 			        <p class="p_article-desc-detail"><c:out value="${bs.pPrice}" /></p>
+			    </div>
+		  	</div>
+	    	</c:forEach>
+    	</div>
+	</div>
+	<!--best recipe-->
+	<div class="p_section_container">
+		<div class="p_headline_container">
+		    <div class="p_section_head"><h3>BEST RECIPE</h3></div>
+		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/curreclist">더 보기</a>
+		    </div>
+		    </div>
+	    </div>
+	    <div class="flex-container">
+			<c:forEach items="${brlist}" var="br">
+			<div class="p_article_container">
+			    <div class="p_article-img">
+				    <a href="#">
+				    <img src="<%=request.getContextPath() %><c:out value="${br.crImgLoc}" />"/></a>
+				</div> 
+			    <div class="p_article-desc">
+			        <p class="p_article-desc-title"><c:out value="${br.crTitle}" /></p>
 			    </div>
 		  	</div>
 	    	</c:forEach>
     	</div>
 	</div>
 	
-	<!--best shopping-->
+	<!--best plating-->
 	<div class="p_section_container">
 		<div class="p_headline_container">
-		    <div class="p_section_head"><h3>BEST</h3></div>
-		    <div class="p_section_more"><div>더 보기</div></div>
+		    <div class="p_section_head"><h3>BEST PLATING</h3></div>
+		    <div class="p_section_more">
+		    	<div><a href="<%=request.getContextPath() %>/ntpclist">더 보기</a></div>
+	    	</div>
 	    </div>
 	    <div class="flex-container">
-			<c:forEach items="${bslist}" var="bs">
+			<c:forEach items="${bplist}" var="bp">
 			<div class="p_article_container">
 			    <div class="p_article-img">
 				    <a href="#">
-				    <img src="<%=request.getContextPath() %><c:out value="${bs.dFile}" />"/></a>
+				    <img src="<%=request.getContextPath() %><c:out value="${bp.pbImgLoc}" />"/></a>
 				</div> 
 			    <div class="p_article-desc">
-			        <p class="p_article-desc-title"><c:out value="${bs.pName}" /></p>
-			        <p class="p_article-desc-detail"><c:out value="${bs.pPrice}" /></p>
+			        <p class="p_article-desc-title"><c:out value="${bp.pbTitle}" /></p>
 			    </div>
 		  	</div>
 	    	</c:forEach>
     	</div>
 	</div>
-	
-	<!--best shopping-->
-	<div class="p_section_container">
-		<div class="p_headline_container">
-		    <div class="p_section_head"><h3>BEST</h3></div>
-		    <div class="p_section_more"><div>더 보기</div></div>
-	    </div>
-	    <div class="flex-container">
-			<c:forEach items="${bslist}" var="bs">
-			<div class="p_article_container">
-			    <div class="p_article-img">
-				    <a href="#">
-				    <img src="<%=request.getContextPath() %><c:out value="${bs.dFile}" />"/></a>
-				</div> 
-			    <div class="p_article-desc">
-			        <p class="p_article-desc-title"><c:out value="${bs.pName}" /></p>
-			        <p class="p_article-desc-detail"><c:out value="${bs.pPrice}" /></p>
-			    </div>
-		  	</div>
-	    	</c:forEach>
-    	</div>
-	</div>
-</div>
 </section>
 
 <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
