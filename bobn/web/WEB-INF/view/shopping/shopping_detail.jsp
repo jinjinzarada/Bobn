@@ -1,11 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/shopping/shopping_detail.css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +64,7 @@
 			<button class="c_prodtail_cart-btn" type="button" name="buy"
 				onclick="javascript:btn()">장바구니</button>
 			<button class="c_prodtail_buy-btn" type="button" name="buy"
-				onclick="location.href = '결제페이지.jsp로 가자'">바로 구매</button>
+				onclick="location.href = './paylist'">바로 구매</button>
 		</div>
 	</div>
 	</div>
@@ -91,10 +91,8 @@
 		function updateAmount() {
 			console.log(this);
 			console.log($(this));
-			console.log($(this).parents(".c_prodtail_quantity").children(
-					".p_id").text());
-			var pidVal = $(this).parents(".c_prodtail_quantity").children(
-					".p_id").text();
+			console.log($(this).parents(".c_prodtail_quantity").children(".p_id").text());
+			var pidVal = $(this).parents(".c_prodtail_quantity").children(".p_id").text();
 			var $thisEle = $(this);
 			var $thisInputEle = "";
 			var p_m_value = 0;
@@ -105,15 +103,7 @@
 				p_m_value = -1
 				$thisInputEle = $thisEle.next();
 			}
-			<!--
-			var updateVal = Number($thisInputEle.val()) + p_m_value;
-			if (updateVal == 0) {
-				var yesno = confirm("상품개수는 1개 이상이어야 합니다. 삭제할까요?");
-				if (yesno == false) {
-					return;
-				}
-			}
-			-->
+		
 			$.ajax({
 				url : "shopcount",
 				type : "post",

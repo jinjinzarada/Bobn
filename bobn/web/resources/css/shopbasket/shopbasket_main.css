@@ -3,8 +3,6 @@
 
 * {
 	font-family: 'Noto Sans', sans-serif;
-}
-* {
     box-sizing: border-box;
 }
 #c_cart_header{
@@ -167,10 +165,14 @@ html,body {
     font-weight: bold;
     font-family: 'Noto Sans', sans-serif;
 }
-
+.itemPriceCnt {
+	border:none;
+	color: #5E6977;
+}
 .c_cart_total-price {
-    width: 83px;
+    width:80px;
     padding-top: 27px;
+    padding-left:10px;
     text-align: center;
     font-size: 16px;
     color: #43484D;

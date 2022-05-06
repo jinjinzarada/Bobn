@@ -1,8 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
@@ -65,7 +65,9 @@
 					+
 				</button>
 			</div>
-			<div class="c_cart_total-price" value="*">&#8361;${vo.p_price}${vo.basketitemAmount}</div>
+			<div class="c_cart_total-price">
+				 <input type="text" class="itemPriceCnt" name="${status.index}" value="&#8361;${vo.p_price}"> 
+			</div>
 		</div>
 		</c:forEach>
 		<br> <br>

@@ -1,14 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
+<%@page import="java.util.ArrayList"%>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopcommon.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_best.css">
-<%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
-<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,7 +122,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="300"
+                                <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="290"
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
