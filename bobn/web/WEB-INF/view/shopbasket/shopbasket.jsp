@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
@@ -22,9 +23,9 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <body>
-<div id="c_cart_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-</div>
+<div id="wrap section">
+<section>
 	<div class="c_shopping-cart">
 		<!-- Cart_Title -->
 		<div class="c_cart_title">
@@ -87,9 +88,9 @@
 				onclick="location.href = '/bobn/paylist';">주문하기</button>
 		</center>
 	</div>
-	<div id="c_cart_footer">
+</section>
+</div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
-	</div>
 <script>
 function selectAll(selectAll)  {
 	  const checkboxes 

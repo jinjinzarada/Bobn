@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
-<%@page import="java.util.ArrayList"%>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
@@ -8,7 +5,11 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_new.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_new.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
+<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -17,7 +18,6 @@
 <title>NEW페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
-
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -26,10 +26,9 @@
 <%
 ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("volist");
 %>
-<div id="c_new_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-</div>
-     <div class="c_wrap content">
+<!-- c_warp 대신 warp으로 대체함.   -->
+     <div class="wrap content">  
         <div id="c_content">
             <section>
                 <article id="c_new_article0">
@@ -170,10 +169,8 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
             </section>
         </div>
         <br>
-    <div id="c_new_footer">
-	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
-	</div>
     </div>
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
     <script>
 		//나라별 화면 조회
 	 	$("#c_new_kr").on("click", function(){
