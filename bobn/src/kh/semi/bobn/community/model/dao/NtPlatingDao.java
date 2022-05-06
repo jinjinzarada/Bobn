@@ -22,7 +22,7 @@ public class NtPlatingDao {
 	// 게시글등록
 	public int insertPlatingContent(Connection conn, NtPlatingContentVo ntpcVo) {
 		int result = 0;
-		String memberId = "hyemi"; // TODO : 삭제
+		String memberId = "jihow78"; // TODO : 삭제
 		System.out.println("PreparedStatement vo :" + ntpcVo);
 
 //		String sql = "insert into ntpc(pb_no, pb_concept, pb_title, pb_content, pb_date, member_id)"
@@ -232,7 +232,7 @@ public class NtPlatingDao {
 	// 댓글등록
 	public int insertPlatingRecomment(Connection conn, NtPlatingRecommentVo ntprVo) {
 		int result = 0;
-		String memberId = "hyemi"; // TODO : 삭제
+		String memberId = "jihow78"; // TODO : 삭제
 		System.out.println("PreparedStatement vo :" + ntprVo);
 
 		String sql = "insert into ntpr(pr_no, pr_content, pb_no, member_id)"
