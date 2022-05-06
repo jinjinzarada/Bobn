@@ -78,7 +78,7 @@ public class RegisterDoServlet extends HttpServlet {
 			System.out.println("회원가입성공===================================");
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('회원가입을 축하드립니다. 로그인 후 서비스를 이용하시기 바랍니다.'); location.href='login';");
+			script.println("alert('회원가입을 축하드립니다. 메인페이지로 이동합니다.'); location.href='main';");
 			script.println("</script>");
 			//request.getRequestDispatcher("WEB-INF/view/loginregister/login.jsp").forward(request, response);
 		}

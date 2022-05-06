@@ -63,10 +63,13 @@ public class LogInLoServlet extends HttpServlet {
 		}else {  // 로그인성공
 			System.out.println("로그인 성공!!");
 			request.getSession().setAttribute("ssUserVo", vo);
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('로그인에 성공하였습니다. 반갑습니다 회원님.'); location.href='main';");
-			script.println("</script>");
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				//script.println("alert('로그인에 성공하였습니다. 반갑습니다 회원님.'); location.href='main';");
+				script.println("alert('로그인에 성공하였습니다. 반갑습니다 회원님.'); history.go(-2);");
+				script.println("</script>");
+		
+			
 //			response.sendRedirect("./");  // 상대경로
 			//TODO - 이동경로 설정 필요
 			//response.sendRedirect(request.getContextPath()+"/main");  // 절대경로사용시 request.getContextPath() 과 함께 작성해야함.
