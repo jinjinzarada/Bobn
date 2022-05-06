@@ -1,11 +1,16 @@
 package kh.semi.bobn.shopping.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import kh.semi.bobn.shopping.model.service.ShoppingService;
+import kh.semi.bobn.shopping.model.vo.ShoppingVo;
 
 /**
  * Servlet implementation class ShoppingMainServlet
@@ -26,6 +31,13 @@ public class ShoppingDetailServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String memberId = "ziwoo123"; // TODO 회원가입 후 삭제
+		
+		ArrayList<ShoppingVo> volist = new ShoppingService().selectShoppingList(memberId);
+
+		System.out.println("shopdetail volist:" + volist);
+		request.setAttribute("shoppingvolist", volist);
 		request.getRequestDispatcher("WEB-INF/view/shopping/shopping_detail.jsp").forward(request, response);
 	}
 

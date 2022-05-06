@@ -18,12 +18,16 @@ public class ShoppingVo {
 	
 	private String d_file;
 
+	private String memberId;
+	private int basketitemAmount;
+	
 	@Override
 	public String toString() {
 		return "ShoppingVo [pId=" + pId + ", p_name=" + p_name + ", p_category=" + p_category + ", p_price=" + p_price
 				+ ", p_sellamount=" + p_sellamount + ", p_weight=" + p_weight + ", p_calorie=" + p_calorie
 				+ ", p_flavor=" + p_flavor + ", p_postdate=" + p_postdate + ", p_salecheck=" + p_salecheck
-				+ ", p_detail=" + p_detail + ", d_file=" + d_file + "]";
+				+ ", p_detail=" + p_detail + ", d_file=" + d_file + ", memberId=" + memberId + ", basketitemAmount="
+				+ basketitemAmount + "]";
 	}
 
 	public String getpId() {
@@ -121,6 +125,21 @@ public class ShoppingVo {
 	public void setD_file(String d_file) {
 		this.d_file = d_file;
 	}
-	
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public int getBasketitemAmount() {
+		return basketitemAmount;
+	}
+
+	public void setBasketitemAmount(int basketitemAmount) {
+		this.basketitemAmount = basketitemAmount;
+	}
 	
 }

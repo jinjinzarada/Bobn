@@ -87,7 +87,6 @@ public class ShopbasketDao {
 		String sql = "update basket_item set basketitem_amount = ? where member_id =? and p_id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			// sql 순서 맞추기
 			pstmt.setInt(1, updateValue);
 			pstmt.setString(2, memberId);
 			pstmt.setString(3, pId);

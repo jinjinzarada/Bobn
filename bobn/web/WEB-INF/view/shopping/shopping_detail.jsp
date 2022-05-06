@@ -50,12 +50,39 @@
 			<br> <span class="c_prodtail_cal_title">칼로리&nbsp; </span> <span
 				class="c_prodtail_cal_title2">300kcal </span>
 		</div>
+<!--  	<c:forEach items="${shoppingvolist}" var="vo">
 		<div class="c_prodtail_quantity">
 			<button class="c_prodtail_minus-btn" type="button" name="button">
 				-</button>
-			<input type="text" name="name" value="1">
+			<input type="text" name="name" value="${vo.basketitemAmount}">
 			<button class="c_prodtail_plus-btn" type="button" name="button">
 				+</button>
+		</div>
+	</c:forEach>-->
+	<!-- 위에 버튼형식으로 바뀔수도 있음 임시 수량버튼 -->
+		<div class="c_prodtail_quantity">
+			<select>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;</option>
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;</option>	
+				<option>&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;</option>				
+			</select>
 		</div>
 		<br>
 		<div class="c_prodtail_buy">
@@ -89,8 +116,8 @@
 		function updateAmount() {
 			console.log(this);
 			console.log($(this));
-			console.log($(this).parents(".c_prodtail_quantity").children(".p_id").text());
-			var pidVal = $(this).parents(".c_prodtail_quantity").children(".p_id").text();
+			console.log($(this).parents(".c_prodtail_right").children(".p_id").text());
+			var pidVal = $(this).parents(".c_prodtail_right").children(".p_id").text();
 			var $thisEle = $(this);
 			var $thisInputEle = "";
 			var p_m_value = 0;

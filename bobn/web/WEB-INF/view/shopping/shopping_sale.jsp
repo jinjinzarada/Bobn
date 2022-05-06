@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_sale.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_sale.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="kh.semi.bobn.shopping.model.vo.ShoppingVo"%>
@@ -36,17 +36,17 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                 </article>
                 <article id="c_sale_article1">
                 	<div class="c_sale_concept_btn_wrap">
-						<button type="button" class="c_sale_country_btn" id="c_best_kr" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_kr" 
 						<c:if test="${pCountry eq '1'}">style="background-color : #F54748; color : white;"</c:if>>한식</button>
-						<button type="button" class="c_sale_country_btn" id="c_best_west" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_west" 
 						<c:if test="${pCountry eq '2'}">style="background-color : #F54748; color : white;"</c:if>>양식</button>
-						<button type="button" class="c_sale_country_btn" id="c_best_chi" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_chi" 
 						<c:if test="${pCountry eq '3'}">style="background-color : #F54748; color : white;"</c:if>>중식</button>
-						<button type="button" class="c_sale_country_btn" id="c_best_ja" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_ja" 
 						<c:if test="${pCountry eq '4'}">style="background-color : #F54748; color : white;"</c:if>>일식</button>
-						<button type="button" class="c_sale_country_btn" id="c_best_east" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_east" 
 						<c:if test="${pCountry eq '5'}">style="background-color : #F54748; color : white;"</c:if>>동남아</button>
-						<button type="button" class="c_sale_country_btn" id="c_best_etc" 
+						<button type="button" class="c_sale_country_btn" id="c_sale_etc" 
 						<c:if test="${pCountry eq '6'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
 					</div>
                 </article>

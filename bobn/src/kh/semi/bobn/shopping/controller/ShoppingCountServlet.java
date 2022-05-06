@@ -52,22 +52,7 @@ public class ShoppingCountServlet extends HttpServlet {
 		try {
 			updateValue = Integer.parseInt(updateValueStr);
 		} catch (Exception e) {
-		}
-//		if(updateValue == 0) {  // 0이 들어오지 않을 것임 .js 에서 처리할 예정
-//			// 상품 삭제 ,  업데이트 아님
-//			int deleteResult = new ShoppingService().deleteAmount(pId, memberId);
-//			out.print(0);  
-//			out.flush();out.close();
-//			return;
-	
-		
-		
-//		int amountCnt = 0;
-//		int result = 0;
-//		amountCnt = new ShopbasketService().selectShopbasketProductAmount(pId, memberId);
-//		if(amountCnt == 0  && updateValue < 0) {
-//			
-//		}
+	}
 		int result = new ShoppingService().updateAmount(pId, memberId, updateValue);
 		out.print(result);   /// 이제 진짜 중요한 데이터만 들고 갈꺼에요.
 		out.flush();out.close();
