@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_write.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_plating_write.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -22,9 +22,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="j_ntpw_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-</div>
  <div class="j_wrap content">
         <div id="j_content">
             <section>
@@ -86,8 +84,6 @@
                 $("#j_ntpw_files").append(html);
         });
     </script>
-    <div id="j_ntpw_footer">
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
-	</div>
 </body>
 </html>
