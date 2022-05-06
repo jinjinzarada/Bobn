@@ -1,19 +1,5 @@
-@charset "UTF-8";
-
-
-header {
-	border:0;
-}
-
- /* 부트스트랩 반응형 제거 코드 - 전체*/
-        .container {
-            width: 1500px;
-            max-width: none!important;
-            margin-left: 80.500px;
-            margin-right: 80.500px;
-        }
-         
- /* section */
+@charset "UTF-8";   
+/* section */
         .p_section_container {
         	max-width: 1500px;
         	/* 위 nav와 banner 보다 작아서 좌우 패딩 줌 */
@@ -89,7 +75,4 @@ header {
             font-weight: 400;
             color: #343f56;
             margin: 0;
-        }
-       footer {
-        	border : 0;
         }

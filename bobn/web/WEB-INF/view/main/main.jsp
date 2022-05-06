@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/main.css">
@@ -32,6 +34,7 @@
 <body>
 
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+<div class="wrap section">
 <section>
 <div class="section_container">
 	<!-- Slideshow container  from w3schools howto -->
@@ -131,6 +134,7 @@
 	    	</c:forEach>
     	</div>
 	</div>
+</div>
 </section>
 
 <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>

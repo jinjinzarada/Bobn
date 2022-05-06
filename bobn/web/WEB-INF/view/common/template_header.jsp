@@ -1,20 +1,17 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
-
+<%@ page import="kh.semi.bobn.user.model.vo.UserVo" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ page import="kh.semi.bobn.user.model.vo.UserVo" %>
 <!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <header>
 		<div>
-			<div>
+			<div class="header_container">
 				<a href="<%=request.getContextPath() %>/main"> <img src="<%=request.getContextPath() %>/resources/image/common_main/bobn_logo.png" class="p_logo_size">
 				</a>
 			</div>
 			<nav class="nav nav-tabs">
-				<div class="container d-flex flex-wrap">
+			<!-- 부트스트랩 반응형 제거 코드 - 제거가 잘 안되서 이름을 바꿉니다.container to header_container -->
+				<div class="header_container d-flex flex-wrap">
 					<ul class="nav me-auto">
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/main"
 							class="nav-link link-dark px-2" aria-current="page">Main</a></li>

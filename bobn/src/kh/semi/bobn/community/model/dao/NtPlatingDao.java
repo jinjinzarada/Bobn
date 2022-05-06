@@ -316,6 +316,26 @@ public class NtPlatingDao {
 
 			return ntprVo;
 		}
+		
+		//게시글 삭제
+		public int deletePlatingContent(Connection conn, int bNo) {
+			int result = 0;
+			
+			String sql = "delete from ntpc where b_no = ?";
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, bNo);
+				result = pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+			return result;
+			
+			
+		}
 
 		
 
