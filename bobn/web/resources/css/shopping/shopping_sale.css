@@ -12,12 +12,7 @@
           width:100%;
           font-family: 'Noto Sans', sans-serif;
 }
-.container {
-    width: 1500px;
-    max-width: none !important;
-    margin-left: 80.500px;
-    margin-right: 80.500px;
-}
+
 #c_sale_article0{
     font-size: 30px;
     border-color: white;
