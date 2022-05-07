@@ -47,18 +47,15 @@
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/mypage" class="nav-link link-dark px-2"> 
 							<img src="<%=request.getContextPath() %>/resources/image/common_main/person.png" class="p_icon">
 						</a></li>
-<%-- 						<!-- 로그인, 아웃 변경 -->
-						<c:choose>
-							<c:when test="${sessionScope.UserDao==null}"> --%>
+						<c:if test="${empty sessionScope.UserDao}">
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/login"
 							class="nav-link link-dark px-2">Login</a></li>
-<%-- 						</c:when>
-						<c:otherwise>
+						</c:if>
+						<c:if test="${not empty sessionScope.UserDao}">
 				 		<li class="nav-item"><a href="<%=request.getContextPath() %>/main"
 							class="nav-link link-dark px-2">Logout</a></li>
-							<!-- '로그아웃 되었습니다' 알림창  -->
-						</c:otherwise>
-						</c:choose> --%>
+							<!-- '로그아웃 되었습니다' 알림창, 세션 처리 필요함  -->
+						</c:if>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2">|</a></li>
 						<li class="nav-item"><a href="<%=request.getContextPath() %>/register"
