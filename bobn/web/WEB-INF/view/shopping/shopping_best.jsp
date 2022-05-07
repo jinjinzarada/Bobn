@@ -51,6 +51,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 						<c:if test="${pCountry eq '6'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
 					</div>
                 </article>
+                <c:if test="${pCountry eq '1'}">
                 <ul class="c_best_menu">
                     <li>
                       <a href="#" id="c_best_select1">추천순 &#9660;</a>
@@ -73,13 +74,40 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/grilledeel.png" alt="" width="287"
+                                <object data="<%=request.getContextPath()%>/resources/image/product/dackdori.png" alt="" width="267"
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                         </tr>
                         <tr>
                             <td class="c_best_article2_text">소고기 미역국 / &#8361;5,000</td>
                             <td class="c_best_article2_text">순두부찌개 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">닭볶음탕 / <strike>&#8361;15,000</strike>&nbsp;&#8361;10,500</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST | 품절되었습니다.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/bulgogi.png" alt="" width="275"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/forkkimchi.png" alt="" width="285"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/grilledeel.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">불고기 전골 / &#8361;20,000</td>
+                            <td class="c_best_article2_text">돼지김치찌개 / &#8361;10,000</td>
                             <td class="c_best_article2_text">장어구이 / &#8361;15,000</td>
                         </tr>
                         <tr>
@@ -92,38 +120,11 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         </tr>
                         <tr>
                             <td class="c_best_article2_img">
-                               <object data="<%=request.getContextPath()%>/resources/image/product/bulgogi.png" alt="" width="275"
+                                <object data="<%=request.getContextPath()%>/resources/image/product/suckju.png" alt="" width="300"
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
-                               <object data="<%=request.getContextPath()%>/resources/image/product/steak.png" alt="" width="295"
-                                onclick="location.href='/bobn/shopdetail';"></object>
-                            </td>
-                            <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/rosepasta.png" alt="" width="285"
-                                onclick="location.href='/bobn/shopdetail';"></object>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="c_best_article2_text">불고기 전골 / &#8361;20,000</td>
-                            <td class="c_best_article2_text">스테이크 / &#8361;20,000</td>
-                            <td class="c_best_article2_text">로제파스타 / &#8361;5,000</td>
-                        </tr>
-                        <tr>
-                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
-                            <td class="c_best_article2_text" style= "color:#F54748";>BEST | 품절되었습니다.</td>
-                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><br></td>
-                        </tr>
-                        <tr>
-                            <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/wollamssam.png" alt="" width="290"
-                                onclick="location.href='/bobn/shopdetail';"></object>
-                            </td>
-                            <td class="c_best_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="290"
+                                <object data="<%=request.getContextPath()%>/resources/image/product/jeyuk.png" alt="" width="300"
                                 onclick="location.href='/bobn/shopdetail';"></object>
                             </td>
                             <td class="c_best_article2_img">
@@ -132,9 +133,9 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                             </td>
                         </tr>
                         <tr>
-                            <td class="c_best_article2_text">월남쌈 / &#8361;10,000</td>
-                            <td class="c_best_article2_text">에그타르트 / &#8361;5,000</td>
-                            <td class="c_best_article2_text">감자수제비 / &#8361;15,000</td>
+                            <td class="c_best_article2_text">차돌박이 숙주볶음 / &#8361;3,000</td>
+                            <td class="c_best_article2_text">제육볶음 / &#8361;6,000</td>
+                            <td class="c_best_article2_text">감자수제비 / &#8361;5,000</td>
                         </tr>
                         <tr>
                             <td class="c_best_article2_text"style="color:#F54748">BEST</td>
@@ -148,25 +149,367 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                 <article id="c_best_article3">
 					<div class="c_best_pagination">
 					
-						<c:if test="${startPage > 1}">
+						<!--<c:if test="${startPage > 1}">
 						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
-						</c:if>
+						</c:if>-->
 						
 						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
 						<c:if test="${currentPage eq i}">
-						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">${i}</a>
-						</c:if>
-						
-						<c:if test="${currentPage ne i}">
-						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
 						</c:if>
 						</c:forEach>
 						
-						<c:if test="${endPage < pageCnt}">
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
 						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
-						</c:if>
+						</c:if>-->
 					</div>
 				</article>
+				</c:if>
+				<c:if test="${pCountry eq '2'}">
+				<ul class="c_best_menu">
+                    <li>
+                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
+                      <ul class="c_depth_1">
+                        <li><a href="#">가격순</a></li>
+                        <li><a href="#">판매순</a></li>
+                        <li><a href="#">추천순</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <article id="c_best_article2">
+                    <table>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/steak.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/pizza.png" alt="" width="275"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/rosepasta.png" alt="" width="285"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">스테이크 / <strike>&#8361;20,000</strike>&nbsp;&#8361;10,000</td>
+                            <td class="c_best_article2_text">피자 / &#8361;10,000</td>
+                            <td class="c_best_article2_text">로제파스타 / <strike>&#8361;5,000</strike>&nbsp;&#8361;4,000</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </table>
+                </article>
+                <br>
+                <!-- 페이징 -->
+                <article id="c_best_article3">
+					<div class="c_best_pagination">
+					
+						<!--<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>-->
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
+						</c:if>
+						</c:forEach>
+						
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>-->
+					</div>
+				</article>
+				</c:if>
+				<c:if test="${pCountry eq '3'}">
+				<ul class="c_best_menu">
+                    <li>
+                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
+                      <ul class="c_depth_1">
+                        <li><a href="#">가격순</a></li>
+                        <li><a href="#">판매순</a></li>
+                        <li><a href="#">추천순</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <article id="c_best_article2">
+                    <table>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/jjambbong.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/jjajang.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/tang.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">짬뽕 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">짜장면 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">탕수육 / &#8361;7,000</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </table>
+                </article>
+                <br>
+                <!-- 페이징 -->
+                <article id="c_best_article3">
+					<div class="c_best_pagination">
+					
+						<!--<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>-->
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
+						</c:if>
+						</c:forEach>
+						
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>-->
+					</div>
+				</article>
+				</c:if>
+				<c:if test="${pCountry eq '4'}">
+				<ul class="c_best_menu">
+                    <li>
+                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
+                      <ul class="c_depth_1">
+                        <li><a href="#">가격순</a></li>
+                        <li><a href="#">판매순</a></li>
+                        <li><a href="#">추천순</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <article id="c_best_article2">
+                    <table>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/ramen.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/taco.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/chadol.png" alt="" width="295"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">라멘 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">타코야끼 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">차돌덮밥 / <strike>&#8361;6,000</strike>&nbsp;&#8361;4,800</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </table>
+                </article>
+                <br>
+                <!-- 페이징 -->
+                <article id="c_best_article3">
+					<div class="c_best_pagination">
+					
+						<!--<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>-->
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
+						</c:if>
+						</c:forEach>
+						
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>-->
+					</div>
+				</article>
+				</c:if>
+				<c:if test="${pCountry eq '5'}">
+				<ul class="c_best_menu">
+                    <li>
+                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
+                      <ul class="c_depth_1">
+                        <li><a href="#">가격순</a></li>
+                        <li><a href="#">판매순</a></li>
+                        <li><a href="#">추천순</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <article id="c_best_article2">
+                    <table>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/wollamssam.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/ssal.png" alt="" width="285"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/curry.png" alt="" width="285"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">월남쌈 / <strike>&#8361;10,000</strike>&nbsp;&#8361;5,000</td>
+                            <td class="c_best_article2_text">쌀국수 / &#8361;5,000</td>
+                            <td class="c_best_article2_text">카레 / &#8361;6,000</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </table>
+                </article>
+                <br>
+                <!-- 페이징 -->
+                <article id="c_best_article3">
+					<div class="c_best_pagination">
+					
+						<!--<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>-->
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
+						</c:if>
+						</c:forEach>
+						
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>-->
+					</div>
+				</article>
+				</c:if>
+				<c:if test="${pCountry eq '6'}">
+				<ul class="c_best_menu">
+                    <li>
+                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
+                      <ul class="c_depth_1">
+                        <li><a href="#">가격순</a></li>
+                        <li><a href="#">판매순</a></li>
+                        <li><a href="#">추천순</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <article id="c_best_article2">
+                    <table>
+                        <tr>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/macaroon.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                            <td class="c_best_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/tiramisu.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text">에그타르트 / <strike>&#8361;3,500</strike>&nbsp;&#8361;2,800</td>
+                            <td class="c_best_article2_text">마카롱 / <strike>&#8361;5,500</strike>&nbsp;&#8361;4,400</td>
+                            <td class="c_best_article2_text">티라미수 / <strike>&#8361;5,000</strike>&nbsp;&#8361;4,000</td>
+                        </tr>
+                        <tr>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST | 품절되었습니다.</td>
+                            <td class="c_best_article2_text" style= "color:#F54748";>BEST</td>
+                            <td class="c_best_article2_text"style="color:#F54748">BEST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
+                    </table>
+                </article>
+                <br>
+                <!-- 페이징 -->
+                <article id="c_best_article3">
+					<div class="c_best_pagination">
+					
+						<!--<c:if test="${startPage > 1}">
+						<a href="shopblist?pageNum=${startPage-1}&pCountry=${pCountry}">&laquo;</a>
+						</c:if>-->
+						
+						<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+						<c:if test="${currentPage eq i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}" class="c_best_active">1</a>
+						</c:if>
+						</c:forEach>
+						
+						<!--<c:if test="${currentPage ne i}">
+						<a href="shopblist?pageNum=${i}&pCountry=${pCountry}">${i}</a>
+						</c:if>-->
+						
+						
+						<!--<c:if test="${endPage < pageCnt}">
+						<a href="shopblist?pageNum=${endPage+1}&pCountry=${pCountry}">&raquo;</a>
+						</c:if>-->
+					</div>
+				</article>
+				</c:if>
             </section>
         </div>
         <br>

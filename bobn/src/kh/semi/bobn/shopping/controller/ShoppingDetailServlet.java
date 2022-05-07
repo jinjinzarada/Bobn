@@ -32,7 +32,7 @@ public class ShoppingDetailServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String memberId = "ziwoo123"; // TODO 회원가입 후 삭제
+		String memberId = "ziwoo123"; // TODO 
 		
 		ArrayList<ShoppingVo> volist = new ShoppingService().selectShoppingList(memberId);
 
