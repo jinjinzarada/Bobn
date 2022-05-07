@@ -3,3 +3,8 @@
 .p_footer_sns {
 	margin-right:10px;
 }
+
+footer {
+	width: 1200px;
+	max-width: 1200px;
+}
