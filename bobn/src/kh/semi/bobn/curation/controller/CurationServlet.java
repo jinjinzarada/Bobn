@@ -26,7 +26,7 @@ public class CurationServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/curation/currecipe.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/view/curation/recipe.jsp").forward(request, response);
 	}
 
 	/**

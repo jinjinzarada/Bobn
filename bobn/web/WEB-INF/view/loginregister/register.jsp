@@ -1,3 +1,10 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<!-- JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/loginregister/register.css">
@@ -28,7 +35,7 @@
             <div class="flex">
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이름
+                        이름
                     </li>
                     <li class="item">
                         <input type="text" id="uname" name="name" placeholder="이름을 입력하세요." autofocus required>
@@ -39,7 +46,7 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp아이디
+                        아이디
                     </li>
                     <li class="item">
                         <input type="text" id="uid" name="id" placeholder="사용하고 싶은 아이디를 입력하세요." required>
@@ -51,7 +58,7 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp비밀번호
+                        비밀번호
                     </li>
                     <li class="item">
                         <input type="password" id="pwd" name="pwd" placeholder="영문자+숫자+특수문자 조합으로 8~12자리 입력" required>
@@ -62,7 +69,7 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp비밀번호 확인
+                        비밀번호 확인
                     </li>
                     <li class="item">
                         <input type="password" id="repwd" placeholder="비밀번호를 다시 입력하세요." required>
@@ -72,7 +79,7 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이메일
+                        이메일
                     </li>
                     <li class="item">
                         <input type="email" id="email_id" name="email" placeholder="이메일을 입력하세요." required>
@@ -84,20 +91,20 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp생년월일
+                        생년월일
                     </li>
                     <li class="item">
-                        <input type="date" name="birthdate" id="birthday" required>
+                        <input type="date" name="birthdate" id="birthday" max="9999-12-31" required>
                     </li>
                     <li class="item">
                     </li>
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp성별
+                        성별
                     </li>
                     <li class="item">
-                        <select name="gender" id="">
+                        <select name="gender" id="" style="padding: 0;">
                             <option value="선택" selected>선택</option>
                             <option value="M">남성</option>
                             <option value="F">여성</option>
@@ -108,7 +115,7 @@
                 </ul>
                 <ul class="container">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp전화번호
+                        전화번호
                     </li>
                     <li class="item">
                         <input type="text" id="mobile" name="mobile" placeholder="휴대전화번호 입력">
@@ -118,7 +125,7 @@
                 </ul>
                 <ul class="container" id="agreementstart">
                     <li class="item center">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp이용약관동의
+                        이용약관동의
                     </li>
                     <li class="item">
                         <input type="checkbox" name="name2" value="selectall" onclick='selectAll(this)'><span class="spantotal">&nbsp전체동의</span>

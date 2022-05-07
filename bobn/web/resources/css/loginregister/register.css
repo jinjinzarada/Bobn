@@ -1,148 +1,5 @@
 @charset "UTF-8";
-/* reset.css */
-html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        
-        vertical-align: baseline;
-    }
-  
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    
-    /* common.css */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
 
-		* {
-		  font-family: 'Noto Sans', sans-serif;
-		}
-          
-    
-            .l_signup_wrap {
-                width: 100%;
-            }
-            .l_signup_wrap.header {
-                background: white;
-                border: 1px solid black;
-                box-sizing: border-box;
-            }
-            .l_signup_wrap.content {
-                background: white;
-                border: 1px solid black;
-                box-sizing: border-box;
-            }
-            .l_signup_wrap.footer {
-                background: white;
-                border: 1px solid black;
-                box-sizing: border-box;
-            }
-            /* header */
-            
-            #l_signup_header{
-                padding: 30px 20px;
-            }
-            /* #content */
-            #l_signup_content{
-                /* 1. 중앙정렬 */
-                width: 80%; margin: 0 auto;
-                position: relative;
-                /* 2. float 배치- 한것으로 height 계산 못하므로 overflow hidden 설정 */
-                overflow: hidden;
-            }
-            /* section */
-            section{
-                /* 2. float 배치 */
-                width: 100%; 
-                float: left;
-            }
-            article {
-                /* 5. 테두리 !! 중요 부모요소의 크기를 최대로 가지면서 나의 content 크기가 줄어듬 */
-                border: 1px solid black;
-                padding: 30px 20px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-    
-            /* footer */
-            
-            #l_signup_footer{
-                padding: 30px 20px;
-            }
-    
-    
-            /* 1500 보다 클때 */
-            @media (min-width:1500px) {
-                body{
-                    font-size: 1.2rem;
-                }
-            }
-    
-            /* 800 보다 작을 때 */
-            @media (max-width:799px) {
-                body{
-                    font-size: 0.8rem;
-                }
-                /* header */
-                header{ 
-                    /* 1. 중앙정렬 */
-                    width: 90%;
-                }
-                /* #content */
-                #l_signup_content{
-                    /* 1. 중앙정렬 */
-                    width: 90%;
-                    position: relative;
-                    /* 2. float 배치- 한것으로 height 계산 못하므로 overflow hidden 설정 */
-                    overflow: hidden;
-                }
-                /* section */
-                section{
-                    /* 2. float 배치 */
-                    width: 100%; 
-                    float: none;
-                }
-                article {
-                    /* 5. 테두리 !! 중요 부모요소의 크기를 최대로 가지면서 나의 content 크기가 줄어듬 */
-                    padding: 30px 20px;
-                }
-     
-                /* footer */
-                footer{
-                    /* 1. 중앙정렬 */
-                    width: 90%; margin: 0 auto;
-                    margin-bottom: 10px;
-                }
-            }
 /* 내 css 부분 */
  a {
   text-decoration: none;
@@ -153,13 +10,15 @@ html, body, div, span, applet, object, iframe,
 
 /* 회원가입 대문 */
 .flex{
-	width:140%;
+	width:100%;
+	margin: auto;
+	margin-left: 8%;
 }
 
 .l_all_wrap{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	
 	flex-wrap: wrap;
 	
 }
@@ -176,16 +35,7 @@ html, body, div, span, applet, object, iframe,
             margin-bottom: 2%;
 }        
 .register{
-            width: 90%;
-            margin: auto;
-            padding: 15px 20px;
-            background: white;
-            color: #2b2e4a;
-            font-size: 18px;
-            text-align: left;
-            margin-right: auto;
-            margin-right: auto;
-            display: flex;
+           
         }
         
         .register input{
@@ -202,6 +52,7 @@ html, body, div, span, applet, object, iframe,
         .register .center{
             display: flex;
             align-items: center;
+            width: fit-content;
             
         }
         .register .flex{
@@ -219,8 +70,8 @@ html, body, div, span, applet, object, iframe,
         }
         .register .flex .container .item .idcheck{
             height: 100%;
-            width: 100px;
-            margin-left: -110px;
+            width: 7vw;
+            margin-left: -5vw;
             /* padding: 5px 15px; */
             background: #fb9300;
             border: 1px solid #fb9300;
@@ -237,8 +88,8 @@ html, body, div, span, applet, object, iframe,
         }
         .register .flex .container .item .emailcheck{
             height: 100%;
-            width: 100px;
-            margin-left: -110px;
+            width: 7vw;
+            margin-left: -5vw;
             /* padding: 5px 15px; */
             background: #fb9300;
             border: 1px solid #fb9300;
@@ -256,7 +107,7 @@ html, body, div, span, applet, object, iframe,
             border: 1px solid #2b2e4a;
         }
         .register .button_submit{
-            width: 300px;
+            width: 20vw;
             height: 50px;
             color: white;
             border: none;
@@ -264,8 +115,8 @@ html, body, div, span, applet, object, iframe,
             background: #fb9300;
             transition: 0.3s;
             font-size: 18px;
-            margin-left: 9%;
-            margin-top: 20px;
+            margin-left: 13vw;
+            margin-top: 1.8vw;
         }
         .register .flex .container:last-child{
             margin: 0;
@@ -279,7 +130,7 @@ html, body, div, span, applet, object, iframe,
             background: white;
         }
         .register .cancel{
-            width: 300px;
+            width: 20vw;
             height: 50px;
             color: white;
             border: none;
@@ -287,8 +138,8 @@ html, body, div, span, applet, object, iframe,
             background: #fb9300;
             transition: 0.3s;
             font-size: 18px;
-            margin-left:-18vw;
-            margin-top: 20px;
+            margin-right: 11.2vw;
+            margin-top: 1.8vw;
         }
         .register .flex .container:last-child{
             margin: 0;
@@ -301,6 +152,7 @@ html, body, div, span, applet, object, iframe,
             color: #fb9300;
             background: white;
         }
+        
 
 
 /* 약관동의 부분 */
@@ -325,7 +177,7 @@ input[type="checkbox"]{
 }
 .lineforagreeall{
     border-bottom: 1px solid #F54748;
-            width: 85%;
+            width: 87%;
             margin: auto;
             margin-bottom: 10px;
             margin-left: -10px;
