@@ -4,10 +4,6 @@
 	font-family: 'Noto Sans', sans-serif;
 }
 
-header {
-	border:0;
-}
-
 /* 부트스트랩 반응형 제거 코드 - 전체*/
 .container {
 	width: 1500px;
@@ -40,8 +36,4 @@ header {
 }
 a.page-link {
   color: #f54748;
-}
-
-footer {
-	border:0;
 }

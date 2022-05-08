@@ -30,8 +30,8 @@
 	crossorigin="anonymous"></script>
 
 <body>
-	<section>
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
+	<section>
 		<div class="p_section_container">
 			<div class="p_headline_container">
 				<div class="p_section_head">

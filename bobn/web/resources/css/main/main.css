@@ -25,6 +25,7 @@
             text-align: right;
             font-size: 15px;
             color: #f54748;
+            text-decoration: none;
             position: relative;
             padding-right : 30px;
         }
@@ -33,7 +34,6 @@
         	bottom: 3px;
         	right: 0;
         }
-
         .flex-container{
             display: flex;
             justify-content: center;
@@ -43,31 +43,30 @@
         .p_article_container {
         	width: 20%;
         	margin-right:10px;
-        	
+        	border:none;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .p_article-img {
-            border: solid;
-            border-bottom: none;
-            border-color: #343f56;
-/*             이미지에 크기를 줘야 resizing되어 이미지가 겹치지 않음
-			width: 200px;
-            height: 200px; */
+        	border:none;            
         }
         .p_article-img img {
             width: 100%;
+            border:none;
         }
         .p_article-desc {
             border: solid;
-            border-color: #343f56;
+            border-top:none;
+            border-color: #bbb;
+            border-width:1px;
             text-align: center;
         }
         .p_article-desc-title {
             font-size: 16px;
             font-weight: 600;
             color: #343f56;
+            border-bottom: none;
             margin: 0;
         }
         .p_article-desc-detail {

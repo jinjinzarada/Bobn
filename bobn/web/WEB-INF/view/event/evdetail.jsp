@@ -62,9 +62,6 @@
 						<tr>
 							<td>${eVo.eContent }</td>
 						</tr>
-						<tr>
-							<td>공유하기</td>
-						</tr>
 					</tbody>
 				</table>
 				<br>

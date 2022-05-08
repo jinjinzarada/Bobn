@@ -12,7 +12,7 @@
 		<h5>1234-4321</h5>
 	 -->
 		<ul class="nav flex-column">
-			<li><h4><a href="#" style="text-decoration: none; color: #343f56;">고객센터</a></h4></li>
+			<li><h4><a href="<%=request.getContextPath() %>/csnoticelist" style="text-decoration: none; color: #343f56;">고객센터</a></h4></li>
 			<li><h5>1234-4321</h5></li>
 			<li class="nav-item mb-2"> </li>
 			<li class="nav-item mb-2"

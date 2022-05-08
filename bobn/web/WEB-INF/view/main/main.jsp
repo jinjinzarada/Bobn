@@ -42,17 +42,20 @@
 		<!-- Full-width images with number and caption text -->
 		<div class="mySlides fade">
 		  <div class="numbertext">1 / 3</div>
-		  <img src="<%=request.getContextPath()%>/resources/image/ntcc/콘테스트.jpg" style="width:100%">
+		  <a href="<%=request.getContextPath() %>/ntcclist">
+		  <img src="<%=request.getContextPath()%>/resources/image/common_main/bobn_contest_slide_1500.png" style="width:100%"></a>
 		  <div class="text"></div>
 		</div>
 		<div class="mySlides fade">
 		  <div class="numbertext">2 / 3</div>
-		  <img src="<%=request.getContextPath()%>/resources/image/ntcc/콘테스트.jpg" style="width:100%">
+		  <a href="<%=request.getContextPath() %>/cumbti">
+		  <img src="<%=request.getContextPath()%>/resources/image/common_main/bobn_mbti_slide_1500.png" style="width:100%"></a>
 		  <div class="text"></div>
 		</div>
 		<div class="mySlides fade">
 		  <div class="numbertext">3 / 3</div>
-		  <img src="<%=request.getContextPath()%>/resources/image/ntcc/콘테스트.jpg" style="width:100%">
+		  <a href="<%=request.getContextPath() %>/event">
+		  <img src="<%=request.getContextPath()%>/resources/image/common_main/bobn_event_slide_1500.png" style="width:100%"></a>
 		  <div class="text"></div>
 		</div>
 		<!-- Next and previous buttons -->
@@ -78,8 +81,7 @@
 			<c:forEach items="${bslist}" var="bs">
 			<div class="p_article_container">
 			    <div class="p_article-img">
-				    <a href="#">
-				    <img src="<%=request.getContextPath() %><c:out value="${bs.dFile}" />"/></a>
+				    <img src="<%=request.getContextPath() %><c:out value="${bs.dFile}" />"/>
 				</div> 
 			    <div class="p_article-desc">
 			        <p class="p_article-desc-title"><c:out value="${bs.pName}" /></p>
@@ -101,8 +103,7 @@
 			<c:forEach items="${brlist}" var="br">
 			<div class="p_article_container">
 			    <div class="p_article-img">
-				    <a href="#">
-				    <img src="<%=request.getContextPath() %><c:out value="${br.crImgLoc}" />"/></a>
+				    <img src="<%=request.getContextPath() %><c:out value="${br.crImgLoc}" />"/>
 				</div> 
 			    <div class="p_article-desc">
 			        <p class="p_article-desc-title"><c:out value="${br.crTitle}" /></p>
@@ -124,8 +125,7 @@
 			<c:forEach items="${bplist}" var="bp">
 			<div class="p_article_container">
 			    <div class="p_article-img">
-				    <a href="#">
-				    <img src="<%=request.getContextPath() %><c:out value="${bp.pbImgLoc}" />"/></a>
+				    <img src="<%=request.getContextPath() %><c:out value="${bp.pbImgLoc}" />"/>
 				</div> 
 			    <div class="p_article-desc">
 			        <p class="p_article-desc-title"><c:out value="${bp.pbTitle}" /></p>

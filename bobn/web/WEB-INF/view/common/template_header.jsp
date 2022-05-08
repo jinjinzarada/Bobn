@@ -52,9 +52,8 @@
 							class="nav-link link-dark px-2">Login</a></li>
 						</c:if>
 						<c:if test="${not empty sessionScope.ssUserVo}">
-				 		<li class="nav-item"><a href="<%=request.getContextPath() %>/main"
+				 		<li class="nav-item"><a href="<%=request.getContextPath() %>/logout"
 							class="nav-link link-dark px-2">Logout</a></li>
-							<!-- '로그아웃 되었습니다' 알림창, 세션 처리 필요함  -->
 						</c:if>
 						<li class="nav-item"><a href="#"
 							class="nav-link link-dark px-2">|</a></li>

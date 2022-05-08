@@ -8,9 +8,6 @@
 	font-family: 'Noto Sans', sans-serif;
 }
 
-header {
-	border: 0;
-}
 /* 부트스트랩 반응형 제거 코드 - 전체*/
 .container {
 	width: 1500px;
@@ -61,9 +58,8 @@ header {
 .tabcontent {
 	float: left;
 	padding: 0px 40px;
-	width: 800px;
 	border-left: none;
-	height: 300px;
+	height: 500px;
 }
 
 .tabhead {

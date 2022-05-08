@@ -1,3 +1,9 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage.css">
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -12,76 +18,40 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
-<!-- font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+	crossorigin="anonymous"></script>
+<title>My Page</title>
 </head>
 
 <body>
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 	<section>
+
+	</script>
 		<div class="container">
 			<br> <br>
 			<h3>마이페이지</h3>
 			<br>
-
 			<div class="tab">
-				<button class="tablinks" onclick="opentab(event, 'tab01')">주문/배송
-					조회</button>
-				<button class="tablinks" onclick="opentab(event, 'tab02')">회원
+				<button class="tablinks" onclick="opentab(event, 'tab01')">회원
 					정보 수정</button>
-				<button class="tablinks" onclick="opentab(event, 'tab03')">회원
+				<button class="tablinks" onclick="opentab(event, 'tab02')">회원
 					탈퇴</button>
 			</div>
 
 			<div id="tab01" class="tabcontent">
-				<h4 class="tabhead">주문/배송 조회</h4>
-				<br>
-				<div class="card" style="width: 11rem;">
-					<div class="card-body">
-						<h5 class="card-title">결제 완료</h5>
-						<p class="card-text">0</p>
-						<!-- 데이터 받아 와야 함 -->
-					</div>
-				</div>
-				<div class="card" style="width: 11rem;">
-					<div class="card-body">
-						<h5 class="card-title">상품 준비 중</h5>
-						<p class="card-text">0</p>
-						<!-- 데이터 받아 와야 함 -->
-					</div>
-				</div>
-				<div class="card" style="width: 11rem;">
-					<div class="card-body">
-						<h5 class="card-title">배송 중</h5>
-						<p class="card-text">0</p>
-						<!-- 데이터 받아 와야 함 -->
-					</div>
-				</div>
-				<div class="card" style="width: 11rem;">
-					<div class="card-body">
-						<h5 class="card-title">배송 완료</h5>
-						<p class="card-text">0</p>
-						<!-- 데이터 받아 와야 함 -->
-					</div>
-				</div>
-			</div>
-
-			<div id="tab02" class="tabcontent">
-				<h4 class="tabhead">회원 정보 수정</h4>
-				<br>
+			<h4 class="tabhead">회원 정보 수정</h4>
+			<br>
 				<div class="row g-3 align-items-center">
 					<div class="col-auto">
 						<label for="inputPassword6" class="col-form-label">Password</label>
@@ -97,7 +67,7 @@
 				</div>
 			</div>
 
-			<div id="tab03" class="tabcontent">
+			<div id="tab02" class="tabcontent">
 				<h4 class="tabhead">회원 탈퇴</h4>
 				<br>
 				<div class="card" style="width: 20rem; text-align: left;">
@@ -134,14 +104,11 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
-	
+		
 	<script>
 	$(document).ready(function() {
 		$('#tab01').show();
 		$('#tab02').hide();
-		$('#tab03').hide();
 	});
 	function opentab(evt, mypagetab) {
 		var i, p_tabcontent, p_tablinks;
@@ -159,5 +126,7 @@
 		evt.currentTarget.className += " active";
 	}
 	</script>
+	</section>
+	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>
