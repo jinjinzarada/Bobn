@@ -255,88 +255,83 @@ public class NtPlatingDao {
 
 		return result;
 	}
-	
+
 	// 댓글조회
-		public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(Connection conn, int pbNo) {
-			ArrayList<NtPlatingRecommentVo> ntprVolist = null;
+	public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(Connection conn, int pbNo) {
+		ArrayList<NtPlatingRecommentVo> ntprVolist = null;
 
-			String sql = "select * from ntpr where pb_no=?";
+		String sql = "select * from ntpr where pb_no=?";
 
-			// vo에 가져온걸 sql문에 넣어줌
-			try {
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, pbNo);
-				rs = pstmt.executeQuery();
+		// vo에 가져온걸 sql문에 넣어줌
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, pbNo);
+			rs = pstmt.executeQuery();
 
-				ntprVolist = new ArrayList<NtPlatingRecommentVo>();
-				while (rs.next()) {
-					NtPlatingRecommentVo ntprVo = new NtPlatingRecommentVo();
-					ntprVo.setMemberId(rs.getString("member_id"));
-					ntprVo.setPrDate(rs.getTimestamp("pr_date"));
-					ntprVo.setPrContent(rs.getString("pr_content"));
+			ntprVolist = new ArrayList<NtPlatingRecommentVo>();
+			while (rs.next()) {
+				NtPlatingRecommentVo ntprVo = new NtPlatingRecommentVo();
+				ntprVo.setMemberId(rs.getString("member_id"));
+				ntprVo.setPrDate(rs.getTimestamp("pr_date"));
+				ntprVo.setPrContent(rs.getString("pr_content"));
 
-					ntprVolist.add(ntprVo);
-					System.out.println("ntpiVolist :" + ntprVolist);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				close(rs);
-				close(pstmt);
+				ntprVolist.add(ntprVo);
+				System.out.println("ntpiVolist :" + ntprVolist);
 			}
-
-			// 담아놨던 결과 result를 리턴
-			return ntprVolist;
-
-		}
-		
-	
-		// 댓글 총 갯수 조회
-		public NtPlatingRecommentVo countPlatingRecomment(Connection conn, int pbNo) {
-			NtPlatingRecommentVo ntprVo = null;
-			String sql = "select ntpr.pb_no, (select count(*) from ntpr where pb_no=?) as prRecommentCnt from ntpr";
-
-			try {
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, pbNo);
-				rs = pstmt.executeQuery();
-				
-				ntprVo = new NtPlatingRecommentVo();
-				if(rs.next()) {
-					ntprVo.setPrRecommentCnt(rs.getInt("prRecommentCnt"));
-				}
-				
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				close(rs);
-				close(pstmt);
-			}
-
-			return ntprVo;
-		}
-		
-		//게시글 삭제
-		public int deletePlatingContent(Connection conn, int bNo) {
-			int result = 0;
-			
-			String sql = "delete from ntpc where b_no = ?";
-			try {
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, bNo);
-				result = pstmt.executeUpdate();
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				close(pstmt);
-			}
-			return result;
-			
-			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
 		}
 
-		
+		// 담아놨던 결과 result를 리턴
+		return ntprVolist;
+
+	}
+
+	// 댓글 총 갯수 조회
+	public NtPlatingRecommentVo countPlatingRecomment(Connection conn, int pbNo) {
+		NtPlatingRecommentVo ntprVo = null;
+		String sql = "select ntpr.pb_no, (select count(*) from ntpr where pb_no=?) as prRecommentCnt from ntpr";
+
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, pbNo);
+			rs = pstmt.executeQuery();
+
+			ntprVo = new NtPlatingRecommentVo();
+			if (rs.next()) {
+				ntprVo.setPrRecommentCnt(rs.getInt("prRecommentCnt"));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		return ntprVo;
+	}
+
+	// 게시글 삭제
+	public int deletePlatingContent(Connection conn, int bNo) {
+		int result = 0;
+
+		String sql = "delete from ntpc where pb_no = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bNo);
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+
+	}
 
 }

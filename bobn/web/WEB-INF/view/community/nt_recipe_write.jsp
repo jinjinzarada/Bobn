@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntreset.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/ntcommon.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/nt_recipe_write.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

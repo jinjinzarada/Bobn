@@ -3,23 +3,6 @@
 * {
 	font-family: 'Noto Sans', sans-serif;
 }
-
-#j_ntpl_header{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
-#j_ntpl_footer{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
-
-/* 페이지명 article0*/
-#j_ntpl_article0 {
-	font-size: 30px;
-	border-color: white;
-	border-bottom: 1px solid #F54748;
-	font-family: 'Noto Sans', sans-serif;
-}
 /* 컨셉버튼 article1 */
 #j_ntpl_total:active {
 	background-color: #F54748;
@@ -37,6 +20,8 @@
 	justify-content: center;
 	align-items: center;
 	font-family: 'Noto Sans', sans-serif;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .j_ntpl_concept_btn {
@@ -66,6 +51,11 @@
 }
 
 /* 글쓰기버튼 article2*/
+#j_ntpl_article2{
+	width: 80%;
+	margin: 0 auto;
+}
+
 #j_ntpl_write_btn {
 	width: 100px;
 	height: 40px;

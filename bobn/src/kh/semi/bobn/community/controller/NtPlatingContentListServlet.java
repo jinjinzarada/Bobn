@@ -31,8 +31,7 @@ public class NtPlatingContentListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		System.out.println("/ntpclist");
 
 		// 디폴트 첫화면(전체)
@@ -43,17 +42,17 @@ public class NtPlatingContentListServlet extends HttpServlet {
 
 		// 페이징 처리
 		int currentPage = 1;
-		
+
 		String pageNumStr = request.getParameter("pageNum");
-		if(pageNumStr != null && !pageNumStr.equals(""))
-			  currentPage = Integer.parseInt(pageNumStr);
-		
+		if (pageNumStr != null && !pageNumStr.equals(""))
+			currentPage = Integer.parseInt(pageNumStr);
+
 		System.out.println("currentPage : " + currentPage);
 		final int pageSize = 6;
 		final int pageBlock = 3;
 
 		int totalCnt = countPlatingList(pbConcept);
-		System.out.println("갯수:" + totalCnt );
+		System.out.println("갯수:" + totalCnt);
 		// paging 처리
 		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 : 1);
 		int startPage = 1;
@@ -78,11 +77,12 @@ public class NtPlatingContentListServlet extends HttpServlet {
 			endRnum = totalCnt;
 		}
 
-		System.out.println("startRnum : "+ startRnum);
-		System.out.println("endRnum : "+ endRnum);
-		
+		System.out.println("startRnum : " + startRnum);
+		System.out.println("endRnum : " + endRnum);
+
 		// service로 이동
-		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingService().listPlatingContent(pbConcept, startRnum, endRnum);
+		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingService().listPlatingContent(pbConcept, startRnum,
+				endRnum);
 		System.out.println("리스트 갯수 : " + ntpcVolist.size());
 
 		// 읽어온 디비를 "ntpcVolist"넣어줌(jsp랑 소통)
@@ -92,16 +92,15 @@ public class NtPlatingContentListServlet extends HttpServlet {
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("pageCnt", pageCnt);
-		
-		
+
 		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_list.jsp").forward(request, response);
 	}
-		//게시글 총 갯수 조회
-		public int countPlatingList(String pbConcept) {
-			int result = new NtPlatingService().countPlatingList(pbConcept);
-			return result;
+
+	// 게시글 총 갯수 조회
+	public int countPlatingList(String pbConcept) {
+		int result = new NtPlatingService().countPlatingList(pbConcept);
+		return result;
 	}
-		
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

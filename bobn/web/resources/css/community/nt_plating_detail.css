@@ -1,162 +1,150 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27')
+	;
+
 * {
 	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_header{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
-#j_ntpd_footer{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
-
-/* 페이지명 article0*/
-#j_ntpd_article0{
-    font-size: 30px;
-    border-color: white;
-    border-bottom: 1px solid #F54748;
-    font-family: 'Noto Sans', sans-serif;
-}
-
 /* 회원id,컨셉,좋아요 article1*/
-#j_ntpd_article1{
-    border: white;
-    font-family: 'Noto Sans', sans-serif;
+#j_ntpd_article1 {
+	border: white;
+	font-family: 'Noto Sans', sans-serif;
+	width: 80%;
+	margin: 0 auto;
 }
-#j_ntpd_like_btn{
-    float: right;
-    font-family: 'Noto Sans', sans-serif;
+/* 삭제하기 버튼 */
+#j_ntpd_delete {
+	float: right;
 }
-#j_ntpd_concept{
-    float: right;
-    font-family: 'Noto Sans', sans-serif;
+
+#j_ntpd_delete_btn {
+	background-color: #F54748;
+	border-radius: 5px;
+	border: 1px solid #F54748;
+	cursor: pointer;
+	font-size: medium;
+	padding: 3px 10px;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_concept_btn{
-    border: 1px solid #F54748;
-    color: white;
-    background-color: #F54748;
-    border-top-right-radius: 5px;
-    border-radius: 5px; 
-    font-family: 'Noto Sans', sans-serif;
-   
+
+#j_ntpd_delete_btn:hover {
+	background-color: #e74141;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_member_id{
-    float: left;
-    font-family: 'Noto Sans', sans-serif;
-    
+
+/*게시글 작성자 */
+#j_ntpd_member_id {
+	float: left;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 /*이미지,내용,댓글작성 article2*/
-.j_ntpd_article2_img{
-    /* border: 1px solid black; */
-    text-align: center;
-    padding: 20px 40px;
-    font-size: medium;
-    font-family: 'Noto Sans', sans-serif;
+.j_ntpd_article2_img {
+	/* border: 1px solid black; */
+	text-align: center;
+	padding: 20px 40px;
+	font-size: medium;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_submit_btn{
-    background-color: #F54748;
-    border-radius: 5px;
-    border: 1px solid #F54748;
-    cursor: pointer;  
-    font-size: medium;
-    padding: 3px 10px;
-    font-family: 'Noto Sans', sans-serif;
-}
-#j_ntpd_submit_btn:hover {
-    background-color: #e74141;
-    font-family: 'Noto Sans', sans-serif;
-    }
 
-#j_ntpd_article2{
-    display: flex;               
-    justify-content: center; 
-    align-items: center;
-    border: white;
-    border-bottom: 1px solid #F54748;
-    font-family: 'Noto Sans', sans-serif;
+#j_ntpd_submit_btn {
+	background-color: #F54748;
+	border-radius: 5px;
+	border: 1px solid #F54748;
+	cursor: pointer;
+	font-size: medium;
+	padding: 3px 10px;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_ntprCnt{
-    float: left;
-    font-family: 'Noto Sans', sans-serif;
+
+#j_ntpd_submit_btn:hover {
+	background-color: #e74141;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_share{
-    float: right;
-    font-family: 'Noto Sans', sans-serif;
+
+#j_ntpd_article2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: white;
+	border-bottom: 1px solid #F54748;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_recomment{
-    width: 570px;
-    font-family: 'Noto Sans', sans-serif;
+
+#j_ntpd_ntprCnt {
+	float: left;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_detail_img{
+
+#j_ntpd_recomment {
+	width: 570px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+#j_ntpd_detail_img {
 	width: 600px;
 	height: 600px;
 	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntpd_cnt{
+
+#j_ntpd_cnt {
 	color: #F54748;
 	font-weight: bold;
 }
-#j_ntpd_ntprCnt{
+
+#j_ntpd_ntprCnt {
 	font-weight: bold;
 }
 
 /* 슬라이드 버튼 */
-.slides{
-	display:none;
+.slides {
+	display: none;
 	font-family: 'Noto Sans', sans-serif;
 }
 
-
-.j_ntpd_slides_l{
+.j_ntpd_slides_l {
 	background-color: #F54748;
-    border-radius: 5px;
-    border: 1px solid #F54748;
-    padding-bottom : 10px;
+	border-radius: 5px;
+	border: 1px solid #F54748;
+	padding-bottom: 10px;
 	font-size: 50px;
 	cursor: pointer;
 	float: left;
-  	margin-top : 290px;
-  	margin-right : 15px;
-  	font-family: 'Noto Sans', sans-serif;
+	margin-top: 290px;
+	margin-right: 15px;
+	font-family: 'Noto Sans', sans-serif;
 }
-.j_ntpd_slides_r{
+
+.j_ntpd_slides_r {
 	background-color: #F54748;
-    border-radius: 5px;
-    border: 1px solid #F54748;
-	padding-bottom : 10px;
+	border-radius: 5px;
+	border: 1px solid #F54748;
+	padding-bottom: 10px;
 	font-size: 50px;
 	cursor: pointer;
 	float: right;
-	margin-top : 290px;
-	margin-left : 15px;
+	margin-top: 290px;
+	margin-left: 15px;
 	font-family: 'Noto Sans', sans-serif;
 }
 
 /* 작성한 댓글 article3 */
-#j_ntpd_article3{
-    width: 680px; margin: 0 auto;
-    border: white;
-    font-family: 'Noto Sans', sans-serif;
+#j_ntpd_article3 {
+	width: 680px;
+	margin: 0 auto;
+	border: white;
+	font-family: 'Noto Sans', sans-serif;
 }
-
-#j_ntpd_memberid{
+/*댓글 작성자 */
+#j_ntpd_memberid {
 	float: left;
 	font-family: 'Noto Sans', sans-serif;
-	
 }
 
-#j_ntpd_date{
+#j_ntpd_date {
 	float: right;
 	padding-left: 40px;
 	font-family: 'Noto Sans', sans-serif;
-	
 }
-
-
-
-
-
-

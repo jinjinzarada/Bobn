@@ -43,15 +43,15 @@ public class NtPlatingService {
 		return result;
 
 	}
-	
+
 	// 게시글 총 갯수 조회
 	public int countPlatingList(String pbConcept) {
 		System.out.println("PlatingService vo :" + pbConcept);
-		
+
 		Connection conn = getConnection();
 		int result = new NtPlatingDao().countPlatingList(conn, pbConcept);
 		System.out.println("PlatingService result :" + result);
-		
+
 		close(conn);
 		return result;
 	}
@@ -59,16 +59,17 @@ public class NtPlatingService {
 	// 게시글 조회
 	public ArrayList<NtPlatingListVo> listPlatingContent(String pbConcept, int startRnum, int endRnum) {
 		System.out.println("PlatingService vo :" + pbConcept);
-		
+
 		Connection conn = getConnection();
-		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingDao().listPlatingContent(conn, pbConcept, startRnum, endRnum);
+		ArrayList<NtPlatingListVo> ntpcVolist = new NtPlatingDao().listPlatingContent(conn, pbConcept, startRnum,
+				endRnum);
 		System.out.println("PlatingService ntpcVolist :" + ntpcVolist);
 
 		close(conn);
 		return ntpcVolist;
 
 	}
-	
+
 	// 게시글 상세조회
 	public NtPlatingContentVo detailPlatingContent(int pbNo) {
 		System.out.println("PlatingService vo :" + pbNo);
@@ -107,31 +108,43 @@ public class NtPlatingService {
 		return result;
 
 	}
-	
+
 	// 댓글조회
-		public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(int pbNo) {
-			System.out.println("PlatingService vo :" + pbNo);
+	public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(int pbNo) {
+		System.out.println("PlatingService vo :" + pbNo);
 
-			Connection conn = getConnection();
-			ArrayList<NtPlatingRecommentVo> ntprVolist = new NtPlatingDao().detailPlatingRecomment(conn, pbNo);
-			System.out.println("PlatingService ntprVo :" + ntprVolist);
+		Connection conn = getConnection();
+		ArrayList<NtPlatingRecommentVo> ntprVolist = new NtPlatingDao().detailPlatingRecomment(conn, pbNo);
+		System.out.println("PlatingService ntprVo :" + ntprVolist);
 
-			close(conn);
-			return ntprVolist;
+		close(conn);
+		return ntprVolist;
 
-		}
-		
-		// 댓글 총 갯수 조회
-				public NtPlatingRecommentVo countPlatingRecomment(int pbNo) {
-					System.out.println("PlatingService vo :" + pbNo);
+	}
 
-					Connection conn = getConnection();
-					NtPlatingRecommentVo ntprVo = new NtPlatingDao().countPlatingRecomment(conn, pbNo);
-					System.out.println("PlatingService ntprVo :" + ntprVo);
+	// 댓글 총 갯수 조회
+	public NtPlatingRecommentVo countPlatingRecomment(int pbNo) {
+		System.out.println("PlatingService vo :" + pbNo);
 
-					close(conn);
-					return ntprVo;
+		Connection conn = getConnection();
+		NtPlatingRecommentVo ntprVo = new NtPlatingDao().countPlatingRecomment(conn, pbNo);
+		System.out.println("PlatingService ntprVo :" + ntprVo);
 
-				}
+		close(conn);
+		return ntprVo;
 
+	}
+
+	// 게시글 삭제
+	public int deletePlatingContent(int pbNo) {
+		System.out.println("PlatingService vo :" + pbNo);
+
+		Connection conn = getConnection();
+		int result = new NtPlatingDao().deletePlatingContent(conn, pbNo);
+		System.out.println("PlatingService result :" + result);
+
+		close(conn);
+		return result;
+
+	}
 }

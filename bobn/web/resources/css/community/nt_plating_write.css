@@ -3,15 +3,6 @@
 * {
 	font-family: 'Noto Sans', sans-serif;
 }
-
-#j_ntpw_header{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
-#j_ntpw_footer{
-          width:100%;
-          font-family: 'Noto Sans', sans-serif;
-}
 /* 페이지명 article0*/
 
 *, ::after, ::before{
@@ -41,6 +32,10 @@ font-family: 'Noto Sans', sans-serif;
 .j_ntpw_ta{
 	padding-left : 35px;
 	font-family: 'Noto Sans', sans-serif;
+}
+
+#j_ntpw_table_name{
+	vertical-align: middle;
 }
 
 #j_ntpw_write {
