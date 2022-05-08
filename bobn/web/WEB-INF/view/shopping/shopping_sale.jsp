@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
@@ -18,6 +15,9 @@
 <title>SALE페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -51,16 +51,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 					</div>
                 </article>
                 <c:if test="${pCountry eq '1'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
@@ -113,16 +103,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '2'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
@@ -175,16 +155,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '3'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
@@ -231,16 +201,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '4'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
@@ -287,16 +247,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '5'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
@@ -343,16 +293,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '6'}">
-                <ul class="c_sale_menu">
-                    <li>
-                      <a href="#" id="c_sale_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>
                 <article id="c_sale_article2">
                     <table>
                         <tr>
