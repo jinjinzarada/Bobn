@@ -11,11 +11,11 @@
  */
  /* 제거가 잘 안되서 이름을 바꿉니다.  또한 하단 부분과 맞지 않아 조정함.*/
 .header_container {
-	width: 1200px;
-	max-width: 1200px;
+	width: 1500px;
+	max-width: 1500px;
 	margin: auto;
-	margin-left: 80.500px;
-	margin-right: 80.500px; 
+/* 	margin-left: 80.500px;
+	margin-right: 80.500px;  */
 } 
 .nav-tabs .nav-item.show .nav-link {
 	border: none;
