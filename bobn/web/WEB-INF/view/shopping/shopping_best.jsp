@@ -51,16 +51,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 					</div>
                 </article>
                 <c:if test="${pCountry eq '1'}">
-                <!--  <ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
@@ -70,11 +60,11 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/tofustew.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail1';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/dackdori.png" alt="" width="267"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail2';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -93,15 +83,15 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/bulgogi.png" alt="" width="275"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail3';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/forkkimchi.png" alt="" width="285"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail4';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/grilledeel.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail5';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -120,15 +110,15 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/suckju.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail6';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/jeyuk.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail7';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/potatosuzebee.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail8';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -170,30 +160,20 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '2'}">
-				<!--<ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/steak.png" alt="" width="295"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail9';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/pizza.png" alt="" width="275"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail10';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/rosepasta.png" alt="" width="285"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail11';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -238,16 +218,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '3'}">
-				<!--<ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
@@ -306,16 +276,6 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '4'}">
-				<!--<ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
@@ -329,7 +289,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/chadol.png" alt="" width="295"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail19';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -374,22 +334,12 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '5'}">
-				<!--<ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/wollamssam.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail20';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/ssal.png" alt="" width="285"
@@ -442,30 +392,20 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 				</article>
 				</c:if>
 				<c:if test="${pCountry eq '6'}">
-				<!--<ul class="c_best_menu">
-                    <li>
-                      <a href="#" id="c_best_select1">추천순 &#9660;</a>
-                      <ul class="c_depth_1">
-                        <li><a href="#">가격순</a></li>
-                        <li><a href="#">판매순</a></li>
-                        <li><a href="#">추천순</a></li>
-                      </ul>
-                    </li>
-                </ul>-->
                 <article id="c_best_article2">
                     <table>
                         <tr>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail16';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/macaroon.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail17';"></object>
                             </td>
                             <td class="c_best_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/tiramisu.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail18';"></object>
                             </td>
                         </tr>
                         <tr>

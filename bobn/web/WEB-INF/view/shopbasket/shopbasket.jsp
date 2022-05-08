@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopbasket/shopbasket_main.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
@@ -73,7 +73,7 @@
 		</div>
 		</c:forEach>
 		<br> <br>
-		<div class="c_cart_jjin_total-price">
+		<!--  <div class="c_cart_jjin_total-price">
 			<br>
 			<div>총 상품금액 : &#8361;20,000</div>
 			<br>
@@ -82,7 +82,7 @@
 			<div>결제 금액 : &#8361;20,000</div>
 			<br>
 		</div>
-		<br>
+		<br>-->
 		<center>
 			<button class="c_cart_order-btn" type="button" name="order"
 				onclick="location.href = '/bobn/paylist';">주문하기</button>

@@ -56,11 +56,11 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_sale_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/boodae.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail12';"></object>
                             </td>
                             <td class="c_sale_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/dackdori.png" alt="" width="290"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail2';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -108,11 +108,11 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_sale_article2_img">
                                <object data="<%=request.getContextPath()%>/resources/image/product/steak.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail9';"></object>
                             </td>
                             <td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/rosepasta.png" alt="" width="290"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail11';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -206,7 +206,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/chadol.png" alt="" width="310"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail19';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -252,7 +252,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/wollamssam.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail20';"></object>
                             </td>
                         </tr>
                         <tr>
@@ -298,15 +298,15 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                          	<td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/tiramisu.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail18';"></object>
                             </td>
                             <td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/eggta.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail16';"></object>
                             </td>
                              <td class="c_sale_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/macaroon.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail';"></object>
+                                onclick="location.href='/bobn/shopdetail17';"></object>
                             </td>
                         </tr>
                         <tr>

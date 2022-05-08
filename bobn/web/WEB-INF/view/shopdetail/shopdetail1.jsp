@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopping/shopping_detail.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopdetail/shopdetail2.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,13 +29,13 @@
 	<!--사진-->
 	<div class="c_prodtail_image">
 		<object
-			data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png"
+			data="<%=request.getContextPath()%>/resources/image/product/tofustew.png"
 			alt="" width="400"></object>
 	</div>
 	<!-- 상품tmi-->
 	<div class="c_prodtail_right">
 		<h3>간편하게 즐기는</h3>
-		<h2 class="c_prodtail_proname">소고기 미역국</h2>
+		<h2 class="c_prodtail_proname">순두부찌개</h2>
 		<br>
 		<!-- <span class="c_prodtail_special">특가상품 | 50% </span> -->
 		<!--<span><STRIKE>5,000 </STRIKE></span><br>-->
@@ -48,7 +48,7 @@
 					class="c_prodtail_deli_title2">일반 배송 </span><br>
 			</div>
 			<br> <span class="c_prodtail_cal_title">칼로리&nbsp; </span> <span
-				class="c_prodtail_cal_title2">300kcal </span>
+				class="c_prodtail_cal_title2">150kcal </span>
 		</div>
 		<div class="c_prodtail_quantity">
 			<select>
@@ -84,11 +84,6 @@
 	</div>
 	</div>
 	<div class="c_prodtail_impor">
-		<!--<div class="c_prodtail_area">
-			 <div class="c_prodtail_title">상품 정보</div>
-			<br>
-			<div>결대로 찢은 소고기와 부드러운 미역을 넣어 만든 미역국입니다.</div> 
-		</div>-->
 	</div>
 </div>
 <div id="c_prodtail_header">
@@ -97,7 +92,7 @@
 	<script>
 		function btn() {
 			alert("장바구니에 추가되었습니다.")
-			location.href = "./shopdetail";
+			location.href = "./shopdetail1";
 		}
 	</script>
 </body>
