@@ -49,9 +49,7 @@
 			</div>
 
 			<div class="c_cart_image">
-				<!--<object data="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70"></object>-->
 				<img src="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70">
-				<!--<img src="/upload/${vo.d_file}" alt="" width="70">-->
 			</div>
 
 			<div class="c_cart_description">
@@ -67,22 +65,24 @@
 					+
 				</button>
 			</div>
+			<!-- 수량 변경에 따른 가격 변경 -->
 			<div class="c_cart_total-price">
-				 <input type="text" class="itemPriceCnt" name="${status.index}" value="&#8361;${vo.p_price}"> 
+				 <input type="hidden" class="itemOnePrice" value="${vo.p_price}">
+				 <span>&#8361;</span><input type="text" class="itemPriceCnt" value="${vo.p_price*vo.basketitemAmount}"> 
 			</div>
 		</div>
 		</c:forEach>
 		<br> <br>
-		<!--  <div class="c_cart_jjin_total-price">
+		<div class="c_cart_jjin_total-price">
 			<br>
-			<div>총 상품금액 : &#8361;20,000</div>
+			<div>총 상품금액 : &#8361;<span id="total_price"></span></div>
 			<br>
-			<div>배송비 : &#8361;3,000</div>
+			<div>배송비 : &#8361;<span id="delivery_price">3000</span></div>
 			<br>
-			<div>결제 금액 : &#8361;20,000</div>
+			<div>결제 금액 : &#8361;<span id="total_pay_price"></span></div>
 			<br>
 		</div>
-		<br>-->
+		<br>
 		<center>
 			<button class="c_cart_order-btn" type="button" name="order"
 				onclick="location.href = '/bobn/paylist';">주문하기</button>
@@ -135,7 +135,25 @@ function updateAmount(){
 			console.log(result);
 			console.log(this);  
 			if(result == 1){
-				$thisInputEle.val(updateVal); 					
+				$thisInputEle.val(updateVal); 
+				// 상품 한개 가격
+				var priceOneVal = Number($thisInputEle.parents(".c_cart_item").find(".itemOnePrice").val());
+				console.log(priceOneVal);
+				
+				// 수량에 따른 상품가격
+				var priceOneTotalVal = priceOneVal*updateVal;
+				$thisInputEle.parents(".c_cart_item").find(".itemPriceCnt").val(priceOneTotalVal);
+				changeTotalPrice();
+				
+				// 배송비
+				var priceDelivery = Number($thisInputEle.parents(".c_cart_item").find("#delivery_price").val());
+				console.log(priceDelivery);
+
+				// 총 결제가격
+				var priceTotalPay = priceOneTotalVal+priceDelivery;
+				$thisInputEle.parents(".c_cart_item").find("#total_pay_price").val(priceTotalPay);
+				changeTotalPrice();
+
 			}else if(result == 0){
 				// update에 실패 또는 삭제
 				location.reload();
@@ -145,19 +163,22 @@ function updateAmount(){
 		}
 	});
 }
-
 </script>
 <script>
-function change () {
-	hm = document.form.amount;
-	sum = document.form.sum;
-
-		if (hm.value < 0) {
-			hm.value = 0;
-		}
-	sum.value = parseInt(hm.value) * sell_price;
+function changeTotalPrice() {
+	var totalPrice = 0;
+	$(".itemPriceCnt").each(function(idx, thisEle){
+		totalPrice += Number($(thisEle).val());
+	});
+	$("#total_price").text(totalPrice);
+//    $("#delivery_price").text(delivery_price);
+	var delivery_price = $("#delivery_price").text();
+	$("#total_pay_price").text((Number(totalPrice)+Number(delivery_price)));
+	
+// 혹시나 넘버문제인가 하고 실행 --> 계속 NaN...! 
+//	$("#total_pay_price").text((Number(totalPrice))+(Number(delivery_price)));
+	
 }  
 </script>
-
 </body>
 </html>
