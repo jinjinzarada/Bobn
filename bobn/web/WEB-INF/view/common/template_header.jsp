@@ -67,7 +67,7 @@
 		// 새로고침 시 반복 팝업 방지 
 		if(msg !='' || msg !=false) {
 			alert('${msg}');		
-			location.href= "./main";
+			location.href= "./login";
 		}
 	</script>
 		</header>
