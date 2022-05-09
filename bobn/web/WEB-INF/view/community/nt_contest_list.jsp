@@ -21,7 +21,7 @@
                 </article>
                 <article id="j_ntcl_article1">
                     <div>
-                        <img src="<%=request.getContextPath()%>/resources/image/ntcc/콘테스트.jpg" id="j_ntcl_concept">
+                        <img src="<%=request.getContextPath()%>/resources/image/ntcc/contest.png" id="j_ntcl_concept">
                     </div>
                 </article>
                  <article id="j_ntcl_article2">
