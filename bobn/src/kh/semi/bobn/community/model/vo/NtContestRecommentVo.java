@@ -17,26 +17,31 @@ public class NtContestRecommentVo {
 	private Timestamp crDate;
 	private int cbNo;
 	private String memberId;
+	private int crRecommentCnt;
 	
 	//생성자
 	public NtContestRecommentVo() {}
 	
-	public NtContestRecommentVo(int crNo, String crContent, Timestamp crDate, int cbNo, String memberId) {
+	public NtContestRecommentVo(int crNo, String crContent, Timestamp crDate, int cbNo, String memberId,
+			int crRecommentCnt) {
 		super();
 		this.crNo = crNo;
 		this.crContent = crContent;
 		this.crDate = crDate;
 		this.cbNo = cbNo;
 		this.memberId = memberId;
+		this.crRecommentCnt = crRecommentCnt;
 	}
+
+
 
 	//toString
 	@Override
 	public String toString() {
 		return "NtContestRecommentVo [crNo=" + crNo + ", crContent=" + crContent + ", crDate=" + crDate + ", cbNo="
-				+ cbNo + ", memberId=" + memberId + "]";
+				+ cbNo + ", memberId=" + memberId + ", crRecommentCnt=" + crRecommentCnt + "]";
 	}
-
+	
 	//게터세터
 	public int getCrNo() {
 		return crNo;
@@ -77,9 +82,16 @@ public class NtContestRecommentVo {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
+
+	public int getCrRecommentCnt() {
+		return crRecommentCnt;
+	}
+
+	public void setCrRecommentCnt(int crRecommentCnt) {
+		this.crRecommentCnt = crRecommentCnt;
+	}
 	
-	
-	
+
 	
 	
 	

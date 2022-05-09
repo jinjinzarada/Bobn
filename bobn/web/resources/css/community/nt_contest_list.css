@@ -1,117 +1,146 @@
 @charset "UTF-8";
- /* 페이지명 article0*/
- #j_ntcl_article0{
-    font-size: 30px;
-    border-color: white;
-    border-bottom: 1px solid #F54748;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+* {
+	font-family: 'Noto Sans', sans-serif;
 }
 /* 컨셉버튼 article1 */
-#j_ntcl_checked{
-    background-color: #F54748;
+#j_ntcl_total:active {
+	background-color: #F54748;
+	color: white;
+	font-family: 'Noto Sans', sans-serif;
 }
-    #j_ntcl_article1{
-    display: flex;               
-    justify-content: center; 
-    align-items: center;
-    }
-    #j_ntcl_concept{
-        width: 1000px;
-        height: 300px;
-    }
-
-/* 참여하기버튼 article2*/
-#j_ntcl_write_btn{
-    width: 100px;
-    height: 40px;
-    font-size: 20px;
-    color: white;
-    background-color: #F54748;
-    border-top-right-radius: 5px;
-    border-radius: 5px;
-    display: flex;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;   
-    cursor: pointer;   
-
+#j_ntcl_birth:active {
+	background-color: #F54748;
+	color: white;
+	font-family: 'Noto Sans', sans-serif;
 }
+
+#j_ntcl_article1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Noto Sans', sans-serif;
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* 글쓰기버튼 article2*/
+#j_ntcl_article2{
+	width: 80%;
+	margin: 0 auto;
+}
+
+#j_ntcl_write_btn {
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+	color: white;
+	background-color: #F54748;
+	border-top-right-radius: 5px;
+	border-radius: 5px;
+	display: flex;
+	margin-left: auto;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-family: 'Noto Sans', sans-serif;
+}
+
 #j_ntcl_write_btn:hover {
-background-color: #e74141;
+	background-color: #e74141;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 /*이미지 article3*/
-.j_ntcl_article3_img{
-    text-align: center;
-    padding: 20px 40px;
-    font-size: medium;
-    cursor: pointer;  
-    width: 300px;
-	height: 300px;
-
-}
-
-#j_ntcl_img_item{
+.j_ntcl_article3_img {
+	/* border: 1px solid black; */
+	text-align: center;
+	padding: 20px 40px;
+	font-size: medium;
+	cursor: pointer;
 	width: 300px;
 	height: 300px;
+	box-sizing : unset;
+	font-family: 'Noto Sans', sans-serif;
 }
 
-.j_ntcl_article3_img:hover{
-    transform: scale(1.1);
+#j_ntcl_img_item {
+	width: 300px;
+	height: 300px;
+	font-family: 'Noto Sans', sans-serif;
 }
-.j_ntcl_article3_text{
-    text-align: center;
-    padding: 20px 40px;
-    font-size: medium;
-    overflow: hidden;
+
+.j_ntcl_article3_img:hover {
+	transform: scale(1.1);
+	font-family: 'Noto Sans', sans-serif;
 }
-.j_ntcl_article3_img_id{
-    text-align: left;
-    padding: 20px 40px;
-    font-size: medium;
+
+.j_ntcl_article3_text {
+	/* border: 1px solid black; */
+	text-align: center;
+	padding: 20px 40px;
+	font-size: medium;
+	font-family: 'Noto Sans', sans-serif;
 }
-#j_ntcl_article3{
-    display: flex;               
-    justify-content: center; 
-    align-items: center;
-    flex-wrap: wrap;
+
+.j_ntcl_article3_img_id {
+	/* border: 1px solid black; */
+	text-align: left;
+	padding: 20px 40px;
+	font-size: medium;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+#j_ntcl_article3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 /* 페이징 */
-#j_ntcl_article4{
-    display: flex;               
-    justify-content: center; 
-    align-items: center;   
-
+#j_ntcl_article4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination {
-display: inline-block;       
+	display: inline-block;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination a {
-color: black;
-float: left;
-padding: 8px 16px;
-text-decoration: none;
-border: 1px solid #ddd;
+	color: black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination a.j_ntcl_active {
-background-color: #F54748;
-color: white;
-border: 1px solid #F54748;
+	background-color: #F54748;
+	color: white;
+	border: 1px solid #F54748;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination a:hover:not(.active) {
-background-color: #ddd;
+	background-color: #ddd;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination a:first-child {
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-family: 'Noto Sans', sans-serif;
 }
 
 .j_ntcl_pagination a:last-child {
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-family: 'Noto Sans', sans-serif;
 }
