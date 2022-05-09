@@ -146,67 +146,17 @@ function updateAmount(){
 	});
 }
 
-/*
-function funPlusAmount(){
-	console.log(this);  // 요게 클릭한 버튼 + 요거.. 여기에 바로 형님에 숫자가 바꿔야하죠
-	console.log($(this));
-	console.log($(this).parents(".c_cart_item").children(".p_id").text());
-	// 요게 화면에 보여지던 숫자죠...네네
-	var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
-	var $thisEle = $(this);   // 변수에 담아서 기억합니다.
-	$.ajax({
-		url:"bcount",
-		type:"post",
-		data:{pId : pidVal, updateValue:1},
-		success: function (result){
-			console.log(result);
-			console.log(this);  // 이때 this는 ajax 코드가 this네요.네네
-			if(result == 1){
-				//$thisEle.prev().val(pidVal+1);
-				// 위 아래 결과가 어떻게 다른지도 봅시다.
-				var oldVal = $thisEle.prev().val();
-				$thisEle.prev().val(Number(oldVal)+1); // 이젠 진짜 맞겠죠
-			}else if(result == 0){
-				
-			}else {
-				// 요상한 경우..
-			}
-		}
-	});
-}
+</script>
+<script>
+function change () {
+	hm = document.form.amount;
+	sum = document.form.sum;
 
-function funMinusAmount(){
-	console.log(this); 
-	console.log($(this));
-	console.log($(this).parents(".c_cart_item").children(".p_id").text());
-	var pidVal = $(this).parents(".c_cart_item").children(".p_id").text();
-	var $thisEle = $(this);  
-	var updateVal = Number($thisEle.next().val())-1;
-	if(updateVal==0){
-		var yesno = confirm("상품개수는 1개 이상이어야 합니다. 삭제할까요?");
-		if(yesno == false){
-			// 1 상태 유지
-			return;
-		} // 삭제한다.. 아래 bcount로 가서 0인 경우 db에서 삭제 하도록 함
-	}
-	$.ajax({
-		url:"bcount",
-		type:"post",
-		data:{pId : pidVal, updateValue: updateVal},
-		success: function (result){
-			console.log(result);
-			console.log(this);  
-			if(result == 1){
-				$thisEle.next().val(updateVal); 
-			}else if(result == 0){
-				
-			}else {
-				
-			}
+		if (hm.value < 0) {
+			hm.value = 0;
 		}
-	});
-}
-*/
+	sum.value = parseInt(hm.value) * sell_price;
+}  
 </script>
 
 </body>
