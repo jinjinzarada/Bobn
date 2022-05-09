@@ -171,12 +171,9 @@ function changeTotalPrice() {
 		totalPrice += Number($(thisEle).val());
 	});
 	$("#total_price").text(totalPrice);
-//    $("#delivery_price").text(delivery_price);
+
 	var delivery_price = $("#delivery_price").text();
 	$("#total_pay_price").text((Number(totalPrice)+Number(delivery_price)));
-	
-// 혹시나 넘버문제인가 하고 실행 --> 계속 NaN...! 
-//	$("#total_pay_price").text((Number(totalPrice))+(Number(delivery_price)));
 	
 }  
 </script>
