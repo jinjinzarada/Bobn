@@ -1,0 +1,70 @@
+package kh.semi.bobn.community.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kh.semi.bobn.community.model.service.NtRecipeService;
+
+
+/**
+ * Servlet implementation class NtRecipeContentDeleteServlet
+ */
+@WebServlet("/ntrcdelete")
+public class NtRecipeContentDeleteServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public NtRecipeContentDeleteServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		System.out.println("/ntrcdelete");
+
+		// 화면에서 입력받은 데이터 꺼내기
+		String bnoStr = request.getParameter("rbNo");
+		System.out.println(bnoStr);
+		int rbNo = 0;
+		try {
+			// int->String
+			rbNo = Integer.parseInt(bnoStr);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+
+		if (rbNo < 1) { // 오류발생
+			// 읽어온 게시글 번호가 이상할 경우 아래 페이지로 이동
+			response.sendRedirect(request.getContextPath() + "ntrclist");
+			return;
+		}
+
+		// vo를 가지고 서비스로 이동
+		int ntrrResult = new NtRecipeService().deleteRecipeContent(rbNo);
+
+		if (ntrrResult == 0) {
+			System.out.println("게시글삭제 실패ㅠㅠ");
+		} else {
+			System.out.println("게시글삭제 성공!!");
+			response.sendRedirect("ntrclist");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+//	}
+
+}

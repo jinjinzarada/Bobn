@@ -17,24 +17,29 @@ public class NtRecipeRecommentVo {
 	private Timestamp rrDate;
 	private int rbNo;
 	private String memberId;
+	private int rrRecommentCnt;
 	
 	//생성자
 	public NtRecipeRecommentVo() {}
 	
-	public NtRecipeRecommentVo(int rrNo, String rrContent, Timestamp rrDate, int rbNo, String memberId) {
+	public NtRecipeRecommentVo(int rrNo, String rrContent, Timestamp rrDate, int rbNo, String memberId,
+			int rrRecommentCnt) {
 		super();
 		this.rrNo = rrNo;
 		this.rrContent = rrContent;
 		this.rrDate = rrDate;
 		this.rbNo = rbNo;
 		this.memberId = memberId;
+		this.rrRecommentCnt = rrRecommentCnt;
 	}
-	
+
+
+
 	//toString
 	@Override
 	public String toString() {
 		return "NtRecipeRecommentVo [rrNo=" + rrNo + ", rrContent=" + rrContent + ", rrDate=" + rrDate + ", rbNo="
-				+ rbNo + ", memberId=" + memberId + "]";
+				+ rbNo + ", memberId=" + memberId + ", rrRecommentCnt=" + rrRecommentCnt + "]";
 	}
 
 	//게터세터
@@ -76,6 +81,14 @@ public class NtRecipeRecommentVo {
 
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+
+	public int getRrRecommentCnt() {
+		return rrRecommentCnt;
+	}
+
+	public void setRrRecommentCnt(int rrRecommentCnt) {
+		this.rrRecommentCnt = rrRecommentCnt;
 	}
 	
 	
