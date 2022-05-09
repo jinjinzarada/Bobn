@@ -66,6 +66,23 @@
 	color: #343f56;
 }
 
+
+/* 회원 정보 수정 */
+.p_mypage_table {
+	border : none;
+	color: #343f56
+}
+
+.p_mypage_m1 {
+	color: #343f56;
+	font-weight: 300;
+}
+.btn-primary {
+	background-color: #f54748 !important;
+	border: none !important;
+	margin-left: 130%;
+}
+
 /* 회원 탈퇴 */
 .card-body {
 	margin-left: 20px;

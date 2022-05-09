@@ -11,94 +11,76 @@ public class MypageVo {
 //	MEMBER_GENDER      NOT NULL CHAR(1)      
 //	MEMBER_BIRTHOFDATE NOT NULL DATE   
 	
-	
-	//order_order table
-//	ORDER_NUMBER   NOT NULL VARCHAR2(20)  
-//	ORDER_CONTACT  NOT NULL NUMBER        
-//	ORDER_REQUEST  NOT NULL VARCHAR2(150) 
-//	ORDER_DATE     NOT NULL TIMESTAMP(6)  
-//	ORDER_STATUS            VARCHAR2(30)  
-//	PAY_TOTAL      NOT NULL NUMBER        
-//	PAY_METHOD     NOT NULL NUMBER        
-//	MEMBER_ID      NOT NULL VARCHAR2(20)  
-//	ORDER_DELIVERY NOT NULL VARCHAR2(100) 
-
-	//delivery table
-//	ORDER_NUMBER NOT NULL VARCHAR2(20)  
-//	D_DATE       NOT NULL TIMESTAMP(6)  
-//	D_COMPANY    NOT NULL VARCHAR2(100) 
-//	D_NUMBER     NOT NULL NUMBER        
-//	D_STATUS     NOT NULL NUMBER        
-//	D_TYPE       NOT NULL VARCHAR2(50)  
-	
-	private String loginId;
-	private String loginPwd;
-	private String mEmail;
-	private String mPhone;
-	private String orNum;
-	private String orStatus;
-	private String deSattus;
+	private String mId;
+	private String mpassword;
+	private String mname;
+	private String memail;
+	private String mphone;
+	private String mgender;
+	private String mbdate;
 	
 	@Override
 	public String toString() {
-		return "MypageVo [loginId=" + loginId + ", loginPwd=" + loginPwd + ", mEmail=" + mEmail + ", mPhone=" + mPhone
-				+ ", orNum=" + orNum + ", orStatus=" + orStatus + ", deSattus=" + deSattus + "]";
+		return "MypageVo [mId=" + mId + ", mpassword=" + mpassword + ", mname=" + mname + ", memail=" + memail
+				+ ", mphone=" + mphone + ", mgender=" + mgender + ", mbdate=" + mbdate + "]";
 	}
 
-	public String getLoginId() {
-		return loginId;
+	public String getmId() {
+		return mId;
 	}
 
-	public void setLoginId(String loginId) {
-		this.loginId = loginId;
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
 
-	public String getLoginPwd() {
-		return loginPwd;
+	public String getMpassword() {
+		return mpassword;
 	}
 
-	public void setLoginPwd(String loginPwd) {
-		this.loginPwd = loginPwd;
+	public void setMpassword(String mpassword) {
+		this.mpassword = mpassword;
 	}
 
-	public String getmEmail() {
-		return mEmail;
+	public String getMname() {
+		return mname;
 	}
 
-	public void setmEmail(String mEmail) {
-		this.mEmail = mEmail;
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
 
-	public String getmPhone() {
-		return mPhone;
+	public String getMemail() {
+		return memail;
 	}
 
-	public void setmPhone(String mPhone) {
-		this.mPhone = mPhone;
+	public void setMemail(String memail) {
+		this.memail = memail;
 	}
 
-	public String getOrNum() {
-		return orNum;
+	public String getMphone() {
+		return mphone;
 	}
 
-	public void setOrNum(String orNum) {
-		this.orNum = orNum;
+	public void setMphone(String mphone) {
+		this.mphone = mphone;
 	}
 
-	public String getOrStatus() {
-		return orStatus;
+	public String getMgender() {
+		return mgender;
 	}
 
-	public void setOrStatus(String orStatus) {
-		this.orStatus = orStatus;
+	public void setMgender(String mgender) {
+		this.mgender = mgender;
 	}
 
-	public String getDeSattus() {
-		return deSattus;
+	public String getMbdate() {
+		return mbdate;
 	}
 
-	public void setDeSattus(String deSattus) {
-		this.deSattus = deSattus;
+	public void setMbdate(String mbdate) {
+		this.mbdate = mbdate;
 	}
-
+	
+	
+	
 }

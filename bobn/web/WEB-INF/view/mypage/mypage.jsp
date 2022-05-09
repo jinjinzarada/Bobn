@@ -1,12 +1,21 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/mypage/mypage.css">
 
-
+<%@page import="kh.semi.bobn.mypage.model.vo.MypageVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<!-- JSTL -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -36,8 +45,6 @@
 <body>
 	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 	<section>
-
-	</script>
 		<div class="container">
 			<br> <br>
 			<h3>마이페이지</h3>
@@ -50,21 +57,19 @@
 			</div>
 
 			<div id="tab01" class="tabcontent">
-			<h4 class="tabhead">회원 정보 수정</h4>
-			<br>
-				<div class="row g-3 align-items-center">
-					<div class="col-auto">
-						<label for="inputPassword6" class="col-form-label">Password</label>
-					</div>
-					<div class="col-auto">
-						<input type="password" id="inputPassword6" class="form-control"
-							aria-describedby="passwordHelpInline">
-					</div>
-					<div class="col-auto">
-						<span id="passwordHelpInline" class="form-text"> Must be
-							8-20 characters long. </span>
-					</div>
-				</div>
+				<h4 class="tabhead">회원 정보 수정</h4>
+				<br>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">아이디
+					${mVo.mId }</li>
+					<li class="list-group-item">비밀번호</li>
+					<li class="list-group-item">이름</li>
+					<li class="list-group-item">생년월일</li>
+					<li class="list-group-item">성별</li>
+					<li class="list-group-item">이메일 </li>
+					<li class="list-group-item">전화번호</li>
+				</ul>
+				<br> <input class="btn btn-primary" type="submit" value="수정하기">
 			</div>
 
 			<div id="tab02" class="tabcontent">
@@ -98,34 +103,33 @@
 								name="flexRadioDefault" id="flexRadioDefault1"> <label
 								class="form-check-label" for="flexRadioDefault1"> 기타 </label>
 						</div>
-						<br> <input class="btn btn-danger" type="submit"
-							value="탈퇴하기">
+						<br> <input class="btn btn-danger" type="submit" value="탈퇴하기">
 					</div>
 				</div>
 			</div>
 		</div>
-		
-	<script>
-	$(document).ready(function() {
-		$('#tab01').show();
-		$('#tab02').hide();
-	});
-	function opentab(evt, mypagetab) {
-		var i, p_tabcontent, p_tablinks;
 
-		tabcontent = document.getElementsByClassName("tabcontent");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		tablinks = document.getElementsByClassName("tablinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className
-					.replace(" active", "");
-		}
-		document.getElementById(mypagetab).style.display = "block";
-		evt.currentTarget.className += " active";
-	}
-	</script>
+		<script>
+			$(document).ready(function() {
+				$('#tab01').show();
+				$('#tab02').hide();
+			});
+			function opentab(evt, mypagetab) {
+				var i, p_tabcontent, p_tablinks;
+
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(
+							" active", "");
+				}
+				document.getElementById(mypagetab).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+		</script>
 	</section>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
