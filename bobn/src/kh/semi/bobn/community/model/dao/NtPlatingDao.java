@@ -316,13 +316,13 @@ public class NtPlatingDao {
 	}
 
 	// 게시글 삭제
-	public int deletePlatingContent(Connection conn, int bNo) {
+	public int deletePlatingContent(Connection conn, int pbNo) {
 		int result = 0;
 
 		String sql = "delete from ntpc where pb_no = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bNo);
+			pstmt.setInt(1, pbNo);
 			result = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
