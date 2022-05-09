@@ -1,11 +1,8 @@
 @charset "UTF-8";
-/* 페이지명 article0*/
- #j_ntcs_article0{
-    font-size: 30px;
-    border-color: white;
-    border-bottom: 1px solid #F54748;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+* {
+	font-family: 'Noto Sans', sans-serif;
 }
-
 /* 고객센터 안내 article1*/
 #j_ntcs_notice_btn{
     width: 170px;
@@ -21,14 +18,14 @@
     background-color: #e74141;
 }
 
-li{
+.j_ntcs_li{
     padding: 5px;
 }
 
 #j_ntcs_info{
     font-size: 40px;
 }
-img{
+#j_ntcs_img{
     width: 160px;
     height: 160px;
 }
@@ -44,7 +41,7 @@ img{
     align-items: center;
     }
 
-    label{
+    .j_ntcs_label{
     margin: auto;
     padding: 10px 35px;
     text-align: center;
@@ -57,7 +54,7 @@ img{
     display: none;
     }
 
-    label:hover {
+    .j_ntcs_label:hover {
     background-color: #F54748;
     color: white;
     }

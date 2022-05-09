@@ -1,7 +1,13 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/cscenter/csreset.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/cscenter/cscommon.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/cscenter/cscontent_list.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,48 +15,48 @@
 <head>
 <meta charset="UTF-8">
 <title>고객센터</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 </head>
 <body>
+<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
 <div class="j_wrap content">
         <div id="j_content">
             <section>
-                <article id="j_ntcs_article0">
-                    <p>고객센터</p>
-                </article>
                 <article id="j_ntcs_article1">
                     <div>
                         <ul>
-                            <li>
+                            <li class="j_ntcs_li">
                                 <p id="j_ntcs_info">고객센터</p>
                             </li>
                             <br>
-                            <li>
+                            <li class="j_ntcs_li">
                                 운영시간 : 평일 09:00 ~ 18:00 (주말 & 공휴일 제외)
                             </li>
-                            <li>
+                            <li class="j_ntcs_li">
                                 이메일 : cscenter@bobn.net
                             </li>
-                            <li>
+                            <li class="j_ntcs_li">
                                 전화 : 1234 - 4321
                             </li>
                             <br>
-                            <li>
-                                <button type="button" id="j_ntcs_notice_btn" onclick="location.href='어디로이동할지적어야함';">1:1 문의하기</button>
-                            </li>
                         </ul>
                     </div>
                     <div>
-                        <img src="<%=request.getContextPath()%>/resources/image/cscenter/고객센터.png">
+                        <img src="<%=request.getContextPath()%>/resources/image/cscenter/고객센터.png" id="j_ntcs_img">
                     </div>
                 </article>
                 <article id="j_ntcs_article2">
                     <div class="j_ntcs_btn_wrap">
-                        <input type="radio" name="cscenter" sn="j_ntcs_article8" class="j_ntcs_btn" id="j_ntcs_notice"><label for="j_ntcs_notice" class="labelChecked1">공지사항</label>
-                        <input type="radio" name="cscenter" sn="j_ntcs_article3" class="j_ntcs_btn" id="j_ntcs_or"><label for="j_ntcs_or">주문/결제</label>
-                        <input type="radio" name="cscenter" sn="j_ntcs_article4" class="j_ntcs_btn" id="j_ntcs_de"><label for="j_ntcs_de">배송</label>
-                        <input type="radio" name="cscenter" sn="j_ntcs_article5" class="j_ntcs_btn" id="j_ntcs_ca"><label for="j_ntcs_ca">취소/환불</label>
-                        <input type="radio" name="cscenter" sn="j_ntcs_article6" class="j_ntcs_btn" id="j_ntcs_me"><label for="j_ntcs_me">회원</label>
-                        <input type="radio" name="cscenter" sn="j_ntcs_article7" class="j_ntcs_btn" id="j_ntcs_se"><label for="j_ntcs_se">서비스/기타</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article8" class="j_ntcs_btn" id="j_ntcs_notice"><label for="j_ntcs_notice" class="labelChecked1 j_ntcs_label">공지사항</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article3" class="j_ntcs_btn" id="j_ntcs_or"><label for="j_ntcs_or" class="j_ntcs_label">주문/결제</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article4" class="j_ntcs_btn" id="j_ntcs_de"><label for="j_ntcs_de" class="j_ntcs_label">배송</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article5" class="j_ntcs_btn" id="j_ntcs_ca"><label for="j_ntcs_ca" class="j_ntcs_label">취소/환불</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article6" class="j_ntcs_btn" id="j_ntcs_me"><label for="j_ntcs_me" class="j_ntcs_label">회원</label>
+                        <input type="radio" name="cscenter" sn="j_ntcs_article7" class="j_ntcs_btn" id="j_ntcs_se"><label for="j_ntcs_se" class="j_ntcs_label">서비스/기타</label>
                     </div>
                 </article>
                 <article id="j_ntcs_article3" class="j_ntcs_cscontent">
@@ -268,5 +274,6 @@
           $("#"+val).addClass("j_ntcs_cscontent_select");
         });
     </script>
+    	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>
