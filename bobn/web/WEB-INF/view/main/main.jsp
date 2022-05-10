@@ -13,6 +13,7 @@
     pageEncoding="UTF-8"%>
  <!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,7 +76,7 @@
 	<div class="p_section_container">
 		<div class="p_headline_container">
 		    <div class="p_section_head"><h3>BEST SHOPPING</h3></div>
-		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/shopblist">더 보기</a></div></div>
+		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/shopblist" class="p_section_more_a">더 보기</a></div></div>
 	    </div>
 	    <div class="flex-container">
 			<c:forEach items="${bslist}" var="bs">
@@ -95,7 +96,7 @@
 	<div class="p_section_container">
 		<div class="p_headline_container">
 		    <div class="p_section_head"><h3>BEST RECIPE</h3></div>
-		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/curreclist">더 보기</a>
+		    <div class="p_section_more"><div><a href="<%=request.getContextPath() %>/curreclist" class="p_section_more_a">더 보기</a>
 		    </div>
 		    </div>
 	    </div>
@@ -118,7 +119,7 @@
 		<div class="p_headline_container">
 		    <div class="p_section_head"><h3>BEST PLATING</h3></div>
 		    <div class="p_section_more">
-		    	<div><a href="<%=request.getContextPath() %>/ntpclist">더 보기</a></div>
+		    	<div><a href="<%=request.getContextPath() %>/ntpclist" class="p_section_more_a">더 보기</a></div>
 	    	</div>
 	    </div>
 	    <div class="flex-container">
@@ -128,7 +129,7 @@
 				    <img src="<c:out value="${bp.pbImgLoc}" />"/>
 				</div> 
 			    <div class="p_article-desc">
-			        <p class="p_article-desc-title"><c:out value="${bp.pbTitle}" /></p>
+			        <p class="p_article-desc-title"><c:out value="${fn:substring(bp.pbTitle, 0, 9)}" /></p>
 			    </div>
 		  	</div>
 	    	</c:forEach>

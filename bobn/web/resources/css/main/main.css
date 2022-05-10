@@ -23,12 +23,14 @@
         	width:20%;
             position: relative;
             right : 30px;
-        }
-        .p_section_more >a{
-        	text-align: right;
+            text-align: right;
         	font-size:15px;
-        	color:#f54748;
-            text-decoration: none;
+
+        }
+         .p_section_more_a {
+        	color:#f54748 !important;
+            text-decoration: none !important;
+
         }
         .p_section_more>div{
         	position: absolute;
@@ -50,10 +52,13 @@
             justify-content: center;
         }
         .p_article-img {
-        	border:none;            
+        	border:none;       
         }
         .p_article-img img {
-            width: 100%;
+		    display: inline-block;
+		    width: 100%;
+		    height: 250px;
+            object-fit: cover;
             border:none;
         }
         .p_article-desc {
