@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.bobn.community.model.service.NtContestService;
 import kh.semi.bobn.community.model.vo.NtContestListVo;
-import kh.semi.bobn.community.model.vo.NtContestRecommentVo;
 
 /**
  * Servlet implementation class NtContestContentListServlet

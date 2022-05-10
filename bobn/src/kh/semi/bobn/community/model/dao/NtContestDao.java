@@ -16,14 +16,10 @@ public class NtContestDao {
 	private PreparedStatement pstmt = null; // 질의
 	private ResultSet rs = null; // 결과물을 가져옴
 
-	// TODO : USER 회원가입 및 login 후 재수정
-	// TODO : 임시 memberId : hyemi
-
 	// 게시글등록
 	public int insertContestContent(Connection conn, NtContestContentVo ntccVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
-		System.out.println("PreparedStatement vo :" + ntccVo);
+		String memberId = ntccVo.getMemberId();
 
 		String sql = "insert into ntcc(cb_no, cb_title, cb_content, member_id)"
 				+ "values ((select nvl(max(cb_no),0)+1 from ntcc),?,?,?)";
@@ -204,7 +200,7 @@ public class NtContestDao {
 	// 댓글등록
 	public int insertContestRecomment(Connection conn, NtContestRecommentVo ntcrVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
+		String memberId = ntcrVo.getMemberId();
 		System.out.println("PreparedStatement vo :" + ntcrVo);
 
 		String sql = "insert into ntcr(cr_no, cr_content, cb_no, member_id)"
@@ -232,7 +228,7 @@ public class NtContestDao {
 	public ArrayList<NtContestRecommentVo> detailContestRecomment(Connection conn, int cbNo) {
 		ArrayList<NtContestRecommentVo> ntcrVolist = null;
 
-		String sql = "select * from ntcr where cb_no=?";
+		String sql = "select * from ntcr where cb_no=? order by cr_date desc";
 
 		// vo에 가져온걸 sql문에 넣어줌
 		try {

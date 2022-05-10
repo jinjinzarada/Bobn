@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.bobn.community.model.service.NtRecipeService;
 import kh.semi.bobn.community.model.vo.NtRecipeRecommentVo;
+import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtRecipeRecommentWriteServlet
@@ -37,6 +38,16 @@ public class NtRecipeRecommentWriteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String memberId = "";
+
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo == null) {
+			request.setAttribute("ntrmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_recipe_errorPage.jsp").forward(request, response);
+		}else {
+			memberId = ssvo.getmId();
+		}
+		
 		System.out.println("/ntrrwrite");
 
 		// 화면(nt_recipe_detail.jsp)에서 입력받은 데이터 꺼내기
@@ -59,6 +70,7 @@ public class NtRecipeRecommentWriteServlet extends HttpServlet {
 
 		// 꺼낸 정보 vo에 담아줌(erd-레시피댓글테이블)
 		NtRecipeRecommentVo ntrrVo = new NtRecipeRecommentVo();
+		ntrrVo.setMemberId(memberId);
 		ntrrVo.setRbNo(rbNo);
 		ntrrVo.setRrContent(rrContent);
 		System.out.println("controller ntrrVo:" + ntrrVo);

@@ -18,6 +18,7 @@ import javax.servlet.http.Part;
 import kh.semi.bobn.community.model.service.NtRecipeService;
 import kh.semi.bobn.community.model.vo.NtRecipeContentVo;
 import kh.semi.bobn.community.model.vo.NtRecipeImgVo;
+import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtRecipeContentWriteServlet
@@ -44,7 +45,13 @@ public class NtRecipeContentWriteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/community/nt_recipe_write.jsp").forward(request, response);
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo == null) {
+			request.setAttribute("ntrmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_recipe_errorPage.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("WEB-INF/view/community/nt_recipe_write.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -57,10 +64,17 @@ public class NtRecipeContentWriteServlet extends HttpServlet {
 		String rbConcept = request.getParameter("rbConcept");
 		String rbTitle = request.getParameter("rbTitle");
 		String rbContent = request.getParameter("rbContent");
-		System.out.println(rbTitle);
+		String memberId = "";
+		
+		//로그인 정보 읽어오기
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo!=null) {
+			memberId = ssvo.getmId();
+		}
 
 		// 꺼낸 정보 vo에 담아줌(erd-플레이팅게시글테이블)
 		NtRecipeContentVo ntrcVo = new NtRecipeContentVo();
+		ntrcVo.setMemberId(memberId);
 		ntrcVo.setRbConcept(rbConcept);
 		ntrcVo.setRbTitle(rbTitle);
 		ntrcVo.setRbContent(rbContent);

@@ -16,17 +16,10 @@ public class NtPlatingDao {
 	private PreparedStatement pstmt = null; // 질의
 	private ResultSet rs = null; // 결과물을 가져옴
 
-	// TODO : USER 회원가입 및 login 후 재수정
-	// TODO : 임시 memberId : hyemi
-
 	// 게시글등록
 	public int insertPlatingContent(Connection conn, NtPlatingContentVo ntpcVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
-		System.out.println("PreparedStatement vo :" + ntpcVo);
-
-//		String sql = "insert into ntpc(pb_no, pb_concept, pb_title, pb_content, pb_date, member_id)"
-//				+ "values ((select nvl(max(pb_no),0)+1 from ntpc),?,?,?,default,(select member_id from member where member_id='"+memberId+"'))";
+		String memberId = ntpcVo.getMemberId();
 
 		String sql = "insert into ntpc(pb_no, pb_concept, pb_title, pb_content, member_id)"
 				+ "values ((select nvl(max(pb_no),0)+1 from ntpc),?,?,?,?)";
@@ -232,7 +225,7 @@ public class NtPlatingDao {
 	// 댓글등록
 	public int insertPlatingRecomment(Connection conn, NtPlatingRecommentVo ntprVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
+		String memberId = ntprVo.getMemberId();
 		System.out.println("PreparedStatement vo :" + ntprVo);
 
 		String sql = "insert into ntpr(pr_no, pr_content, pb_no, member_id)"
@@ -260,7 +253,7 @@ public class NtPlatingDao {
 	public ArrayList<NtPlatingRecommentVo> detailPlatingRecomment(Connection conn, int pbNo) {
 		ArrayList<NtPlatingRecommentVo> ntprVolist = null;
 
-		String sql = "select * from ntpr where pb_no=?";
+		String sql = "select * from ntpr where pb_no=? order by pr_date desc";
 
 		// vo에 가져온걸 sql문에 넣어줌
 		try {

@@ -16,17 +16,10 @@ public class NtRecipeDao {
 	private PreparedStatement pstmt = null; // 질의
 	private ResultSet rs = null; // 결과물을 가져옴
 
-	// TODO : USER 회원가입 및 login 후 재수정
-	// TODO : 임시 memberId : hyemi
-
 	// 게시글등록
 	public int insertRecipeContent(Connection conn, NtRecipeContentVo ntrcVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
-		System.out.println("PreparedStatement vo :" + ntrcVo);
-
-//		String sql = "insert into ntrc(rb_no, rb_concept, rb_title, rb_content, rb_date, member_id)"
-//				+ "values ((select nvl(max(rb_no),0)+1 from ntrc),?,?,?,default,(select member_id from member where member_id='"+memberId+"'))";
+		String memberId = ntrcVo.getMemberId();
 
 		String sql = "insert into ntrc(rb_no, rb_concept, rb_title, rb_content, member_id)"
 				+ "values ((select nvl(max(rb_no),0)+1 from ntrc),?,?,?,?)";
@@ -232,7 +225,7 @@ public class NtRecipeDao {
 	// 댓글등록
 	public int insertRecipeRecomment(Connection conn, NtRecipeRecommentVo ntrrVo) {
 		int result = 0;
-		String memberId = "jihow78"; // TODO : 삭제
+		String memberId = ntrrVo.getMemberId();
 		System.out.println("PreparedStatement vo :" + ntrrVo);
 
 		String sql = "insert into ntrr(rr_no, rr_content, rb_no, member_id)"
@@ -260,7 +253,7 @@ public class NtRecipeDao {
 	public ArrayList<NtRecipeRecommentVo> detailRecipeRecomment(Connection conn, int rbNo) {
 		ArrayList<NtRecipeRecommentVo> ntrrVolist = null;
 
-		String sql = "select * from ntrr where rb_no=?";
+		String sql = "select * from ntrr where rb_no=? order by rr_date desc";
 
 		// vo에 가져온걸 sql문에 넣어줌
 		try {

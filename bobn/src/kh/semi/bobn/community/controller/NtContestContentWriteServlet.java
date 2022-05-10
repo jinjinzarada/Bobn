@@ -18,6 +18,7 @@ import javax.servlet.http.Part;
 import kh.semi.bobn.community.model.service.NtContestService;
 import kh.semi.bobn.community.model.vo.NtContestContentVo;
 import kh.semi.bobn.community.model.vo.NtContestImgVo;
+import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtContestContentWriteServlet
@@ -44,7 +45,13 @@ public class NtContestContentWriteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/community/nt_contest_write.jsp").forward(request, response);
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo == null) {
+			request.setAttribute("ntcmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_contest_errorPage.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("WEB-INF/view/community/nt_contest_write.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -56,10 +63,17 @@ public class NtContestContentWriteServlet extends HttpServlet {
 		// 화면(nt_contest_write.jsp)에서 입력받은 데이터 꺼내기
 		String cbTitle = request.getParameter("cbTitle");
 		String cbContent = request.getParameter("cbContent");
-		System.out.println(cbTitle);
+		String memberId = "";
+		
+		//로그인 정보 읽어오기
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo!=null) {
+			memberId = ssvo.getmId();
+		}
 
 		// 꺼낸 정보 vo에 담아줌(erd-콘테스트게시글테이블)
 		NtContestContentVo ntccVo = new NtContestContentVo();
+		ntccVo.setMemberId(memberId);
 		ntccVo.setCbTitle(cbTitle);
 		ntccVo.setCbContent(cbContent);
 		System.out.println("controller vo:" + ntccVo);

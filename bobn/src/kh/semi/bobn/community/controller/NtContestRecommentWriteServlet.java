@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.bobn.community.model.service.NtContestService;
 import kh.semi.bobn.community.model.vo.NtContestRecommentVo;
+import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtContestRecommentWriteServlet
@@ -28,15 +29,24 @@ public class NtContestRecommentWriteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String memberId = "";
+
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo == null) {
+			request.setAttribute("ntcmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_contest_errorPage.jsp").forward(request, response);
+		}else {
+			memberId = ssvo.getmId();
+		}
+		
 		System.out.println("/ntcrwrite");
 
 		// 화면(nt_Contest_detail.jsp)에서 입력받은 데이터 꺼내기
@@ -59,6 +69,7 @@ public class NtContestRecommentWriteServlet extends HttpServlet {
 
 		// 꺼낸 정보 vo에 담아줌(erd-플레이팅댓글테이블)
 		NtContestRecommentVo ntcrVo = new NtContestRecommentVo();
+		ntcrVo.setMemberId(memberId);
 		ntcrVo.setCbNo(cbNo);
 		ntcrVo.setCrContent(crContent);
 		System.out.println("controller ntcrVo:" + ntcrVo);

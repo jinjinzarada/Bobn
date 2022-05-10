@@ -18,6 +18,7 @@ import javax.servlet.http.Part;
 import kh.semi.bobn.community.model.service.NtPlatingService;
 import kh.semi.bobn.community.model.vo.NtPlatingContentVo;
 import kh.semi.bobn.community.model.vo.NtPlatingImgVo;
+import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtPlatingContentWriteServlet
@@ -44,7 +45,13 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/community/nt_plating_write.jsp").forward(request, response);
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo == null) {
+			request.setAttribute("ntpmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_plating_errorPage.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("WEB-INF/view/community/nt_plating_write.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -52,15 +59,21 @@ public class NtPlatingContentWriteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("/ntpcwrite들어왔음");
-
 		// 화면(nt_plating_write.jsp)에서 입력받은 데이터 꺼내기
 		String pbConcept = request.getParameter("pbConcept");
 		String pbTitle = request.getParameter("pbTitle");
 		String pbContent = request.getParameter("pbContent");
-		System.out.println(pbTitle);
-
+		String memberId = "";
+		
+		//로그인 정보 읽어오기
+		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
+		if(ssvo!=null) {
+			memberId = ssvo.getmId();
+		}
+		
 		// 꺼낸 정보 vo에 담아줌(erd-플레이팅게시글테이블)
 		NtPlatingContentVo ntpcVo = new NtPlatingContentVo();
+		ntpcVo.setMemberId(memberId);
 		ntpcVo.setPbConcept(pbConcept);
 		ntpcVo.setPbTitle(pbTitle);
 		ntpcVo.setPbContent(pbContent);

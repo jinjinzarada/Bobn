@@ -36,8 +36,8 @@
 	font-size: 20px;
 	color: white;
 	background-color: #F54748;
-	border-top-right-radius: 5px;
 	border-radius: 5px;
+	border:1px solid #F54748;
 	display: flex;
 	margin-left: auto;
 	justify-content: center;
