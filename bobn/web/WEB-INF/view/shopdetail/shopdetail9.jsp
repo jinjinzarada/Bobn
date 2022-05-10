@@ -20,11 +20,10 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <body>
-<div id="c_prodtail_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-</div>
  <br>
-<div>
+<div class="wrap section">  
+<section>
 	<div>
 	<!--사진-->
 	<div class="c_prodtail_image">
@@ -85,10 +84,9 @@
 	</div>
 	<div class="c_prodtail_impor">
 	</div>
+</section>
 </div>
-<div id="c_prodtail_header">
 <%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
-</div>
 	<script>
 		function btn() {
 			alert("장바구니에 추가되었습니다.")

@@ -28,7 +28,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
 %>
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
 <!-- c_warp 대신 warp으로 대체함.   -->
-     <div class="wrap content">
+     <div class="wrap section">
         <div id="c_content">
             <section>
                 <article id="c_sale_article0">

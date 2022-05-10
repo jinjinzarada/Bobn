@@ -14,7 +14,8 @@
 }
 
 .c_pay_frame{
-    width: 80%;
+/* section 크기가 지정되어 있으므로 100%로 유지함.
+     width: 80%; */
     margin:0 auto;
     padding: 50px 50px;
 }

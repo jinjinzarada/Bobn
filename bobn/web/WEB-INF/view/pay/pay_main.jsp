@@ -21,9 +21,9 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 	crossorigin="anonymous"></script>
 <body>
-<div id="c_pay_header">
 <%@ include file="/WEB-INF/view/common/template_header.jsp" %>
-</div>
+<div id="wrap section">
+<section>
 	<div class="c_pay_frame">
 		<!-- 주문자 -->
 		<h2 class="c_payment_title">&nbsp; 주문자</h2>
@@ -80,31 +80,31 @@
 		<br>
 		<table class="c_pay_order">
 			<tr>
-				<td>
+				<!--<td>
 					<input type="checkbox" name="check" value="selectall" onclick="selectAll(this)">
-				</td>
+				</td>-->
 				<td>상품사진</td>
 				<td>상품명</td>
 				<td>가격</td>
 				<td>수량</td>
+				<td>가격</td>
 			</tr>
 		</table>
 			<c:forEach items="${payvolist}" var="vo">
 		<table class="c_pay_order_list">
 			<tr>
-				<td width="102">
-					<input type="checkbox" name ="check" value="select">
-				</td>
-				<td width="297">
-					<!-- <object data="<%=request.getContextPath()%>/resources/image/product/seaweedsoup.png" alt="" width="70"></object> -->
+				<td width="272">
 					<img src="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70">
 				</td>
-				<td width="239">${vo.p_name}</td>
-				<td width="180">
-					<span id="c_pay_price">${vo.p_price}</span>원
+				<td width="220">${vo.p_name}</td>
+				<td width="169">
+					<span name="itemOnePrice" class="itemOnePrice" id="c_pay_price">${vo.p_price}</span>원
+				</td>
+				<td width="169">
+					<span name="itemAmount" class="itemAmount" id="c_pay_price">${vo.basketitemAmount}</span>개</td> 
 				</td>
 				<td>
-					<span name="itemAmount" class="itemAmount" id="c_pay_price">${vo.basketitemAmount}</span>개</td> 
+					<span name="itemPriceCnt" class="itemPriceCnt" id="c_pay_price">${vo.p_price*vo.basketitemAmount}</span>원</td> 
 				</td>
 			</tr>
 		</table>
@@ -134,14 +134,16 @@
 				<th>배송비</th>
 				<th>총 결제금액</th>
 			</tr>
-			<c:forEach items="${payvolist}" var="vo">
 			<tr style="background-color: #fff;">
 				<td style="padding: 23px 0;">
-					<span id="c_pay_price">${vo.payTotal}</span>원
+					<span style="font-size:20pt; font-weight:bold;" id="pay_total_price"></span>원
 				</td>
-			</c:forEach>
-				<td><span id="c_pay_price">3,000</span>원</td>
-				<td><span id="c_pay_price">13,000</span>원</td>
+				<td>
+					<span style="font-size:20pt; font-weight:bold;" id="pay_delivery_price">3000</span>원
+				</td>
+				<td>
+					<span style="font-size:20pt; font-weight:bold;" id="pay_total_pay_price"></span>원
+				</td>
 			</tr>
 		</table>
 		<div class="c_pay_btnside">
@@ -151,11 +153,85 @@
 	</div>
 	<br>
 	<br>
-	<br>
-	<br>
-	<div id="c_pay_footer">
+</section>
+</div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 	</div>
+	<script>
+//$(".c_cart_plus-btn").click(updateAmount);
+//$(".c_cart_minus-btn").click(updateAmount);
+function updateAmount(){
+	console.log(this); 
+	console.log($(this));
+	console.log($(this).parents(".c_pay_calcu").children(".p_id").text());
+	var pidVal = $(this).parents(".c_pay_calcu").children(".p_id").text();
+	var $thisEle = $(this);
+	var $thisInputEle = "";
+	var p_m_value = 0;
+	if($(this).prop("class") == 'c_cart_plus-btn'){
+		p_m_value = 1;
+		$thisInputEle = $thisEle.prev();
+	} else if($(this).prop("class") == 'c_cart_minus-btn'){
+		p_m_value = -1
+		$thisInputEle = $thisEle.next();
+	}
+	var updateVal = Number($thisInputEle.val())+p_m_value;
+	if(updateVal==0){
+		var yesno = confirm("상품개수는 1개 이상이어야 합니다. 삭제할까요?");
+		if(yesno == false){
+			return;
+		} 
+	}
+	$.ajax({
+		url:"pcount",
+		type:"post",
+		data:{pId : pidVal, updateValue: updateVal},
+		success: function (result){
+			console.log(result);
+			console.log(this);  
+			if(result == 1){
+				$thisInputEle.val(updateVal); 
+				// 상품 한개 가격
+				var priceOneVal = Number($thisInputEle.parents(".c_pay_calcu").find(".itemOnePrice").val());
+				console.log(priceOneVal);
+				
+				// 수량에 따른 상품가격
+				var priceOneTotalVal = priceOneVal*updateVal;
+				$thisInputEle.parents(".c_pay_calcu").find(".itemPriceCnt").val(priceOneTotalVal);
+				changeTotalPrice();
+				
+				// 배송비
+				var priceDelivery = Number($thisInputEle.parents(".c_pay_calcu").find("#pay_delivery_price").val());
+				console.log(priceDelivery); 
+
+				// 총 결제가격
+				var priceTotalPay = priceOneTotalVal+priceDelivery;
+				$thisInputEle.parents(".c_pay_calcu").find("#pay_total_pay_price").val(priceTotalPay);
+				changeTotalPrice();
+
+			}else if(result == 0){
+				// update에 실패 또는 삭제
+				location.reload();
+			}else {
+				
+			}
+		}
+	});
+}
+</script>
+<script>
+function changeTotalPrice() {
+	var totalPrice = 0;
+//	$(".itemPriceCnt").each(function(idx, thisEle){
+//		totalPrice += Number($(thisEle).val());
+//	});
+	$("#pay_total_price").text(totalPrice);
+
+	var pay_delivery_price = $("#pay_delivery_price").text();
+	$("#pay_total_pay_price").text((Number(totalPrice)+Number(pay_delivery_price)));
+	
+}  
+</script>
 <script>
     function findAddress(){
     new daum.Postcode({
@@ -165,7 +241,6 @@
 
             document.getElementById('c_pay_postnum').value = data.zonecode;
             document.getElementById('c_pay_add1').value = data.address;
-            
         }
     }).open();
 }
@@ -186,16 +261,6 @@
                 document.getElementById("phone6").value = document.getElementById("phone3").value;
            }
     }
-</script>
-<script>
-function selectAll(selectAll)  {
-	  const checkboxes 
-	       = document.getElementsByName("check");
-
-		  checkboxes.forEach((checkbox) => {
-		  checkbox.checked = selectAll.checked;
-	  })
-	}
 </script>
 </body>
 </html>

@@ -19,7 +19,6 @@ public class PayDao {
 		int result = 0;
 
 		String sql = "insert into payment values (?,?,?,?,?,?,default)";
-//		(select nvl(max (basketitem_amount),0)+1 from basket_item)
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, vo.getPayNumber());
@@ -43,7 +42,6 @@ public class PayDao {
 	public ArrayList<PayVo> selectPayList(Connection conn, String memberId) {
 		ArrayList<PayVo> volist =null;
 		
-//		String sql="select * from product p join basket_item b using(p_id) where b.member_id = ?";
 		String sql = "select * from product p, detail_image d, basket_item b where p.p_id = d.p_id and d.p_id = b.p_id order by b.member_id";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -80,4 +78,69 @@ public class PayDao {
 		}
 		return volist;
 	}
+
+	public int updateAmount(Connection conn, String pId, String memberId, int updateValue) {
+		int result = 0;
+
+		String sql = "update basket_item set basketitem_amount = ? where member_id =? and p_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, updateValue);
+			pstmt.setString(2, memberId);
+			pstmt.setString(3, pId);
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("result" + result);
+		return result;
+	}
+	public int selectPayAmount(Connection conn, String pId, String memberId) {
+		int result = 0;
+
+		String sql = "select basketitem_amount from basket_item where member_id =? and p_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			pstmt.setString(2, pId);
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("result" + result);
+		return result;
+	}
+
+	public int deletePayAmount(Connection conn, String pId, String memberId) {
+		int result = 0;
+
+		String sql = "delete from basket_item where member_id =? and p_id=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			pstmt.setString(2, pId);
+
+			result = pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("result" + result);
+		return result;
+	}
+
+
 }
