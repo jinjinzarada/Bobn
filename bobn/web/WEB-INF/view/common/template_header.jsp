@@ -62,7 +62,7 @@
 					</ul>
 				</div>
 				</div>
-		<script> 
+	<script> 
 		var msg = '${msg}';
 		// 새로고침 시 반복 팝업 방지 
 		if(msg !='' || msg !=false) {

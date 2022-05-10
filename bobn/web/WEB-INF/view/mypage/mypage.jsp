@@ -43,8 +43,9 @@
 </head>
 
 <body>
-	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
-	<section>
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+<div class="wrap section">  
+<section>
 		<div class="container">
 			<br> <br>
 			<h3>마이페이지</h3>
@@ -131,6 +132,7 @@
 			}
 		</script>
 	</section>
+	</div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>

@@ -30,8 +30,9 @@
 <!-- font -->
 </head>
 <body>
-	<%@ include file="/WEB-INF/view/common/template_header.jsp"%>
-	<section>
+<%@ include file="/WEB-INF/view/common/template_header.jsp" %>
+<div id="wrap section">
+<section>
 	<c:if test="${empty eVo}">
 		<p>해당 글이 없습니다.</p>
 	</c:if>
@@ -73,7 +74,8 @@
 			</div>
 		</div>
 		</c:if>
-	</section>
+</section>
+</div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
 </body>
 </html>

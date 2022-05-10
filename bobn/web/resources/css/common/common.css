@@ -31,8 +31,8 @@
         section{
             /* 1. 중앙정렬 */
         	/* header.css의 nav 설정과 비슷하게 함 */
-			width: 1500px;
-			max-width: 1500px;
+			width: 1200px;
+			max-width: 1200px;
 			margin: 0 auto;
             position: relative;
             overflow: hidden;
@@ -47,8 +47,8 @@
         /* footer */
         footer{
         	/* header.css의 nav 설정과 비슷하게 함 */
-			width: 1500px;
-			max-width: 1500px;
+			width: 1200px;
+			max-width: 1200px;
 			margin: auto;
 			
             margin-top: 10px;

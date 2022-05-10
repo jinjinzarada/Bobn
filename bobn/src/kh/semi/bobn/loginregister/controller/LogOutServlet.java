@@ -22,7 +22,7 @@ public class LogOutServlet extends HttpServlet {
 		session.invalidate();  
 		request.setAttribute("msg", "정상적으로 로그아웃 되었습니다.");
 		System.out.println("로그아웃 성공");
-		request.setAttribute("location", "/main");
+		request.setAttribute("location", request.getContextPath()+"/main");
 		request.getRequestDispatcher("/WEB-INF/view/loginregister/logout.jsp").forward(request, response);
 		
 	}

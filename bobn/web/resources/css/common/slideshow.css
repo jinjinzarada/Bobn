@@ -3,8 +3,8 @@
 .slideshow-container {
   position: relative;
 	/* header.css의 nav 설정과 비슷하게 함 */
-	width: 1500px;
-	max-width: 1500px;
+	width: 1200px;
+	max-width: 1200px;
 	margin: auto;
 }
 
