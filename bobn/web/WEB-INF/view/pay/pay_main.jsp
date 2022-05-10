@@ -27,7 +27,7 @@
 	<div class="c_pay_frame">
 		<!-- 주문자 -->
 		<h2 class="c_payment_title">&nbsp; 주문자</h2>
-		<hr>
+		<br>
 		<table>
         <tr>
             <td class = "c_pay_deliv">이름&nbsp;</td>
@@ -153,11 +153,15 @@
 	</div>
 	<br>
 	<br>
+	<br>
+	<br>
 </section>
+	<br>
+	<br>
 </div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
 	</div>
-	<script>
+<script>
 //$(".c_cart_plus-btn").click(updateAmount);
 //$(".c_cart_minus-btn").click(updateAmount);
 function updateAmount(){
