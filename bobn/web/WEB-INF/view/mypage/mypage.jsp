@@ -16,6 +16,7 @@
 
 <!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -63,7 +64,7 @@
 					</tr>
 					<tr>
 						<th scope="row"><b>생년월일</b></th>
-						<td>${ssUserVo.mbdate }</td>
+						<td>${fn:substring(ssUserVo.mbdate, 0,10)}</td>
 					</tr>
 					<tr>
 						<th scope="row"><b>성별</b></th>
