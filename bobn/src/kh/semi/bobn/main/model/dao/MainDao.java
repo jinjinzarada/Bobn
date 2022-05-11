@@ -57,7 +57,7 @@ public class MainDao {
 
 		String sql = "select i.CRRECONTENTIMAGE_LOCATION, c.CRRECONTENT_TITLE "
 				+ " from cr_recipe_content c left outer join cr_recipe_content_image i"
-				+ " using (CRRECONTENT_NO) order by CRRECONTENT_NO";
+				+ " using (CRRECONTENT_NO) order by CRRECONTENT_NO desc";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();

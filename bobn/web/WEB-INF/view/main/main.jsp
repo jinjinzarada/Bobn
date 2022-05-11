@@ -104,7 +104,7 @@
 			<c:forEach items="${brlist}" var="br">
 			<div class="p_article_container">
 			    <div class="p_article-img">
-				    <img src="<%=request.getContextPath() %><c:out value="${br.crImgLoc}" />"/>
+				    <img src="<c:out value="${br.crImgLoc}" />"/>
 				</div> 
 			    <div class="p_article-desc">
 			        <p class="p_article-desc-title"><c:out value="${br.crTitle}" /></p>
