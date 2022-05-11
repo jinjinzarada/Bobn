@@ -98,7 +98,10 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 
 </script>
 <style>
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
+* {
+	font-family: 'Noto Sans', sans-serif !important;
+}
 .modal {
 	     position: fixed;
 	     top: 0;
@@ -120,18 +123,177 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 	     position: absolute;
 	     background-color: #fff;
 	     width: 700px;
-	     height: 300px;
+	     height: 320px;
 	     padding: 15px;
 	   }
 	
 .modalBox button {
 	     display: block;
 	     width: 80px;
-	     margin: 0 auto;
+	     margin: auto;
+	     margin-top: 5%;
+	     margin-bottom: 5%;
+	     background: #fb9300;
+	    border: 1px solid #fb9300;
+	    color: white;
+	    transition: 0.3s;
 	   }
+.modalBox button:hover {
+		background: white;
+    	color: #fb9300;
+		}
+	   
 .hidden {
           display: none;
         }
+
+#userinput_wrap{
+	margin: auto;
+	text-align: left;
+	width: 1200px;
+	padding-left: 9.111px;
+	margin-top: 1.5%;
+	margin-bottom: -1%;
+	display: flex;
+	flex-direction: column;
+	
+}
+#userinput2_wrap{
+	width: 100vw;
+	word-break: break-all;
+	white-space:wrap; 
+}
+#userinput3_wrap{
+	margin-top: 0.5%;
+	float: left;
+	width: 100vw;
+	
+}
+
+#userinput_commitbutton{
+	background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    transition: 0.3s;
+}
+#userinput_commitbutton:hover{
+	background: white;
+    color: #fb9300;
+}
+
+.resizemap{
+	background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    transition: 0.3s;
+}
+.resizemap:hover{
+	background: white;
+    color: #fb9300;
+}
+
+#line1, #line2, #line3{
+	background-color: #F54748;
+	height:2px;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 1%;
+}
+
+#placelisttitle{
+	margin: auto;
+	width: 70%;
+	margin-bottom: 1%;
+	font-weight: bold;
+}
+
+#placesList{
+	padding-left: 0;
+	margin: auto;
+	width: 70%;
+	
+}
+#pagination{
+	margin: auto;
+	width: 70%;
+}
+#exceldown_wrap{
+	margin: auto;
+	text-align: left;
+	width:70%;
+	margin-top: 1.5%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+	
+}
+.search{
+	margin: auto;
+	text-align: left;
+	width: 70%;
+	
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
+	
+}
+#sectionall{
+	margin: auto;
+	item-align: left;
+}
+
+#l_excelbtn{
+	background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    transition: 0.3s;
+     margin-right: 1%;
+     flex-shrink: 0;
+     margin-top:2px;
+}
+#l_excelbtn:hover{
+	background: white;
+    color: #fb9300;
+}
+.openBtn{
+	background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    transition: 0.3s;
+    margin-top:2px;
+    flex-shrink: 0;
+}
+.openBtn:hover{
+	background: white;
+    color: #fb9300;
+}
+#naverbtntagcopy{
+	background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    transition: 0.3s;
+    flex-shrink: 0;
+    margin-right: 1%;
+    margin-top:2px;
+}
+#naverbtntagcopy:hover{
+	background: white;
+    color: #fb9300;
+}
+
+.paste_food, .caloshow, .sodiumshow{
+	font-weight: bold;
+	border:0;
+}
+.caloshow, .sodiumshow{
+	font-weight: bold;
+	width: 50px;
+}
+a{
+	color:#fb9300;
+	text-decoration: none;
+}
+
 
 </style>
 </head>
@@ -141,17 +303,20 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 
 
 	<div id="userinput_wrap">
-		<div>검색어를 입력해주세요. 검색어는 현재 위치하신 곳의 지역명(예:역삼동)과 검색하시고 싶은 메뉴 혹은 키워드(예:삼겹살, 맛집 등)를 나누어서 입력해주시기 바랍니다.</div>
-		<input id="userplace" placeholder="현재 위치 입력(예:역삼동)">
-		<input id="userfood" placeholder="음식/키워드 입력(예:맛집)" onkeypress="userinputsearch()">
-		<button id="userinput_commitbutton" onclick="userinputsearch()">검색어 입력하기!</button>
+		<div id="userinput2_wrap">검색어를 입력해주세요. 검색어는 현재 위치하신 곳의 <strong>동 단위의 지역명</strong>(예:역삼동)과 검색하시고 싶은 <strong>메뉴</strong>(예:삼겹살, 불고기 등)를 나누어서 입력해주시기 바랍니다.</div>
+		<div id="userinput3_wrap">
+			<input id="userplace" placeholder="현재 위치 입력(예:역삼동)">
+			<input id="userfood" placeholder="음식 메뉴 입력(예:맛집)" onkeypress="userinputsearch()">
+			<button id="userinput_commitbutton" onclick="userinputsearch()">검색어 입력하기!</button>
+			<button class="resizemap" onclick="resizeMap(); relayout()">지도가 작다면 크기를 늘려드릴게요!</button>
+		</div>
 	</div>
 	
 	
 	<div class="map_wrap">
-		    <div id="map" style="width:80%;height:50%;position:relative;overflow:hidden; margin-top:5%; margin-bottom:5%; margin-left:10%; margin-right:10%"></div>
+		    <div id="map" style="width:70%;height:50%;position:relative;overflow:hidden; margin-top:5%; margin-bottom:5%; margin-left:15%; margin-right:15%"></div>
 		    <div>
-				<button class="resizemap" onclick="resizeMap(); relayout()">지도가 작다면 크기를 늘려드릴게요!</button> 
+				 
 			</div>
 		<div id="menu_wrap" class="bg_white">
 		        <div class="option">
@@ -162,13 +327,15 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 		                </form>
 		            </div>
 		        </div>
-			<hr>
+			<hr id="line1">
 			<div id="searchresult_wrap">
 		     <div id="placelisttitle">검색결과</div>
-			<hr>
+			<hr id="line2">
 			<div id="placediv">
 		      <ul id="placesList"></ul>
+		      <hr id="line3">
 		      <div id="pagination"></div>
+		      
 		    </div>
 		    </div>
 		</div>
@@ -189,15 +356,19 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 		</tbody> 
 	</table>
 
-
-	<input type="button" value="결과를 엑셀로 다운로드하세요!" onclick="tablecreate(); downloadexcel();"/>
+	<div id="exceldown_wrap">
+		<input type="button" id="l_excelbtn" value="결과를 엑셀로 다운로드하세요!" onclick="tablecreate(); downloadexcel();"/>
+		 <button id="naverbtntagcopy" type="button" onclick="tooriginalbtn()">선택한 음식점을 네이버로 더 자세히 알려드릴게요!</button>
+		<button type="button" class="openBtn" onclick="calo()">그런데 그거 아세요...? 지금 검색하신 음식은...</button>
+	</div>
 	
 	
-	<section>
+	<section id="sectionall">
 	        <form action="https://search.naver.com/search.naver" method="get" target="_blank">
 	            <div class="search">
 	                <input type="text" name="query" id="query" value="" hidden>
-	                <button type="submit" onclick="searchnaver()">선택한 음식점을 네이버로 더 자세히 알려드릴게요!</button>
+	                <button id="naverbtntag" type="submit" onclick="searchnaver()"hidden>선택한 음식점을 네이버로 더 자세히 알려드릴게요!</button>
+		          
 	            </div>
 	        </form>
 	</section>
@@ -206,17 +377,17 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 	<section>
 
         <div class="calo_wrap">
-            <button type="button" class="openBtn" onclick="calo()">그런데 그거 아세요...? 지금 검색하신 음식은...</button>
+            
             <div class="modal hidden">
 			  <div class="bg"></div>
 			  <div class="modalBox">
 			    <div>현재 검색을 하신</div>
 			    <input type="text" name="paste_food" class="paste_food">
 			    <div>의 경우 100g당 칼로리와 나트륨 함량이 무려</div>
-			    <input type="text" class="caloshow"><span>칼로리</span>
+			    <input type="text" class="caloshow"><span>칼로리 &nbsp&nbsp&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp&nbsp&nbsp</span>
 			    <input type="text" class="sodiumshow"><span>mg</span>
 			    <div>정도네요!</div>
-			    <div>건강에 좋다고만은 할 수 없겠네요!</div>
+			    <div>건강에 더 좋은 선택지가 있어요!</div>
 			    <div>만약 건강과 영양을 복합적으로 생각하시는 분이시라면</div>
 			    <div><a href="<%=request.getContextPath()%>/shopblist">여기를 클릭해주세요!</a></div>
 			    <div>여러분의 건강과 영양을 한층 더 건강하게!</div>
@@ -228,7 +399,9 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 </div>
 
 <script>
-
+	function tooriginalbtn(){
+		$('#naverbtntag').click(); 
+	}
 	
 	const open = () => {
 	    document.querySelector(".modal").classList.remove("hidden");
@@ -461,7 +634,7 @@ function displayPlaces(places) {
 function getListItem(index, places) {
 
     var el = document.createElement('li'),
-    itemStr = '<input type="radio" class="' + (index+1) + '" name="resname_radio"></input>' + '<span class="markerbg marker_' + (index+1) + '"></span>' +
+    itemStr = '<input type="radio" id="radiobtn" class="' + (index+1) + '" name="resname_radio">' + (index+1) + '번 음식점</input>' + '<span class="markerbg marker_' + (index+1) + '"></span>' +
                 '<div class="info">' +
                 '   <h5 class="nav_resname">' + places.place_name + '</h5>';
 
@@ -566,8 +739,8 @@ function removeAllChildNods(el) {
  
 function resizeMap() {
     var mapContainer = document.getElementById('map');
-    mapContainer.style.width = '80%';
-    mapContainer.style.height = '90%'; 
+    mapContainer.style.width = '70%';
+    mapContainer.style.height = '70%'; 
 }
 
 function relayout() {    

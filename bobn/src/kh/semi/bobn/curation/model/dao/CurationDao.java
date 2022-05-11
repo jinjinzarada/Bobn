@@ -18,9 +18,10 @@ public class CurationDao {
 	
 	public CurationVo readFoodInfo(Connection conn, String foodname){
 		CurationVo result = null;
-		//String sql = "select AVG(CALORIE), AVG(SODIUM) from cr_restaurant where FOOD_NAME LIKE '%' || ? || '%'";
-		String sql2 = "select TRUNC(AVG(CALORIE)), TRUNC(AVG(SODIUM)) from cr_restaurant where FOOD_NAME LIKE '%' || ? || '%'";
+		
 		String sql = "select TRUNC(AVG(CALORIE)), TRUNC(AVG(SODIUM)) from cr_restaurant where FOOD_NAME=?";
+		//String sql = "select TRUNC(AVG(CALORIE)), TRUNC(AVG(SODIUM)) from cr_restaurant where FOOD_NAME LIKE ? || '%'";
+		//String sql = "select TRUNC(AVG(CALORIE)), TRUNC(AVG(SODIUM)) from cr_restaurant where FOOD_NAME=?";
 		//String sql = "select CALORIE, SODIUM from cr_restaurant where FOOD_NAME=?";
 		try { 
 			pstmt = conn.prepareStatement(sql);
