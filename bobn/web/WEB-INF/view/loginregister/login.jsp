@@ -81,7 +81,7 @@
             x.style.left = "-850px";
             y.style.left = "-450px";
             y2.style.left = "170px";
-            z.style.left = "370px";
+            z.style.left = "380px";
         }
     </script>
     <script>

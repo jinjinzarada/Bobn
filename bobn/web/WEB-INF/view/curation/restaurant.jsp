@@ -204,8 +204,9 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 	
 	
 	<section>
+
         <div class="calo_wrap">
-            <button type="button" class="openBtn" onclick="calo()">그런데 그거 아세요...?</button>
+            <button type="button" class="openBtn" onclick="calo()">그런데 그거 아세요...? 지금 검색하신 음식은...</button>
             <div class="modal hidden">
 			  <div class="bg"></div>
 			  <div class="modalBox">
@@ -215,7 +216,7 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 			    <input type="text" class="caloshow"><span>칼로리</span>
 			    <input type="text" class="sodiumshow"><span>mg</span>
 			    <div>정도네요!</div>
-			    <div>건강에 좋다고만은 할 수 없는 상태에요!</div>
+			    <div>건강에 좋다고만은 할 수 없겠네요!</div>
 			    <div>만약 건강과 영양을 복합적으로 생각하시는 분이시라면</div>
 			    <div><a href="<%=request.getContextPath()%>/shopblist">여기를 클릭해주세요!</a></div>
 			    <div>여러분의 건강과 영양을 한층 더 건강하게!</div>
@@ -246,6 +247,12 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 	  
 	  function calo(){
 		  
+		  if($('#userfood').val() == null || $('#userfood').val() == ''){
+			  alert('검색하실 음식을 먼저 입력해주세요!');
+			  document.querySelector(".openBtn").removeEventListener("click", open);
+			  setTimeout( function(){ $('#userfood').focus(); }, 50 );
+			  return;
+		  }
 		  if($('#userfood').val() !== null && $('#userfood').val() !== ''){
 			  var userinputfoodname = $('#userfood').val();
 			  console.log(userinputfoodname);
@@ -253,6 +260,7 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 		  }
 		  
 		  if($('.paste_food').val() !== null && $('.paste_food').val() !== ''){
+			  document.querySelector(".modal").classList.remove("hidden");
 			  var foodname = $('.paste_food').val();
 			  $.ajax({
                   url:'calo',
@@ -280,8 +288,9 @@ function _excelDown(fileName, sheetName, sheetHtml) {
                       $('.sodiumshow').val("확인된 나트륨 정보가 없네요!");
                   }
               });
+			  $(".paste_food").prop('readonly', true);
 		  }
-		  $(".paste_food").prop('readonly', true);
+		  
 		}
 
 
@@ -358,7 +367,7 @@ function searchPlaces() {
     var keyword = document.getElementById('keyword').value;
 
     if (!keyword.replace(/^\s+|\s+$/g, '')) {
-        alert('키워드를 입력해주세요!');
+        alert('키워드를 입력해주세요! 본 검색은 한글에 최적화가 되어 있습니다.');
         return false;
     }
 
