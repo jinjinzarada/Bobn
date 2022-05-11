@@ -78,7 +78,7 @@
 							<tr>
 								<th class="l_recwrite_table" style="color: white;">썸네일 이미지 추가</th>
 								<td class="l_recwrite_tablewr">
-									<button type="button" id="l_recwrite_addfile">이미지 추가
+									<button type="button" id="l_recwrite_addfile">파일 추가
 								</td>
 							</tr>
 							<tr>
