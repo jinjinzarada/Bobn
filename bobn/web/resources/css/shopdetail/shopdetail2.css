@@ -10,8 +10,9 @@ section > div{
     /* 안에 이미지가 400px 495px임 */
     /* width: 300px;
     height: 100px;  */
-    /* margin-left:300px; */
+    margin-left:300px;
     margin-top: 20px;
+    margin-bottom: 30px;
     /* 형제관계 */
     float:left;
 /*     clear:both; */
@@ -19,6 +20,7 @@ section > div{
 /* 이미지 옆 상세내용 */
 .c_prodtail_right{
     float: right;
+    margin-top: 100px;
     margin-right: 370px;
     margin-bottom: 30px;
     /* text-align: center; */

@@ -87,7 +87,7 @@
 				<td>상품명</td>
 				<td>가격</td>
 				<td>수량</td>
-				<td>가격</td>
+				<td>금액</td>
 			</tr>
 		</table>
 			<c:forEach items="${payvolist}" var="vo">
@@ -136,13 +136,13 @@
 			</tr>
 			<tr style="background-color: #fff;">
 				<td style="padding: 23px 0;">
-					<span style="font-size:20pt; font-weight:bold;" id="pay_total_price"></span>원
+					<span style="font-size:20pt; font-weight:bold;" id="pay_total_price">478000</span>원
 				</td>
 				<td>
 					<span style="font-size:20pt; font-weight:bold;" id="pay_delivery_price">3000</span>원
 				</td>
 				<td>
-					<span style="font-size:20pt; font-weight:bold;" id="pay_total_pay_price"></span>원
+					<span style="font-size:20pt; font-weight:bold;" id="pay_total_pay_price">481000</span>원
 				</td>
 			</tr>
 		</table>

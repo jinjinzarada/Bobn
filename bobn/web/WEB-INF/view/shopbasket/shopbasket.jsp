@@ -39,7 +39,6 @@
 			<div class="c_cart_procnt">수량</div>
 			<div class="c_cart_proprice">가격</div>
 		</div>
-		
 		<c:forEach items="${basketvolist}" var="vo">
 		<!-- Product # -->
 		<div class="c_cart_item">
@@ -68,7 +67,7 @@
 			<!-- 수량 변경에 따른 가격 변경 -->
 			<div class="c_cart_total-price">
 				 <input type="hidden" class="itemOnePrice" value="${vo.p_price}">
-				 <span>&#8361;</span><input type="text" class="itemPriceCnt" value="${vo.p_price*vo.basketitemAmount}"> 
+				 <span>&#8361;</span><input type="text" class="itemPriceCnt" value="${vo.p_price*vo.basketitemAmount}">
 			</div>
 		</div>
 		</c:forEach>
@@ -91,6 +90,7 @@
 </section>
 </div>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp" %>
+
 <script>
 function selectAll(selectAll)  {
 	  const checkboxes 

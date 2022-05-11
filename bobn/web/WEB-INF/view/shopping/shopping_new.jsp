@@ -53,6 +53,33 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                 <c:if test="${pCountry eq '1'}">
                 <article id="c_new_article2">
                     <table>
+                    	<tr>
+                            <td class="c_new_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/chickenfoot.png" alt="" width="260"
+                                onclick="location.href='/bobn/shopdetail15';"></object>
+                            </td>
+                            <td class="c_new_article2_img">
+                               <object data="<%=request.getContextPath()%>/resources/image/product/boodae.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail12';"></object>
+                            </td>
+                            <td class="c_new_article2_img">
+                                <object data="<%=request.getContextPath()%>/resources/image/product/forkkimchi.png" alt="" width="300"
+                                onclick="location.href='/bobn/shopdetail4';"></object>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="c_new_article2_text">닭발 / &#8361;9,500</td>
+                            <td class="c_new_article2_text">부대찌개 / <strike>&#8361;6,000</strike>&nbsp;&#8361;4,800</td>
+                            <td class="c_new_article2_text">돼지김치찌개 / &#8361;10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="c_new_article2_text"style="color:#F54748">NEW | 품절되었습니다.</td>
+                            <td class="c_new_article2_text" style="color:#F54748">NEW</td>
+                            <td class="c_new_article2_text"style="color:#F54748">NEW</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br></td>
+                        </tr>
                         <tr>
                             <td class="c_new_article2_img">
                                 <object data="<%=request.getContextPath()%>/resources/image/product/dduck.png" alt="" width="290"
@@ -80,33 +107,7 @@ ArrayList<ShoppingVo> volist = (ArrayList<ShoppingVo>)request.getAttribute("voli
                         <tr>
                             <td colspan="3"><br></td>
                         </tr>
-                        <tr>
-                            <td class="c_new_article2_img">
-                               <object data="<%=request.getContextPath()%>/resources/image/product/chickenfoot.png" alt="" width="260"
-                                onclick="location.href='/bobn/shopdetail15';"></object>
-                            </td>
-                            <td class="c_new_article2_img">
-                               <object data="<%=request.getContextPath()%>/resources/image/product/boodae.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail12';"></object>
-                            </td>
-                            <td class="c_new_article2_img">
-                                <object data="<%=request.getContextPath()%>/resources/image/product/forkkimchi.png" alt="" width="300"
-                                onclick="location.href='/bobn/shopdetail4';"></object>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="c_new_article2_text">닭발 / &#8361;9,500</td>
-                            <td class="c_new_article2_text">부대찌개 / <strike>&#8361;6,000</strike>&nbsp;&#8361;4,800</td>
-                            <td class="c_new_article2_text">돼지김치찌개 / &#8361;10,000</td>
-                        </tr>
-                        <tr>
-                            <td class="c_new_article2_text"style="color:#F54748">NEW | 품절되었습니다.</td>
-                            <td class="c_new_article2_text" style="color:#F54748">NEW</td>
-                            <td class="c_new_article2_text"style="color:#F54748">NEW</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><br></td>
-                        </tr>
+                        
                     </table>
                 </article>
                 <br>
