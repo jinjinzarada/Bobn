@@ -4,15 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>레시피_에러페이지</title>
+<title>콘테스트_에러페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 <script>
-	if(confirm('<%=request.getAttribute("ntrmsg")%>')){
+	if(confirm('<%=request.getAttribute("ntmsg")%>')){
 		location.href="<%=request.getContextPath()%>/login"
-	}else{		
-		location.href="<%=request.getContextPath()%>/ntrclist"
 	};
 </script>
 </body>

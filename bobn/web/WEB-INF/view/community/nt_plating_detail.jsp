@@ -73,10 +73,11 @@ NtPlatingRecommentVo ntprVo = (NtPlatingRecommentVo)request.getAttribute("ntprVo
 						</tr>
 						<tr>
 							<td class="j_ntpd_article2_img">
-								<form action="ntprwrite" method="post">
+								<form id="j_ntpd_frmRecomment">
 									<input type="hidden" name="pbNo" value="<%=ntpcVo.getPbNo() %>">
+									<input type="hidden" name="memberId" id="memberId" value="${ssUserVo.mId }">
 									<input type="text" name="prContent" id="j_ntpd_recomment">
-									<button type="submit" id="j_ntpd_submit_btn">댓글등록</button>
+									<button type="button" id="j_ntpd_submit_btn">댓글등록</button>
 								</form>
 							</td>
 						</tr>
@@ -102,6 +103,19 @@ NtPlatingRecommentVo ntprVo = (NtPlatingRecommentVo)request.getAttribute("ntprVo
 		</div>
 	</div>
 	<script>
+	
+	$("#j_ntpd_submit_btn").click(function(){
+		var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+		// $("#memberId").val() == false  // 이페이지 진입시점 session
+		if($("#memberId").val() == false || checkSS == false){
+			location.href="<%=request.getContextPath()%>/login";
+		}else{
+			j_ntpd_frmRecomment.action="ntprwrite";
+			j_ntpd_frmRecomment.method="post";
+			j_ntpd_frmRecomment.submit();
+		}
+	});
+	
     //슬라이드
     var slideIndex = 1;
     showDivs(slideIndex);

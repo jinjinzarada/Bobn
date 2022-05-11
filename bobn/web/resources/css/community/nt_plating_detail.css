@@ -137,6 +137,9 @@
 	border: white;
 	font-family: 'Noto Sans', sans-serif;
 }
+#j_ntpd_article3 > table {
+	width: 100%;
+}
 /*댓글 작성자 */
 #j_ntpd_memberid {
 	float: left;

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.semi.bobn.community.model.service.NtPlatingService;
 import kh.semi.bobn.community.model.vo.NtPlatingRecommentVo;
-import kh.semi.bobn.user.model.vo.UserVo;
 
 /**
  * Servlet implementation class NtPlatingRecommentWriteServlet
@@ -39,14 +38,7 @@ public class NtPlatingRecommentWriteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String memberId = "";
-
-		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
-		if(ssvo == null) {
-			request.setAttribute("ntpmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
-			request.getRequestDispatcher("WEB-INF/view/community/nt_plating_errorPage.jsp").forward(request, response);
-		}else {
-			memberId = ssvo.getmId();
-		}
+		memberId = request.getParameter("memberId");
 		
 		System.out.println("/ntprwrite");
 

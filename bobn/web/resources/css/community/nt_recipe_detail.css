@@ -137,6 +137,9 @@
 	border: white;
 	font-family: 'Noto Sans', sans-serif;
 }
+#j_ntrd_article3 > table {
+	width: 100%;
+}
 /*댓글 작성자 */
 #j_ntrd_memberid {
 	float: left;

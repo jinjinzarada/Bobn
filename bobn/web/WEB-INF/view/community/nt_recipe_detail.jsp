@@ -73,8 +73,9 @@ NtRecipeRecommentVo ntrrVo = (NtRecipeRecommentVo)request.getAttribute("ntrrVo")
 						</tr>
 						<tr>
 							<td class="j_ntrd_article2_img">
-								<form action="ntrrwrite" method="post">
+								<form id="j_ntrd_frmRecomment">
 									<input type="hidden" name="rbNo" value="<%=ntrcVo.getRbNo() %>">
+									<input type="hidden" name="memberId" id="memberId" value="${ssUserVo.mId }">
 									<input type="text" name="rrContent" id="j_ntrd_recomment">
 									<button type="submit" id="j_ntrd_submit_btn">댓글등록</button>
 								</form>
@@ -102,6 +103,24 @@ NtRecipeRecommentVo ntrrVo = (NtRecipeRecommentVo)request.getAttribute("ntrrVo")
 		</div>
 	</div>
 	<script>
+	
+	$("#j_ntrd_submit_btn").click(function(){
+		var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+		// $("#memberId").val() == false  // 이페이지 진입시점 session
+
+		if($("#memberId").val() == false || checkSS == false){
+			if(confirm("로그인이 필요한 페이지입니다. 로그인을 하시겠습니까?")){
+				location.href="<%=request.getContextPath()%>/login";
+			} else {
+				// 아무것도 안하고 그페이지 그대로 유지
+			}
+		}else{
+			j_ntrd_frmRecomment.action="ntrrwrite";
+			j_ntrd_frmRecomment.method="post";
+			j_ntrd_frmRecomment.submit();
+		}
+	});
+	
     //슬라이드
     var slideIndex = 1;
     showDivs(slideIndex);

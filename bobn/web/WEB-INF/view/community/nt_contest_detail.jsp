@@ -73,10 +73,11 @@ NtContestRecommentVo ntcrVo = (NtContestRecommentVo)request.getAttribute("ntcrVo
 						</tr>
 						<tr>
 							<td class="j_ntcd_article2_img">
-								<form action="ntcrwrite" method="post">
+								<form id="j_ntcd_frmRecomment">
 									<input type="hidden" name="cbNo" value="<%=ntccVo.getCbNo() %>">
+									<input type="hidden" name="memberId" id="memberId" value="${ssUserVo.mId }">
 									<input type="text" name="crContent" id="j_ntcd_recomment">
-									<button type="submit" id="j_ntcd_submit_btn">댓글등록</button>
+									<button type="button" id="j_ntcd_submit_btn">댓글등록</button>
 								</form>
 							</td>
 						</tr>
@@ -102,6 +103,20 @@ NtContestRecommentVo ntcrVo = (NtContestRecommentVo)request.getAttribute("ntcrVo
 		</div>
 	</div>
 	<script>
+	
+	$("#j_ntcd_submit_btn").click(function(){
+		var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+		// $("#memberId").val() == false  // 이페이지 진입시점 session
+		if($("#memberId").val() == false || checkSS == false){
+			location.href="<%=request.getContextPath()%>/login";
+		}else{
+			j_ntcd_frmRecomment.action="ntcrwrite";
+			j_ntcd_frmRecomment.method="post";
+			j_ntcd_frmRecomment.submit();
+		}
+	});
+	
+	
     //슬라이드
     var slideIndex = 1;
     showDivs(slideIndex);

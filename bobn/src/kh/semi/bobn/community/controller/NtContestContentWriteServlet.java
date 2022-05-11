@@ -47,8 +47,8 @@ public class NtContestContentWriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
 		if(ssvo == null) {
-			request.setAttribute("ntcmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
-			request.getRequestDispatcher("WEB-INF/view/community/nt_contest_errorPage.jsp").forward(request, response);
+			request.setAttribute("ntmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
+			request.getRequestDispatcher("WEB-INF/view/community/nt_errorPage.jsp").forward(request, response);
 		}else {
 			request.getRequestDispatcher("WEB-INF/view/community/nt_contest_write.jsp").forward(request, response);
 		}
