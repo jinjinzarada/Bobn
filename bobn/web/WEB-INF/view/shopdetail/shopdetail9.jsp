@@ -90,7 +90,7 @@
 	<script>
 		function btn() {
 			alert("장바구니에 추가되었습니다.")
-			location.href = "./shopdetail";
+			location.href = "./shopdetail9";
 		}
 	</script>
 </body>

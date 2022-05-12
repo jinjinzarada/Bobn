@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopdetail/shopdetail1.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/shopdetail/shopdetail2.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -92,7 +92,7 @@
 	<script>
 		function btn() {
 			alert("장바구니에 추가되었습니다.")
-			location.href = "./shopdetail";
+			location.href = "./shopdetail2";
 		}
 	</script>
 </body>
