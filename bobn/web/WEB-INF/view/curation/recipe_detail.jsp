@@ -108,14 +108,13 @@
         var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
         // $("#memberId").val() == false  // 이페이지 진입시점 session
         if($("#memberId").val() == false || checkSS == false){
-            alert('로그인 후 이용하실 수 있는 서비스입니다. 로그인 화면으로 이동합니다.');
-        	location.href="<%=request.getContextPath()%>/login";
+            if(confirm('로그인 후 이용하실 수 있는 서비스입니다. 로그인 하시겠습니까?')){location.href="<%=request.getContextPath()%>/login";}
         }else{
         	l_frmRecomment.action="recrewrite";
         	l_frmRecomment.method="post";
         	l_frmRecomment.submit();
         }
-    });
+    }); 
 	$('#l_recdetail_recomment').keypress(function(event){
 	     if ( event.which == 13 ) {
 	         $('#l_recdetail_submit_btn').click();

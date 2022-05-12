@@ -287,13 +287,15 @@ function _excelDown(fileName, sheetName, sheetHtml) {
 }
 .caloshow, .sodiumshow{
 	font-weight: bold;
-	width: 50px;
+	
 }
 a{
 	color:#fb9300;
 	text-decoration: none;
 }
-
+.item{
+	margin-bottom:1.3%;
+}
 
 </style>
 </head>
@@ -383,11 +385,11 @@ a{
 			  <div class="modalBox">
 			    <div>현재 검색을 하신</div>
 			    <input type="text" name="paste_food" class="paste_food">
-			    <div>의 경우 100g당 칼로리와 나트륨 함량이 무려</div>
-			    <input type="text" class="caloshow"><span>칼로리 &nbsp&nbsp&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-			    <input type="text" class="sodiumshow"><span>mg</span>
-			    <div>정도네요!</div>
-			    <div>건강에 더 좋은 선택지가 있어요!</div>
+			    <div id="revisetext">의 경우 100g당 칼로리와 나트륨 함량이 무려</div>
+			    <input type="text" class="caloshow"><span id="deleteok1">칼로리 &nbsp&nbsp&nbsp&nbsp&nbsp/&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+			    <input type="text" class="sodiumshow"><span id="deleteok2">mg</span>
+			    <div id="deleteok3">정도네요!</div>
+			    <div id="deleteok4">건강에 더 좋은 선택지가 있어요!</div>
 			    <div>만약 건강과 영양을 복합적으로 생각하시는 분이시라면</div>
 			    <div><a href="<%=request.getContextPath()%>/shopblist">여기를 클릭해주세요!</a></div>
 			    <div>여러분의 건강과 영양을 한층 더 건강하게!</div>
@@ -447,18 +449,49 @@ a{
                   		$('.caloshow').val(data.caloinfo);
                   		$('.sodiumshow').val(data.sodiuminfo);
                           console.log("ajax 진입-성공(data)까지 들어왔어");
+                          $('#deleteok1').css("visibility", "visible");
+                          $('#deleteok2').css("visibility", "visible");
+                          $('#deleteok3').css("visibility", "visible");
+                          $('#deleteok4').css("visibility", "visible");
+                          $('.caloshow').css("text-align", "left");
+                          $('.caloshow').css("width", "50px");
+                          $('.sodiumshow').css("width", "50px");
+                          $('.sodiumshow').css("text-align", "left");
+                          $('#revisetext').text('의 경우 100g당 칼로리와 나트륨 함량이 약');
                           
                           
                       } else {
                           console.log("ajax 진입-성공(else)까지 들어왔어");
-                          $('.caloshow').val("확인된 칼로리 정보가 없네요!");
-                          $('.sodiumshow').val("확인된 나트륨 정보가 없네요!");
+                          $('.caloshow').val("칼로리 정보가 없네요");
+                          $('.sodiumshow').val("나트륨 정보가 없네요");
+                          $('#deleteok1').css("visibility", "hidden ");
+                          $('#deleteok2').css("visibility", "hidden ");
+                          $('#deleteok3').css("visibility", "hidden ");
+                          $('#deleteok4').css("visibility", "hidden ");
+                          $('.caloshow').css("text-align", "left");
+                          $('.sodiumshow').css("text-align", "left");
+                          $('.caloshow').css("width", "160px");
+                          $('.sodiumshow').css("width", "160px");
+                          $('.sodiumshow').css("margin-left", "-40px");
+                          $('#revisetext').text('에 대한');
+                         
+                          
                       }
                   },
                   error : function(error) {
                       console.log("ajax 진입(에러)까지 들어왔어");
-                      $('.caloshow').val("확인된 칼로리 정보가 없네요!");
-                      $('.sodiumshow').val("확인된 나트륨 정보가 없네요!");
+                      $('.caloshow').val("칼로리 정보가 없네요");
+                      $('.sodiumshow').val("나트륨 정보가 없네요");
+                      $('#deleteok1').css("visibility", "hidden ");
+                      $('#deleteok2').css("visibility", "hidden ");
+                      $('#deleteok3').css("visibility", "hidden ");
+                      $('#deleteok4').css("visibility", "hidden ");
+                      $('.caloshow').css("text-align", "left");
+                      $('.sodiumshow').css("text-align", "left");
+                      $('.caloshow').css("width", "160px");
+                      $('.sodiumshow').css("width", "160px");
+                      $('.sodiumshow').css("margin-left", "-40px");
+                      $('#revisetext').text('에 대한');
                   }
               });
 			  $(".paste_food").prop('readonly', true);
