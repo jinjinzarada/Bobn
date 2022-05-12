@@ -11,10 +11,10 @@ kh semi project 2조(밥조)
 * 구현 및 테스트 : 2022-04-19 ~ 2022-05-12
 
 ## 구성원 (git id)
-* MingNie909 / gitSJL / hyemijang / jinjinzarada
+* MingNine909 / gitSJL / hyemijang / jinjinzarada
 
 ## 담당 업무
-* MingNie909 : 메인, 이벤트, 마이페이지, 프로젝트 관리
+* MingNine909 : 메인, 이벤트, 마이페이지, 프로젝트 관리
 * gitSJL : 큐레이션 (레시피, 맛집추천, 먹BTI), 로그인, 회원가입
 * hyemijang : 커뮤니티 (플레이팅, 레시피, 요리콘테스트), 고객센터
 * jinjinzarada : 쇼핑 (BEST, NEW, SALE), 장바구니, 주문/결제
