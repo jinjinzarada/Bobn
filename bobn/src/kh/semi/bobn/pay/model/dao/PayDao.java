@@ -45,7 +45,6 @@ public class PayDao {
 		String sql = "select * from product p, detail_image d, basket_item b where p.p_id = d.p_id and d.p_id = b.p_id order by b.member_id";
 		try {
 			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, memberId);
 			rs = pstmt.executeQuery();
 		
 			if(rs.next()) {

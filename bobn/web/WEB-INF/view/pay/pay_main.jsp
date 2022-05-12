@@ -90,8 +90,8 @@
 				<td>금액</td>
 			</tr>
 		</table>
-			<c:forEach items="${payvolist}" var="vo">
-		<table class="c_pay_order_list">
+		<c:forEach items="${payvolist}" var="vo">
+			<table class="c_pay_order_list">
 			<tr>
 				<td width="272">
 					<img src="<%=request.getContextPath()%>${vo.d_file}" alt="" width="70">

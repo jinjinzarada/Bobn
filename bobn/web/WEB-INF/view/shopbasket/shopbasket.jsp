@@ -142,6 +142,8 @@ function updateAmount(){
 				
 				// 수량에 따른 상품가격
 				var priceOneTotalVal = priceOneVal*updateVal;
+//				priceOneTotalVal = priceOneTotalVal.toLocaleString("ko-KR", {style:'currency', currency:'KRW'});
+//				console.log(priceOneTotalVal); 금액 앞 원화표시와 숫자 3자리마다(,) 표시해주는 코드 오류떠서 막아놈 다른플젝때 써먹을것
 				$thisInputEle.parents(".c_cart_item").find(".itemPriceCnt").val(priceOneTotalVal);
 				changeTotalPrice();
 				

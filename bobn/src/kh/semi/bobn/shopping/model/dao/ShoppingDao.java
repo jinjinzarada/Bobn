@@ -86,10 +86,11 @@ public class ShoppingDao {
 		ArrayList<ShoppingVo> volist = null;
 		String sql = "";
 		if (pCountry.equals("1")) {
-			sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?";
+			sql = "select * from product p join detail_image d using(p_id) ";
 		} else {
 			sql = "select * from product p join detail_image d using(p_id) where d.p_id = ?";
 		}
+		sql = "select * from (select ROWNUM rnum, tbl1.* from ("+sql+") tbl1) tbl2 where rnum>=? and rnum<=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			if (pCountry.equals("1")) {
