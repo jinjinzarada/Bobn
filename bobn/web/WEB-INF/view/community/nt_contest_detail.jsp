@@ -105,16 +105,17 @@ NtContestRecommentVo ntcrVo = (NtContestRecommentVo)request.getAttribute("ntcrVo
 	<script>
 	
 	$("#j_ntcd_submit_btn").click(function(){
-		var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
-		// $("#memberId").val() == false  // 이페이지 진입시점 session
-		if($("#memberId").val() == false || checkSS == false){
-			location.href="<%=request.getContextPath()%>/login";
-		}else{
-			j_ntcd_frmRecomment.action="ntcrwrite";
+        var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+        // $("#memberId").val() == false  // 이페이지 진입시점 session
+        if($("#memberId").val() == false || checkSS == false){
+            if(confirm('로그인 후 이용하실 수 있는 서비스입니다. 로그인 하시겠습니까?')){
+            	location.href="<%=request.getContextPath()%>/login";}
+        }else{
+        	j_ntcd_frmRecomment.action="ntcrwrite";
 			j_ntcd_frmRecomment.method="post";
 			j_ntcd_frmRecomment.submit();
-		}
-	});
+        }
+    });
 	
 	
     //슬라이드
