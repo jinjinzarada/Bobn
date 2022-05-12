@@ -111,23 +111,24 @@ public class NtPlatingDao {
 		if (pbConcept.equals("4")) {
 			sql = "select *"
 					+ "from (select rownum r, ntpc.* from(select * from ntpc join(select ntpi.*from (select row_number() over(partition by ntpi.pb_no order by pb_no)as rnum,"
-					+ "ntpi.* from ntpi) ntpi where rnum = 1)" + "using(pb_no))ntpc) " + "where r between ? and ?";
+					+ "ntpi.* from ntpi) ntpi where rnum = 1)" + "using(pb_no))ntpc) " + "where r between ? and ? order by pb_date desc";
 		} else {
 			sql = "select *"
 					+ "from (select rownum r, ntpc.* from(select * from ntpc join(select ntpi.*from (select row_number() over(partition by ntpi.pb_no order by pb_no)as rnum,"
 					+ "ntpi.* from ntpi) ntpi where rnum = 1)" + "using(pb_no))ntpc where  pb_concept = ? )"
-					+ "where r between ? and ?";
+					+ "where r between ? and ? order by pb_date desc";
 		}
 		// vo에 가져온걸 sql문에 넣어줌
 		try {
 			pstmt = conn.prepareStatement(sql);
 			if (pbConcept.equals("4")) {
-				pstmt.setInt(1, startRnum);
-				pstmt.setInt(2, endRnum);
+				//최신순이 위로 위야하기 때문에 end가 먼저오고 start가 뒤에
+				pstmt.setInt(1, endRnum);
+				pstmt.setInt(2, startRnum);
 			} else {
 				pstmt.setString(1, pbConcept);
-				pstmt.setInt(2, startRnum);
-				pstmt.setInt(3, endRnum);
+				pstmt.setInt(2, endRnum);
+				pstmt.setInt(3, startRnum);
 			}
 			rs = pstmt.executeQuery();
 			ntpcVolist = new ArrayList<NtPlatingListVo>();

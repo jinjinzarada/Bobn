@@ -111,23 +111,24 @@ public class NtRecipeDao {
 		if (rbConcept.equals("4")) {
 			sql = "select *"
 					+ "from (select rownum r, ntrc.* from(select * from ntrc join(select ntri.*from (select row_number() over(partition by ntri.rb_no order by rb_no)as rnum,"
-					+ "ntri.* from ntri) ntri where rnum = 1)" + "using(rb_no))ntrc) " + "where r between ? and ?";
+					+ "ntri.* from ntri) ntri where rnum = 1)" + "using(rb_no))ntrc) " + "where r between ? and ? order by rb_date desc";
 		} else {
 			sql = "select *"
 					+ "from (select rownum r, ntrc.* from(select * from ntrc join(select ntri.*from (select row_number() over(partition by ntri.rb_no order by rb_no)as rnum,"
 					+ "ntri.* from ntri) ntri where rnum = 1)" + "using(rb_no))ntrc where  rb_concept = ? )"
-					+ "where r between ? and ?";
+					+ "where r between ? and ? order by rb_date desc";
 		}
 		// vo에 가져온걸 sql문에 넣어줌
 		try {
 			pstmt = conn.prepareStatement(sql);
 			if (rbConcept.equals("4")) {
-				pstmt.setInt(1, startRnum);
-				pstmt.setInt(2, endRnum);
+				//최신순이 위로 위야하기 때문에 end가 먼저오고 start가 뒤에
+				pstmt.setInt(1, endRnum);
+				pstmt.setInt(2, startRnum);
 			} else {
 				pstmt.setString(1, rbConcept);
-				pstmt.setInt(2, startRnum);
-				pstmt.setInt(3, endRnum);
+				pstmt.setInt(2, endRnum);
+				pstmt.setInt(3, startRnum);
 			}
 			rs = pstmt.executeQuery();
 			ntrcVolist = new ArrayList<NtRecipeListVo>();

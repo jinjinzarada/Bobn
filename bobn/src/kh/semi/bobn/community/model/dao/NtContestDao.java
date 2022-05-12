@@ -97,13 +97,14 @@ public class NtContestDao {
 		ArrayList<NtContestListVo> ntccVolist = null;
 		String sql = "select *"
 					+ "from (select rownum r, ntcc.* from(select * from ntcc join(select ntci.*from (select row_number() over(partition by ntci.cb_no order by cb_no)as rnum,"
-					+ "ntci.* from ntci) ntci where rnum = 1)" + "using(cb_no))ntcc) " + "where r between ? and ?";
+					+ "ntci.* from ntci) ntci where rnum = 1)" + "using(cb_no))ntcc) " + "where r between ? and ? order by cb_date desc";
 
 		// vo에 가져온걸 sql문에 넣어줌
 		try {
 			pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, startRnum);
-				pstmt.setInt(2, endRnum);
+			//최신순이 위로 위야하기 때문에 end가 먼저오고 start가 뒤에
+			pstmt.setInt(1, endRnum);
+			pstmt.setInt(2, startRnum);
 
 			rs = pstmt.executeQuery();
 			ntccVolist = new ArrayList<NtContestListVo>();

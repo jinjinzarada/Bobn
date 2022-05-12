@@ -71,10 +71,19 @@ public class NtPlatingContentListServlet extends HttpServlet {
 		// rownum 처리
 		int startRnum = 0;
 		int endRnum = 0;
-		startRnum = (currentPage - 1) * pageSize + 1;
-		endRnum = startRnum + pageSize - 1;
-		if (endRnum > totalCnt) {
-			endRnum = totalCnt;
+		
+		//일반적인 순서 페이징
+//		startRnum = (currentPage - 1) * pageSize + 1;
+//		endRnum = startRnum + pageSize - 1;
+//		if (endRnum > totalCnt) {
+//			endRnum = totalCnt;
+//		}
+		
+		//최신순 페이징
+		startRnum = totalCnt-((currentPage-1) * pageSize);
+		endRnum = startRnum - 5;
+		if (endRnum < 1) {
+			endRnum = 1;
 		}
 
 		System.out.println("startRnum : " + startRnum);
