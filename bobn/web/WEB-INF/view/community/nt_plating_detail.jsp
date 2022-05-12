@@ -117,6 +117,18 @@ NtPlatingRecommentVo ntprVo = (NtPlatingRecommentVo)request.getAttribute("ntprVo
         }
     });
 	
+	//삭제하기 온클릭 이벤트
+    $("#j_ntpd_delete_btn").on("click",function(){
+    	var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+    	var pbNo = $(this).attr("pbNo");
+    	if($("#memberId").val() == false || checkSS == false){
+            if(confirm('로그인 후 이용하실 수 있는 서비스입니다. 로그인 하시겠습니까?')){
+            	location.href="<%=request.getContextPath()%>/login";}
+    	} else if(confirm("게시글을 삭제하시겠습니까?")){
+    		location.href="ntpcdelete?pbNo="+pbNo;
+    	}
+    });
+	
     //슬라이드
     var slideIndex = 1;
     showDivs(slideIndex);
@@ -135,13 +147,6 @@ NtPlatingRecommentVo ntprVo = (NtPlatingRecommentVo)request.getAttribute("ntprVo
       }
       x[slideIndex-1].style.display = "block";  
     }
-    //삭제하기 온클릭 이벤트
-    $("#j_ntpd_delete_btn").on("click",function(){
-    	var pbNo = $(this).attr("pbNo");
-    	if(confirm("게시글을 삭제하시겠습니까?")){
-    		location.href="ntpcdelete?pbNo="+pbNo;
-    	}
-    });
     
     
     </script>

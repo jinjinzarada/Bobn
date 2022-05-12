@@ -116,8 +116,17 @@ NtRecipeRecommentVo ntrrVo = (NtRecipeRecommentVo)request.getAttribute("ntrrVo")
 			j_ntrd_frmRecomment.submit();
         }
     });
-	
-	
+	//삭제하기 온클릭 이벤트
+    $("#j_ntrd_delete_btn").on("click",function(){
+    	var checkSS = '${ssUserVo.mId }';   // 현 시점에 로그인 session 확인
+    	var rbNo = $(this).attr("rbNo");
+    	if($("#memberId").val() == false || checkSS == false){
+            if(confirm('로그인 후 이용하실 수 있는 서비스입니다. 로그인 하시겠습니까?')){
+            	location.href="<%=request.getContextPath()%>/login";}
+    	} else if(confirm("게시글을 삭제하시겠습니까?")){
+    		location.href="ntrcdelete?rbNo="+rbNo;
+    	}
+    });
 	
     //슬라이드
     var slideIndex = 1;
@@ -137,14 +146,6 @@ NtRecipeRecommentVo ntrrVo = (NtRecipeRecommentVo)request.getAttribute("ntrrVo")
       }
       x[slideIndex-1].style.display = "block";  
     }
-    //삭제하기 온클릭 이벤트
-    $("#j_ntrd_delete_btn").on("click",function(){
-    	var rbNo = $(this).attr("rbNo");
-    	if(confirm("게시글을 삭제하시겠습니까?")){
-    		location.href="ntrcdelete?rbNo="+rbNo;
-    	}
-    });
-    
     
     </script>
 	<%@ include file="/WEB-INF/view/common/template_footer.jsp"%>
