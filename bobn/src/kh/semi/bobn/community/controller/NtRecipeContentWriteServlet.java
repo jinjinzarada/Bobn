@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -47,8 +48,10 @@ public class NtRecipeContentWriteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserVo ssvo = (UserVo)request.getSession().getAttribute("ssUserVo");
 		if(ssvo == null) {
-			request.setAttribute("ntmsg", "로그인이 필요한 페이지입니다. 로그인 페이지로 이동하시겠습니까?");
-			request.getRequestDispatcher("WEB-INF/view/community/nt_errorPage.jsp").forward(request, response);
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('로그인이 필요한 서비스입니다. 로그인 후 이용해주시기 바랍니다.'); location.href='login';");
+			script.println("</script>");
 		}else {
 			request.getRequestDispatcher("WEB-INF/view/community/nt_recipe_write.jsp").forward(request, response);
 		}
