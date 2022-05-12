@@ -11,11 +11,12 @@
  */
  /* 제거가 잘 안되서 이름을 바꿉니다.  또한 하단 부분과 맞지 않아 조정함.*/
 .header_container {
-	width: 1200px;
-	max-width: 1200px;
-	margin: auto;
-/* 	margin-left: 80.500px;
-	margin-right: 80.500px;  */
+   /* 스크롤바 여부에 따라 넓이가 다르게 인식되어 center로 고정하였을때 흔들리듯 보임. 스크롤바가 있을때 */
+   width: calc(1200px - (100vw - 100%));
+   max-width: 1200px;
+   margin: auto;
+/*    margin-left: 80.500px;
+   margin-right: 80.500px;  */
 } 
 .nav-tabs .nav-item.show .nav-link {
 	border: none;
@@ -29,11 +30,19 @@ a.nav-link.link-dark.px-2 {
 nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 	border: none;
 }
-nav:hover {
-	/* 이것도 의도한 색 같으나 nav태그에는 색을 줘도 변화가 없으며, ul태그 역시 색이 나타나지 않음. */
+/* nav:hover {
+	이것도 의도한 색 같으나 nav태그에는 색을 줘도 변화가 없으며, ul태그 역시 색이 나타나지 않음.
 	color: #f54748 !important;
 	border: none;
+} */
+
+/* 다른 페이지 영향력을 줄이기 위해서 header 아래이 있는 nav 1개에만 적용함. */
+header nav:hover {
+   color: #f54748 !important;
+   /* ejkim border 영역은 남기면서 안보이게 하고 싶을떄*/
+   border-bottom : 1px solid transparent;
 }
+
 .link-dark {
 	color: #343f56;
 	font-weight: 500;
