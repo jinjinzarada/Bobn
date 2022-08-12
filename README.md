@@ -1,5 +1,6 @@
 # bobn
-kh semi project 2조(밥조)
+* kh semi project 2조(밥조)
+* 구현 결과 (최종 발표 PPT) : [링크](https://drive.google.com/file/d/13Sx7vD2jpVSlgK1EhZEIV3CpE8b2gr4r/view?usp=sharing)
 
 ## 구현 목표
 * All in one meal kit site - BOB& (밥엔)
