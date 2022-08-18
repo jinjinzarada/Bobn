@@ -37,3 +37,8 @@
 
 * 쇼핑 화면 (sale)
 ![bobn_sale](https://user-images.githubusercontent.com/97798479/185381513-d9be3595-1883-4a96-9962-03d048962674.gif)
+
+* 각 화면 카테고리 
+![bobn_category](https://user-images.githubusercontent.com/97798479/185382408-5b1efaac-90f0-434f-af9b-22ba6915432b.gif)
+
+* 
