@@ -29,5 +29,11 @@
 * Development Tool : SQL Developer, Eclipse, Visual Studio Code
 
 # 담당 구현 화면
-* 쇼핑 화면
+* 쇼핑 화면 (best)
 ![bobn_shopping](https://user-images.githubusercontent.com/97798479/185380770-e2bb997f-6041-47b3-8b79-f84297cc942e.gif)
+
+* 쇼핑 화면 (new)
+![bobn_new](https://user-images.githubusercontent.com/97798479/185381281-8d553eb9-681e-471b-a9fd-d7e4eecf50cb.gif)
+
+* 쇼핑 화면 (sale)
+![bobn_sale](https://user-images.githubusercontent.com/97798479/185381513-d9be3595-1883-4a96-9962-03d048962674.gif)
