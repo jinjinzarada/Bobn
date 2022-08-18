@@ -50,5 +50,5 @@
 * 장바구니에서 결제
 ![bobn_carttopay](https://user-images.githubusercontent.com/97798479/185383898-3d113d9a-5f22-4b44-ad56-7d8687690293.gif)
 
-* 결제 화면(주소 
+* 결제 화면(주소 API)
 ![bobn_pay](https://user-images.githubusercontent.com/97798479/185385087-2e9fcf3a-5c4b-4de9-91cf-6d6f1a702358.gif)
