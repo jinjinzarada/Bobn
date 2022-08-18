@@ -28,17 +28,27 @@
 * Framework, Open API : Ajax, jQuery, Bootstrap, 다음 지도, 다음 주소, 서머노트에디터
 * Development Tool : SQL Developer, Eclipse, Visual Studio Code
 
-# 담당 구현 화면
-* 쇼핑 화면 (best)
+# jinjinzarada 담당 구현 화면
+* 쇼핑 화면 (BEST)
 ![bobn_shopping](https://user-images.githubusercontent.com/97798479/185380770-e2bb997f-6041-47b3-8b79-f84297cc942e.gif)
 
-* 쇼핑 화면 (new)
+* 쇼핑 화면 (NEW)
 ![bobn_new](https://user-images.githubusercontent.com/97798479/185381281-8d553eb9-681e-471b-a9fd-d7e4eecf50cb.gif)
 
-* 쇼핑 화면 (sale)
+* 쇼핑 화면 (SALE)
 ![bobn_sale](https://user-images.githubusercontent.com/97798479/185381513-d9be3595-1883-4a96-9962-03d048962674.gif)
 
 * 각 화면 카테고리 
 ![bobn_category](https://user-images.githubusercontent.com/97798479/185382408-5b1efaac-90f0-434f-af9b-22ba6915432b.gif)
 
-* 
+* 제품상세화면
+![bobn_detail](https://user-images.githubusercontent.com/97798479/185382938-a8a317f0-8a39-45f1-936a-b6e75efe6cdf.gif)
+
+* 장바구니 화면
+![bobn_cart](https://user-images.githubusercontent.com/97798479/185383600-3df4778b-3464-476f-ada7-01831e3b22c9.gif)
+
+* 장바구니에서 결제
+![bobn_carttopay](https://user-images.githubusercontent.com/97798479/185383898-3d113d9a-5f22-4b44-ad56-7d8687690293.gif)
+
+* 결제 화면(주소 
+![bobn_pay](https://user-images.githubusercontent.com/97798479/185385087-2e9fcf3a-5c4b-4de9-91cf-6d6f1a702358.gif)
