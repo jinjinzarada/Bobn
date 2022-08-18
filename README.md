@@ -52,3 +52,6 @@
 
 * 결제 화면(주소 API)
 ![bobn_pay](https://user-images.githubusercontent.com/97798479/185385087-2e9fcf3a-5c4b-4de9-91cf-6d6f1a702358.gif)
+
+* 장바구니에 있던 상품 가져오기
+![bobn_payfin](https://user-images.githubusercontent.com/97798479/185385854-fb6d4bfc-16b1-483e-a8b2-ecb865c14abc.gif)
