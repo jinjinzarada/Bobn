@@ -28,7 +28,7 @@
 * Framework, Open API : Ajax, jQuery, Bootstrap, 다음 지도, 다음 주소, 서머노트에디터
 * Development Tool : SQL Developer, Eclipse, Visual Studio Code
 
-# jinjinzarada 담당 구현 화면
+## 최은진(jinjinzarada) 담당 구현 화면
 * 쇼핑 화면 (BEST)
 ![bobn_shopping](https://user-images.githubusercontent.com/97798479/185380770-e2bb997f-6041-47b3-8b79-f84297cc942e.gif)
 
